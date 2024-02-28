@@ -12,4 +12,4 @@ The purpose of this blog post is to highlight three potential data sets that our
 
   This data set was gathered from data.gov, a free database provided by the U.S. Government (https://catalog.data.gov/dataset/death-rates-for-suicide-by-sex-race-hispanic-origin-and-age-united-states-020c1). This data set has 6390 objects and 13 columns, and describes U.S. suicide rates from the years 1950 to 2018. Data before 1980 is a decade apart (1950, 1960, 1970, 1980) but yearly after 1980.
   
-  There is a large variety of groups that this data set is separated by, including aggregate data, gender, race, and age. 
+  There is a large variety of groups that this data set is separated by, including aggregate data, gender, race, and age. This data was collected by the National Center for Health Statistics, and is highly categorized to the point where grabbing specific information from it has potential to be easy, but proper sorting may prove to be a challenge. Cleaning of the data appears to be unnecessary. While this topic is quite bleak, 
