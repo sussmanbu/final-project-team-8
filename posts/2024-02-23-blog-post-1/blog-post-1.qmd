@@ -6,3 +6,8 @@ date-modified: "2024-02-23"
 draft: FALSE
 ---
 
+The purpose of this blog post is to highlight three potential data sets that our group may focus on for our final project.
+
+## Data Set One: Death rates for suicide by race, age, and Hispanic origin in the United States
+
+This data set was gathered from data.gov, a free database provided by the U.S. Government (https://catalog.data.gov/dataset/death-rates-for-suicide-by-sex-race-hispanic-origin-and-age-united-states-020c1). 
