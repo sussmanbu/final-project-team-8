@@ -12,4 +12,18 @@ The purpose of this blog post is to highlight three potential data sets that our
 
   This data set was gathered from data.gov, a free database provided by the U.S. Government (https://catalog.data.gov/dataset/death-rates-for-suicide-by-sex-race-hispanic-origin-and-age-united-states-020c1). This data set has 6390 objects and 13 columns, and describes U.S. suicide rates from the years 1950 to 2018. Data before 1980 is a decade apart (1950, 1960, 1970, 1980) but yearly after 1980.
   
-  There is a large variety of groups that this data set is separated by, including aggregate data, gender, race, and age. This data was collected by the National Center for Health Statistics, and is highly categorized to the point where grabbing specific information from it has potential to be easy, but proper sorting may prove to be a challenge. Cleaning of the data appears to be unnecessary. While this topic is quite bleak, 
+  There is a large variety of groups that this data set is separated by, including aggregate data, gender, race, and age. This data was collected by the National Center for Health Statistics, and is highly categorized to the point where grabbing specific information from it has potential to be easy, but proper sorting may prove to be a challenge. Cleaning of the data appears to be unnecessary. While this topic is quite bleak, it could provide valuable insight into the well being of many demographics in the United States.
+  
+  
+  
+  
+  
+## Data Set Two: USA Unemployment Rates by Demographics & Race
+
+The dataset is from Kaggle: https://www.kaggle.com/datasets/asaniczka/unemployment-rates-by-demographics-1978-2023?resource=download
+This dataset from Kaggle titled "Unemployment Rates by Demographics 1978-2023" contains data related to unemployment rates segmented by various demographic factors in the U.S. over a period spanning from 1978 to 2023. The dataset includes 122 columns, including information of unemployment rates for various age groups, education levels, genders, races, and more. The dataset includes 537 rows, which the frequency of data collecting is monthly from December 1978 to July 2023. 
+
+The data is sourced from the Economic Policy Institute’s State of Working America Data Library and economic research conducted by the Federal Reserve Bank of St. Louis. The purpose is to monitor and analyze employment trends in the population. 
+I think we are able to load/clean this data because the segmentation is clear in columns so it is easy for us to screen out the exact data columns we are looking for for our main research focus and topic. There is no N/A in this dataset. 
+The main questions I hope to address with this dataset is to find relationship between education level and unemployment rate and find the trend for different demographic groups across time span. 
+>>>>>>> 9e59aec5a22df7775ffa8526415654dc876d962f
