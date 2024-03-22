@@ -3,11 +3,15 @@ title: "Blog Post 2"
 editor: visual
 ---
 
+### Blog Post 2 - Reviewing Feedback and Data Exploration 
 
+Throughout this week, we reviewed the feedback on our datasets. We decided that we would use our datasets on death rates via suicide and unemployment as supplementary evidence later on in our project. These two datasets are quite messy to use and proved challenging to sort/clean them to provide a compelling argument. We also decided to focus on two datasets for our project: the World Bank Data on Gender, and the ACS data on Educational Attainment concerning Gender and Race (i.e., the Professor also told us how to extract data from ACS directly via R). 
 
-### writing stuff here ###
+From the ACS dataset, we brainstormed some ideas we could further explore. Firstly, we want to give a brief overview of the data we collected by exhibiting trends over time (i.e., showing poverty rates over time, median earnings of women from different racial backgrounds), and see if there are improvements or regressions in the data. Secondly, we also decided to conduct a gender-pay gap analysis by analyzing median earnings for women and men within each racial group based on their educational attainment. Relating to education, we also want to investigate the educational attainment of genders concerning race by seeing the percentage of women in different levels of education. Lastly, to further explore the disparities between genders, we want to see the poverty rates of women in each racial group, based on educational attainment.
 
-``` {r}
+```{r}
+library(tidyverse)
 data = read_csv('USA_Gender_Stats.csv')
-
 ```
+
+Continue with ACS data set here
