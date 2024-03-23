@@ -11,7 +11,39 @@ From the ACS dataset, we brainstormed some ideas we could further explore. First
 
 ```{r}
 library(tidyverse)
-data = read_csv('USA_Gender_Stats.csv')
+```
+
+
+```{r, echo=FALSE}
+data = read_csv('dataset/USA_Gender_Stats.csv', show_col_types = FALSE)
+
+data_ex <- data |>
+  filter(Indicator.Code == 'SL.EMP.TOTL.SP.FE.NE.ZS' | Indicator.Code == 'SL.EMP.TOTL.SP.MA.NE.ZS') |>
+  select(, -c(1:5)) |> 
+  select(, c(1:64)) |>
+  rename_all(~gsub("X", "", .)) |>
+  t()
+
+data_ex = as.data.frame(data_ex)
+
+data_ex <- data_ex|>
+  rownames_to_column(var = 'Year') |>
+  rename(
+    'Employment to Population Ratio (Female)' = 'V1',
+    'Employment to Population Ratio (Male)' = 'V2'
+  )
+
+data_ex$Year <- as.Date(as.character(data_ex$Year), format = "%Y")
+
+ggplot(data_ex, aes(x = Year)) +
+  geom_line(aes(y = `Employment to Population Ratio (Female)`, color = "Female")) +
+  geom_line(aes(y = `Employment to Population Ratio (Male)`, color = "Male")) +
+  labs(x = "Year", y = "Employment to Population Ratio") +
+  scale_color_manual(values = c("Female" = "blue", "Male" = "red")) + theme(legend.title = element_blank())
+
+
+  
+  
 ```
 
 Continue with ACS data set here
