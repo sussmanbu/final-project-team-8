@@ -13,7 +13,6 @@ From the ACS dataset, we brainstormed some ideas we could further explore. First
 library(tidyverse)
 ```
 
-
 ```{r, echo=FALSE}
 data = read_csv('dataset/USA_Gender_Stats.csv', show_col_types = FALSE)
 
@@ -56,7 +55,3 @@ library(tidyverse)
 data2 = read_csv('dataset/USA_Gender_Stats.csv')
 view(data2)
 ```
-
-
-
-
