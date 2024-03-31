@@ -7,4 +7,9 @@ editor: visual
 
 For this week, we obtained methods from the Professor on how to extract data from an ACS file, particularly about the tidycensus package (link here: <https://bit.ly/43GG3Uc>) . This is particularly useful as our main data set is from the ACS. 
 
-To be continued.
+To be co
+
+```         
+```
+
+ntinued.
