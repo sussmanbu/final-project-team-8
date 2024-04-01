@@ -7,9 +7,89 @@ editor: visual
 
 For this week, we obtained methods from the Professor on how to extract data from an ACS file, particularly about the tidycensus package (link here: <https://bit.ly/43GG3Uc>) . This is particularly useful as our main data set is from the ACS. 
 
-To be co
+Additionally, we also cleaned our Gender Data form the World Bank by isolating the indicator name and codes relatively easily. After, we briefly explored the data by making charts to see how indicators relate with each other (e.g., for instance, we noticed something interesting about converging employment-to-population ratios for men and women). Additionally, we also cleaned another dataset on death rates by suicide and analyzed the death rates for females from different races over the years. Interestingly, the death rates by suicide across all races stayed constant over the years (we are not sure if we made a mistake, if the data is unreliable, or actually reflects the truth). The R code chunk when analyzing the death rate data is below: 
+
+```{r}
+library(ggplot2)
+library(readxl)
+
+data <- read_excel("dataset/Death rates by suicide.xlsx")
+
+##For Female: White category
+
+filtered_data <- subset(data, STUB_LABEL == "Female: White" & STUB_NAME == "Sex and race")
+
+ggplot(filtered_data, aes(x = YEAR, y = STUB_LABEL_NUM)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  labs(title = "Death Rates by Suicide for Female: White",
+       x = "Year",
+       y = "Death Rates per 100,000 people",
+       caption = "Data source: To be filled") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        axis.title = element_text(size = 10),
+        axis.text = element_text(size = 10),
+        legend.position = "none")
+
+
+##For Female: Black or African category
+
+filtered_data <- subset(data, STUB_LABEL == "Female: Black or African American" & STUB_NAME == "Sex and race")
+
+ggplot(filtered_data, aes(x = YEAR, y = STUB_LABEL_NUM)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  labs(title = "Death Rates by Suicide for Female: Black or African American",
+       x = "Year",
+       y = "Death Rates per 100,000 people",
+       caption = "Data source: Death_rates_by_suicide dataset") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        legend.position = "none")
+
+
+## For Female: Female: American Indian or Alaska Native
+
+filtered_data <- subset(data, STUB_LABEL == "Female: American Indian or Alaska Native" & STUB_NAME == "Sex and race")
+
+ggplot(filtered_data, aes(x = YEAR, y = STUB_LABEL_NUM)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  labs(title = "Death Rates by Suicide for Female: American Indian or Alaska Native",
+       x = "Year",
+       y = "Death Rates per 100,000 people",
+       caption = "Data source: Death_rates_by_suicide dataset") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        legend.position = "none")
+
+##For Female: Asian or Pacific Islander
+
+filtered_data <- subset(data, STUB_LABEL == "Female: Asian or Pacific Islander" & STUB_NAME == "Sex and race")
+
+ggplot(filtered_data, aes(x = YEAR, y = STUB_LABEL_NUM)) +
+  geom_line(color = "steelblue", size = 1.2) +
+  labs(title = "Death Rates by Suicide for Female: Asian or Pacific Islander",
+       x = "Year",
+       y = "Death Rates per 100,000 people",
+       caption = "Data source: Death_rates_by_suicide dataset") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 12),
+        legend.position = "none")
+```
+
+{Describe and/or put more data analysis attempts here, if any}
+
+\
+On the other hand, we also used this week to review linear regression methodologies, particularly the methods to check the assumptions of the linear model (i.e., Residuals vs. Fitted plots, Q-Q plots, Scale-Location plot (very similar to Residuals vs. Fitted plots), and Residuals vs Leverage (Cook’s Distance) plots). We will use these extensively in our project to see if our data posits linear patterns, and rely on the Residuals vs. Leverage method to remove outliers and boost accuracy of our model. Throughout the project, we also want to experiment with using more predictor variables for a certain response variable to see if it will increase accuracy. 
+
+Some challenges were that we were met with difficulties using the tidycensus package. Even though we have inserted the correct API key provided by the Census Bureau, an error persistently occurred. We will consult with the Professor to uncover this bug. Due to this, we were not able to analyze our ACS data extensively. 
+
+\
 
 ```         
 ```
-
-ntinued.
