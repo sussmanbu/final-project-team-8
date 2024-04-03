@@ -1,9 +1,0 @@
----
-title: "Test (26/02) Post "
-author: ""
-date: "2024-02-26"
-date-modified: "2024-02-26"
-draft: FALSE
----
-
-Test post. This is a test. 
