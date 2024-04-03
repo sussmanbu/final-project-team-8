@@ -65,8 +65,11 @@ Instead, you can load in the results of this script, which could be plain text f
 To link to this file, you can use `[cleaning script](/scripts/load_and_clean_data.R)` wich appears as [cleaning script](/scripts/load_and_clean_data.R). 
 
 
-```{r world bank clean}
-
+```{r world_bank}
+source(
+  "scripts/World_bank_load_and_clean.R",
+  echo = TRUE
+)
 ```
 ----
 
