@@ -42,51 +42,51 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-alabama_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
-  Years = alabama_data$Years,
-  Percentage_women = alabama_data$`Alabama...13`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`Alabama...13`,
   Race = "White Alone"
 )
 
 # Alaska
-alaska_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_alaska <- tibble(
-  Years = alaska_data$Years,
-  Percentage_women = alaska_data$`...25`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...25`,
   Race = "White Alone"
 )
 
 
 # Arizona
-arizona_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_arizona <- tibble(
-  Years = arizona_data$Years,
-  Percentage_women = arizona_data$`...37`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...37`,
   Race = "White Alone"
 )
 
 # Arkansas
-arkansas_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_arkansas <- tibble(
-  Years = arkansas_data$Years,
-  Percentage_women = arkansas_data$`...49`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...49`,
   Race = "White Alone"
 )
 
 # California
-california_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_california <- tibble(
-  Years = california_data$Years,
-  Percentage_women = california_data$`...61`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...61`,
   Race = "White Alone"
 )
 
 # Colorado
-colorado_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_colorado <- tibble(
-  Years = colorado_data$Years,
-  Percentage_women = colorado_data$`...73`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...73`,
   Race = "White Alone"
 )
 
@@ -94,15 +94,15 @@ bdh_whitealone_colorado <- tibble(
 connecticut_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_connecticut <- tibble(
   Years = connecticut_data$Years,
-  Percentage_women = connecticut_data$`...85`,
+  Percentage_women = us_whitealone_data$`...85`,
   Race = "White Alone"
 )
 
 # Delaware
-delaware_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+
 bdh_whitealone_delaware <- tibble(
-  Years = delaware_data$Years,
-  Percentage_women = delaware_data$`...97`,
+  Years = us_whitealone_data$Years,
+  Percentage_women = us_whitealone_data$`...97`,
   Race = "White Alone"
 )
 
@@ -110,7 +110,7 @@ bdh_whitealone_delaware <- tibble(
 florida_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_florida <- tibble(
   Years = florida_data$Years,
-  Percentage_women = florida_data$`...109`,
+  Percentage_women = us_whitealone_data$`...109`,
   Race = "White Alone"
 )
 
@@ -118,7 +118,7 @@ bdh_whitealone_florida <- tibble(
 georgia_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_georgia <- tibble(
   Years = georgia_data$Years,
-  Percentage_women = georgia_data$`...121`,
+  Percentage_women = us_whitealone_data$`...121`,
   Race = "White Alone"
 )
 
@@ -126,7 +126,7 @@ bdh_whitealone_georgia <- tibble(
 hawaii_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_hawaii <- tibble(
   Years = hawaii_data$Years,
-  Percentage_women = hawaii_data$`...133`,
+  Percentage_women = us_whitealone_data$`...133`,
   Race = "White Alone"
 )
 
@@ -134,7 +134,7 @@ bdh_whitealone_hawaii <- tibble(
 idaho_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_idaho <- tibble(
   Years = idaho_data$Years,
-  Percentage_women = idaho_data$`...145`,
+  Percentage_women = us_whitealone_data$`...145`,
   Race = "White Alone"
 )
 
@@ -142,7 +142,7 @@ bdh_whitealone_idaho <- tibble(
 illinois_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_illinois <- tibble(
   Years = illinois_data$Years,
-  Percentage_women = illinois_data$`...157`,
+  Percentage_women = us_whitealone_data$`...157`,
   Race = "White Alone"
 )
 
@@ -150,7 +150,7 @@ bdh_whitealone_illinois <- tibble(
 indiana_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_indiana <- tibble(
   Years = indiana_data$Years,
-  Percentage_women = indiana_data$`...169`,
+  Percentage_women = us_whitealone_data$`...169`,
   Race = "White Alone"
 )
 
@@ -158,7 +158,7 @@ bdh_whitealone_indiana <- tibble(
 iowa_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_iowa <- tibble(
   Years = iowa_data$Years,
-  Percentage_women = iowa_data$`...181`,
+  Percentage_women = us_whitealone_data$`...181`,
   Race = "White Alone"
 )
 
@@ -166,7 +166,7 @@ bdh_whitealone_iowa <- tibble(
 kansas_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_kansas <- tibble(
   Years = kansas_data$Years,
-  Percentage_women = kansas_data$`...193`,
+  Percentage_women = us_whitealone_data$`...193`,
   Race = "White Alone"
 )
 
@@ -174,7 +174,7 @@ bdh_whitealone_kansas <- tibble(
 kentucky_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_kentucky <- tibble(
   Years = kentucky_data$Years,
-  Percentage_women = kentucky_data$`...205`,
+  Percentage_women = us_whitealone_data$`...205`,
   Race = "White Alone"
 )
 
@@ -182,7 +182,7 @@ bdh_whitealone_kentucky <- tibble(
 louisiana_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_louisiana <- tibble(
   Years = louisiana_data$Years,
-  Percentage_women = louisiana_data$`...217`,
+  Percentage_women = us_whitealone_data$`...217`,
   Race = "White Alone"
 )
 
@@ -190,7 +190,7 @@ bdh_whitealone_louisiana <- tibble(
 maine_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_maine <- tibble(
   Years = maine_data$Years,
-  Percentage_women = maine_data$`...229`,
+  Percentage_women = us_whitealone_data$`...229`,
   Race = "White Alone"
 )
 
@@ -198,7 +198,7 @@ bdh_whitealone_maine <- tibble(
 maryland_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_maryland <- tibble(
   Years = maryland_data$Years,
-  Percentage_women = maryland_data$`...241`,
+  Percentage_women = us_whitealone_data$`...241`,
   Race = "White Alone"
 )
 
@@ -206,7 +206,7 @@ bdh_whitealone_maryland <- tibble(
 massachusetts_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_massachusetts <- tibble(
   Years = massachusetts_data$Years,
-  Percentage_women = massachusetts_data$`...253`,
+  Percentage_women = us_whitealone_data$`...253`,
   Race = "White Alone"
 )
 
@@ -214,7 +214,7 @@ bdh_whitealone_massachusetts <- tibble(
 michigan_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_michigan <- tibble(
   Years = michigan_data$Years,
-  Percentage_women = michigan_data$`...265`,
+  Percentage_women = us_whitealone_data$`...265`,
   Race = "White Alone"
 )
 
@@ -222,7 +222,7 @@ bdh_whitealone_michigan <- tibble(
 minnesota_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_minnesota <- tibble(
   Years = minnesota_data$Years,
-  Percentage_women = minnesota_data$`...277`,
+  Percentage_women = us_whitealone_data$`...277`,
   Race = "White Alone"
 )
 
@@ -230,7 +230,7 @@ bdh_whitealone_minnesota <- tibble(
 mississippi_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_mississippi <- tibble(
   Years = mississippi_data$Years,
-  Percentage_women = mississippi_data$`...289`,
+  Percentage_women = us_whitealone_data$`...289`,
   Race = "White Alone"
 )
 
@@ -238,7 +238,7 @@ bdh_whitealone_mississippi <- tibble(
 missouri_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_missouri <- tibble(
   Years = missouri_data$Years,
-  Percentage_women = missouri_data$`...301`,
+  Percentage_women = us_whitealone_data$`...301`,
   Race = "White Alone"
 )
 
@@ -246,7 +246,7 @@ bdh_whitealone_missouri <- tibble(
 montana_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_montana <- tibble(
   Years = montana_data$Years,
-  Percentage_women = montana_data$`...313`,
+  Percentage_women = us_whitealone_data$`...313`,
   Race = "White Alone"
 )
 
@@ -254,7 +254,7 @@ bdh_whitealone_montana <- tibble(
 nebraska_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_nebraska <- tibble(
   Years = nebraska_data$Years,
-  Percentage_women = nebraska_data$`...325`,
+  Percentage_women = us_whitealone_data$`...325`,
   Race = "White Alone"
 )
 
@@ -262,7 +262,7 @@ bdh_whitealone_nebraska <- tibble(
 nevada_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_nevada <- tibble(
   Years = nevada_data$Years,
-  Percentage_women = nevada_data$`...337`,
+  Percentage_women = us_whitealone_data$`...337`,
   Race = "White Alone"
 )
 
@@ -270,7 +270,7 @@ bdh_whitealone_nevada <- tibble(
 newhampshire_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_newhampshire <- tibble(
   Years = newhampshire_data$Years,
-  Percentage_women = newhampshire_data$`...349`,
+  Percentage_women = us_whitealone_data$`...349`,
   Race = "White Alone"
 )
 
