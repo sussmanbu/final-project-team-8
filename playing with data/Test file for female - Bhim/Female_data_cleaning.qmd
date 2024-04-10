@@ -997,410 +997,360 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-alabama_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
+us_blackalone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_blackalone_alabama <- tibble(
-  Years = alabama_data$Years,
-  Percentage_black_women = alabama_data$`Alabama...13`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`Alabama...13`,
   Race = "Black Alone"
 )
 
 # Alaska
-alaska_data_black <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_alaska <- tibble(
-  Years = alaska_data_black$Years,
-  Percentage_black_women = alaska_data_black$`...25`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...25`,
   Race = "Black Alone"
 )
 
 # Arizona
-arizona_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_arizona <- tibble(
-  Years = arizona_data$Years,
-  Percentage_black_women = arizona_data$`...37`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...37`,
   Race = "Black Alone"
 )
 
 # Arkansas
-arkansas_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_arkansas <- tibble(
-  Years = arkansas_data$Years,
-  Percentage_black_women = arkansas_data$`...49`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...49`,
   Race = "Black Alone"
 )
 
 # California
-california_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_california <- tibble(
-  Years = california_data$Years,
-  Percentage_black_women = california_data$`...61`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...61`,
   Race = "Black Alone"
 )
 
 # Colorado
-colorado_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_colorado <- tibble(
-  Years = colorado_data$Years,
-  Percentage_black_women = colorado_data$`...73`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...73`,
   Race = "Black Alone"
 )
 
 # Connecticut
-connecticut_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_connecticut <- tibble(
-  Years = connecticut_data$Years,
-  Percentage_black_women = connecticut_data$`...85`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...85`,
   Race = "Black Alone"
 )
 
 # Delaware
-delaware_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_delaware <- tibble(
-  Years = delaware_data$Years,
-  Percentage_black_women = delaware_data$`...97`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...97`,
   Race = "Black Alone"
 )
 
 # Florida
-florida_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_florida <- tibble(
-  Years = florida_data$Years,
-  Percentage_black_women = florida_data$`...109`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...109`,
   Race = "Black Alone"
 )
 
 # Georgia
-georgia_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_georgia <- tibble(
-  Years = georgia_data$Years,
-  Percentage_black_women = georgia_data$`...121`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...121`,
   Race = "Black Alone"
 )
 
 # Hawaii
-hawaii_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_hawaii <- tibble(
-  Years = hawaii_data$Years,
-  Percentage_black_women = hawaii_data$`...133`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...133`,
   Race = "Black Alone"
 )
 
 # Idaho
-idaho_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_idaho <- tibble(
-  Years = idaho_data$Years,
-  Percentage_black_women = idaho_data$`...145`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...145`,
   Race = "Black Alone"
 )
 
 # Illinois
-illinois_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_illinois <- tibble(
-  Years = illinois_data$Years,
-  Percentage_black_women = illinois_data$`...157`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...157`,
   Race = "Black Alone"
 )
 
 # Indiana
-indiana_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_indiana <- tibble(
-  Years = indiana_data$Years,
-  Percentage_black_women = indiana_data$`...169`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...169`,
   Race = "Black Alone"
 )
 
 # Iowa
-iowa_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_iowa <- tibble(
-  Years = iowa_data$Years,
-  Percentage_black_women = iowa_data$`...181`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...181`,
   Race = "Black Alone"
 )
 
 # Kansas
-kansas_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_kansas <- tibble(
-  Years = kansas_data$Years,
-  Percentage_black_women = kansas_data$`...193`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...193`,
   Race = "Black Alone"
 )
 
 # Kentucky
-kentucky_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_kentucky <- tibble(
-  Years = kentucky_data$Years,
-  Percentage_black_women = kentucky_data$`...205`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...205`,
   Race = "Black Alone"
 )
 
 # Louisiana
-louisiana_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_louisiana <- tibble(
-  Years = louisiana_data$Years,
-  Percentage_black_women = louisiana_data$`...217`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...217`,
   Race = "Black Alone"
 )
 
 # Maine
-maine_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_maine <- tibble(
-  Years = maine_data$Years,
-  Percentage_black_women = maine_data$`...229`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...229`,
   Race = "Black Alone"
 )
 
 # Maryland
-maryland_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_maryland <- tibble(
-  Years = maryland_data$Years,
-  Percentage_black_women = maryland_data$`...241`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...241`,
   Race = "Black Alone"
 )
 
 # Massachusetts
-massachusetts_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_massachusetts <- tibble(
-  Years = massachusetts_data$Years,
-  Percentage_black_women = massachusetts_data$`...253`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...253`,
   Race = "Black Alone"
 )
 
 # Michigan
-michigan_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_michigan <- tibble(
-  Years = michigan_data$Years,
-  Percentage_black_women = michigan_data$`...265`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...265`,
   Race = "Black Alone"
 )
 
 # Minnesota
-minnesota_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_minnesota <- tibble(
-  Years = minnesota_data$Years,
-  Percentage_black_women = minnesota_data$`...277`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...277`,
   Race = "Black Alone"
 )
 
 # Mississippi
-mississippi_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_mississippi <- tibble(
-  Years = mississippi_data$Years,
-  Percentage_black_women = mississippi_data$`...289`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...289`,
   Race = "Black Alone"
 )
 
 # Missouri
-missouri_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_missouri <- tibble(
-  Years = missouri_data$Years,
-  Percentage_black_women = missouri_data$`...301`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...301`,
   Race = "Black Alone"
 )
 
 # Montana
-montana_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_montana <- tibble(
-  Years = montana_data$Years,
-  Percentage_black_women = montana_data$`...313`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...313`,
   Race = "Black Alone"
 )
 
 # Nebraska
-nebraska_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_nebraska <- tibble(
-  Years = nebraska_data$Years,
-  Percentage_black_women = nebraska_data$`...325`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...325`,
   Race = "Black Alone"
 )
 
 # Nevada
-nevada_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_nevada <- tibble(
-  Years = nevada_data$Years,
-  Percentage_black_women = nevada_data$`...337`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...337`,
   Race = "Black Alone"
 )
 
 # New Hampshire
-newhampshire_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_newhampshire <- tibble(
-  Years = newhampshire_data$Years,
-  Percentage_black_women = newhampshire_data$`...349`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...349`,
   Race = "Black Alone"
 )
 
 # New Jersey
-newjersey_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_newjersey <- tibble(
-  Years = newjersey_data$Years,
-  Percentage_black_women = newjersey_data$`...361`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...361`,
   Race = "Black Alone"
 )
 
 # New Mexico
-newmexico_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_newmexico <- tibble(
-  Years = newmexico_data$Years,
-  Percentage_black_women = newmexico_data$`...373`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...373`,
   Race = "Black Alone"
 )
 
 # New York
-newyork_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_newyork <- tibble(
-  Years = newyork_data$Years,
-  Percentage_black_women = newyork_data$`...385`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...385`,
   Race = "Black Alone"
 )
 
 # North Carolina
-northcarolina_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_northcarolina <- tibble(
-  Years = northcarolina_data$Years,
-  Percentage_black_women = northcarolina_data$`...397`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...397`,
   Race = "Black Alone"
 )
 
 # North Dakota
-northdakota_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_northdakota <- tibble(
-  Years = northdakota_data$Years,
-  Percentage_black_women = northdakota_data$`...409`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...409`,
   Race = "Black Alone"
 )
 
 # Ohio
-ohio_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_ohio <- tibble(
-  Years = ohio_data$Years,
-  Percentage_black_women = ohio_data$`...421`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...421`,
   Race = "Black Alone"
 )
 
 # Oklahoma
-oklahoma_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_oklahoma <- tibble(
-  Years = oklahoma_data$Years,
-  Percentage_black_women = oklahoma_data$`...433`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...433`,
   Race = "Black Alone"
 )
 
 # Oregon
-oregon_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_oregon <- tibble(
-  Years = oregon_data$Years,
-  Percentage_black_women = oregon_data$`...445`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...445`,
   Race = "Black Alone"
 )
 
 # Pennsylvania
-pennsylvania_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_pennsylvania <- tibble(
-  Years = pennsylvania_data$Years,
-  Percentage_black_women = pennsylvania_data$`...457`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...457`,
   Race = "Black Alone"
 )
 
 # Rhode Island
-rhodeisland_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_rhodeisland <- tibble(
-  Years = rhodeisland_data$Years,
-  Percentage_black_women = rhodeisland_data$`...469`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...469`,
   Race = "Black Alone"
 )
 
 # South Carolina
-southcarolina_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_southcarolina <- tibble(
-  Years = southcarolina_data$Years,
-  Percentage_black_women = southcarolina_data$`...481`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...481`,
   Race = "Black Alone"
 )
 
 # South Dakota
-southdakota_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_southdakota <- tibble(
-  Years = southdakota_data$Years,
-  Percentage_black_women = southdakota_data$`...493`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...493`,
   Race = "Black Alone"
 )
 
 # Tennessee
-tennessee_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_tennessee <- tibble(
-  Years = tennessee_data$Years,
-  Percentage_black_women = tennessee_data$`...505`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...505`,
   Race = "Black Alone"
 )
 
 # Texas
-texas_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_texas <- tibble(
-  Years = texas_data$Years,
-  Percentage_black_women = texas_data$`...517`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...517`,
   Race = "Black Alone"
 )
 
 # Utah
-utah_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_utah <- tibble(
-  Years = utah_data$Years,
-  Percentage_black_women = utah_data$`...529`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...529`,
   Race = "Black Alone"
 )
 
 # Vermont
-vermont_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_vermont <- tibble(
-  Years = vermont_data$Years,
-  Percentage_black_women = vermont_data$`...541`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...541`,
   Race = "Black Alone"
 )
 
 # Virginia
-virginia_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_virginia <- tibble(
-  Years = virginia_data$Years,
-  Percentage_black_women = virginia_data$`...553`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...553`,
   Race = "Black Alone"
 )
 
 # Washington
-washington_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_washington <- tibble(
-  Years = washington_data$Years,
-  Percentage_black_women = washington_data$`...565`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...565`,
   Race = "Black Alone"
 )
 
 # West Virginia
-westvirginia_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_westvirginia <- tibble(
-  Years = westvirginia_data$Years,
-  Percentage_black_women = westvirginia_data$`...577`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...577`,
   Race = "Black Alone"
 )
 
 # Wisconsin
-wisconsin_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_wisconsin <- tibble(
-  Years = wisconsin_data$Years,
-  Percentage_black_women = wisconsin_data$`...589`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...589`,
   Race = "Black Alone"
 )
 
 # Wyoming
-wyoming_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_wyoming <- tibble(
-  Years = wyoming_data$Years,
-  Percentage_black_women = wyoming_data$`...601`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...601`,
   Race = "Black Alone"
 )
 
 # Puerto Rico
-puertorico_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_puertorico <- tibble(
-  Years = puertorico_data$Years,
-  Percentage_black_women = puertorico_data$`...613`,
+  Years = us_blackalone_data$Years,
+  Percentage_black_women = us_blackalone_data$`...613`,
   Race = "Black Alone"
 )
 
