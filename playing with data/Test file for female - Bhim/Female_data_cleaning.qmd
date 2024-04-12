@@ -2280,410 +2280,360 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-alabama_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
+us_hawaiian_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_nhopalone_alabama <- tibble(
-  Years = alabama_data$Years,
-  Percentage_nhop_women = alabama_data$`Alabama...13`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`Alabama...13`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Alaska
-alaska_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_alaska <- tibble(
-  Years = alaska_data$Years,
-  Percentage_nhop_women = alaska_data$`...25`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...25`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Arizona
-arizona_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_arizona <- tibble(
-  Years = arizona_data$Years,
-  Percentage_nhop_women = arizona_data$`...37`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...37`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Arkansas
-arkansas_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_arkansas <- tibble(
-  Years = arkansas_data$Years,
-  Percentage_nhop_women = arkansas_data$`...49`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...49`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # California
-california_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_california <- tibble(
-  Years = california_data$Years,
-  Percentage_nhop_women = california_data$`...61`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...61`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Colorado
-colorado_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_colorado <- tibble(
-  Years = colorado_data$Years,
-  Percentage_nhop_women = colorado_data$`...73`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...73`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Connecticut
-connecticut_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_connecticut <- tibble(
-  Years = connecticut_data$Years,
-  Percentage_nhop_women = connecticut_data$`...85`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...85`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Delaware
-delaware_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_delaware <- tibble(
-  Years = delaware_data$Years,
-  Percentage_nhop_women = delaware_data$`...97`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...97`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Florida
-florida_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_florida <- tibble(
-  Years = florida_data$Years,
-  Percentage_nhop_women = florida_data$`...109`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...109`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Georgia
-georgia_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_georgia <- tibble(
-  Years = georgia_data$Years,
-  Percentage_nhop_women = georgia_data$`...121`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...121`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Hawaii
-hawaii_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_hawaii <- tibble(
-  Years = hawaii_data$Years,
-  Percentage_nhop_women = hawaii_data$`...133`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...133`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Idaho
-idaho_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_idaho <- tibble(
-  Years = idaho_data$Years,
-  Percentage_nhop_women = idaho_data$`...145`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...145`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Illinois
-illinois_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_illinois <- tibble(
-  Years = illinois_data$Years,
-  Percentage_nhop_women = illinois_data$`...157`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...157`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Indiana
-indiana_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_indiana <- tibble(
-  Years = indiana_data$Years,
-  Percentage_nhop_women = indiana_data$`...169`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...169`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Iowa
-iowa_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_iowa <- tibble(
-  Years = iowa_data$Years,
-  Percentage_nhop_women = iowa_data$`...181`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...181`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Kansas
-kansas_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_kansas <- tibble(
-  Years = kansas_data$Years,
-  Percentage_nhop_women = kansas_data$`...193`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...193`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Kentucky
-kentucky_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_kentucky <- tibble(
-  Years = kentucky_data$Years,
-  Percentage_nhop_women = kentucky_data$`...205`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...205`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Louisiana
-louisiana_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_louisiana <- tibble(
-  Years = louisiana_data$Years,
-  Percentage_nhop_women = louisiana_data$`...217`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...217`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Maine
-maine_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_maine <- tibble(
-  Years = maine_data$Years,
-  Percentage_nhop_women = maine_data$`...229`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...229`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Maryland
-maryland_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_maryland <- tibble(
-  Years = maryland_data$Years,
-  Percentage_nhop_women = maryland_data$`...241`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...241`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Massachusetts
-massachusetts_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_massachusetts <- tibble(
-  Years = massachusetts_data$Years,
-  Percentage_nhop_women = massachusetts_data$`...253`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...253`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Michigan
-michigan_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_michigan <- tibble(
-  Years = michigan_data$Years,
-  Percentage_nhop_women = michigan_data$`...265`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...265`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Minnesota
-minnesota_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_minnesota <- tibble(
-  Years = minnesota_data$Years,
-  Percentage_nhop_women = minnesota_data$`...277`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...277`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Mississippi
-mississippi_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_mississippi <- tibble(
-  Years = mississippi_data$Years,
-  Percentage_nhop_women = mississippi_data$`...289`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...289`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Missouri
-missouri_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_missouri <- tibble(
-  Years = missouri_data$Years,
-  Percentage_nhop_women = missouri_data$`...301`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...301`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Montana
-montana_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_montana <- tibble(
-  Years = montana_data$Years,
-  Percentage_nhop_women = montana_data$`...313`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...313`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Nebraska
-nebraska_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_nebraska <- tibble(
-  Years = nebraska_data$Years,
-  Percentage_nhop_women = nebraska_data$`...325`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...325`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Nevada
-nevada_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_nevada <- tibble(
-  Years = nevada_data$Years,
-  Percentage_nhop_women = nevada_data$`...337`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...337`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # New Hampshire
-newhampshire_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_newhampshire <- tibble(
-  Years = newhampshire_data$Years,
-  Percentage_nhop_women = newhampshire_data$`...349`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...349`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # New Jersey
-newjersey_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_newjersey <- tibble(
-  Years = newjersey_data$Years,
-  Percentage_nhop_women = newjersey_data$`...361`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...361`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # New Mexico
-newmexico_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_newmexico <- tibble(
-  Years = newmexico_data$Years,
-  Percentage_nhop_women = newmexico_data$`...373`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...373`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # New York
-newyork_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_newyork <- tibble(
-  Years = newyork_data$Years,
-  Percentage_nhop_women = newyork_data$`...385`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...385`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # North Carolina
-northcarolina_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_northcarolina <- tibble(
-  Years = northcarolina_data$Years,
-  Percentage_nhop_women = northcarolina_data$`...397`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...397`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # North Dakota
-northdakota_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_northdakota <- tibble(
-  Years = northdakota_data$Years,
-  Percentage_nhop_women = northdakota_data$`...409`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...409`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Ohio
-ohio_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_ohio <- tibble(
-  Years = ohio_data$Years,
-  Percentage_nhop_women = ohio_data$`...421`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...421`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Oklahoma
-oklahoma_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_oklahoma <- tibble(
-  Years = oklahoma_data$Years,
-  Percentage_nhop_women = oklahoma_data$`...433`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...433`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Oregon
-oregon_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_oregon <- tibble(
-  Years = oregon_data$Years,
-  Percentage_nhop_women = oregon_data$`...445`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...445`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Pennsylvania
-pennsylvania_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_pennsylvania <- tibble(
-  Years = pennsylvania_data$Years,
-  Percentage_nhop_women = pennsylvania_data$`...457`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...457`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Rhode Island
-rhodeisland_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_rhodeisland <- tibble(
-  Years = rhodeisland_data$Years,
-  Percentage_nhop_women = rhodeisland_data$`...469`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...469`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # South Carolina
-southcarolina_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_southcarolina <- tibble(
-  Years = southcarolina_data$Years,
-  Percentage_nhop_women = southcarolina_data$`...481`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...481`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # South Dakota
-southdakota_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_southdakota <- tibble(
-  Years = southdakota_data$Years,
-  Percentage_nhop_women = southdakota_data$`...493`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...493`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Tennessee
-tennessee_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_tennessee <- tibble(
-  Years = tennessee_data$Years,
-  Percentage_nhop_women = tennessee_data$`...505`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...505`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Texas
-texas_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_texas <- tibble(
-  Years = texas_data$Years,
-  Percentage_nhop_women = texas_data$`...517`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...517`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Utah
-utah_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_utah <- tibble(
-  Years = utah_data$Years,
-  Percentage_nhop_women = utah_data$`...529`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...529`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Vermont
-vermont_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_vermont <- tibble(
-  Years = vermont_data$Years,
-  Percentage_nhop_women = vermont_data$`...541`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...541`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Virginia
-virginia_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_virginia <- tibble(
-  Years = virginia_data$Years,
-  Percentage_nhop_women = virginia_data$`...553`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...553`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Washington
-washington_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_washington <- tibble(
-  Years = washington_data$Years,
-  Percentage_nhop_women = washington_data$`...565`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...565`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # West Virginia
-westvirginia_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_westvirginia <- tibble(
-  Years = westvirginia_data$Years,
-  Percentage_nhop_women = westvirginia_data$`...577`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...577`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Wisconsin
-wisconsin_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_wisconsin <- tibble(
-  Years = wisconsin_data$Years,
-  Percentage_nhop_women = wisconsin_data$`...589`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...589`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Wyoming
-wyoming_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_wyoming <- tibble(
-  Years = wyoming_data$Years,
-  Percentage_nhop_women = wyoming_data$`...601`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`...601`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
 # Puerto Rico
-puertorico_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_puertorico <- tibble(
-  Years = puertorico_data$Years,
-  Percentage_nhop_women = puertorico_data$`Puerto...613`,
+  Years = us_hawaiian_data$Years,
+  Percentage_nhop_women = us_hawaiian_data$`Puerto...613`,
   Race = "Native Hawaiian and Other Pacific Islander Alone"
 )
 
@@ -2743,7 +2693,6 @@ combined_data_nhopalone <- bind_rows(
 )
 
 print(combined_data_nhopalone)
-
 ```
 
 7.  **Female, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
@@ -3239,7 +3188,7 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+us_twomore_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_tmr_alabama <- tibble(
   Years = us_whitealone_data$Years,
   Percentage_tmr_women = us_whitealone_data$`Alabama...13`,
@@ -3667,6 +3616,7 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 #Puerto Rico
+us_hispanic_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 puertorico_data <- filter(acs_data, Label == "Bachelor's degree or higher*********")
 bdh_hloorigin_puertorico <- tibble(
   Years = puertorico_data$Years,
