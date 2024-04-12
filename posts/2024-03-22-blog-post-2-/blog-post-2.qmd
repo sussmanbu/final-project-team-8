@@ -3,6 +3,13 @@ title: "Blog Post 2"
 editor: visual
 ---
 
+<<<<<<< HEAD
+### writing stuff here
+
+```{r}
+data = read_csv('USA_Gender_Stats.csv')
+
+=======
 ### Blog Post 2 - Reviewing Feedback and Data Exploration 
 
 Throughout this week, we reviewed the feedback on our datasets. We decided that we would use our datasets on death rates via suicide and unemployment as supplementary evidence later on in our project. These two datasets are quite messy to use and proved challenging to sort/clean them to provide a compelling argument. We found a third supporting dataset from the World Bank on Gender. We also decided to focus on the ACS data on Educational Attainment concerning Gender and Race (i.e., the Professor also told us how to extract data from ACS directly via R). 
@@ -54,4 +61,5 @@ The World Bank dataset encapsulates a lot of data for many different categories 
 library(tidyverse)
 data2 = read_csv('dataset/USA_Gender_Stats.csv')
 view(data2)
+>>>>>>> a8ada69031ac8b319f9d25dd76665eb9a1b12269
 ```
