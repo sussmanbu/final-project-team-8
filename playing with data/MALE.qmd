@@ -438,361 +438,3347 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
+<<<<<<< HEAD
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
+=======
+us_WhitealonenotHispanicorLatino_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
+>>>>>>> cf2834f1983df7cf653371c26afdbf1763f72d07
 bdh_wnhp_alabama <- tibble(
-  Years =  us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...9`,
+  Years =  us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...9`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Alaska
 bdh_wnhp_alaska <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...21`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...21`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Arizona
 bdh_wnhp_arizona <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...33`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...33`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Arkansas
 bdh_wnhp_arkansas <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...45`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...45`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # California
 bdh_wnhp_california <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...53`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...53`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Colorado
 bdh_wnhp_colorado <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...65`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...65`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Connecticut
 bdh_wnhp_connecticut <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...77`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...77`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Delaware
 bdh_wnhp_delaware <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...89`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...89`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Florida
 bdh_wnhp_florida <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...101`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...101`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Georgia
 bdh_wnhp_georgia <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men =us_whitealone_data$`...113`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...113`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Hawaii
 bdh_wnhp_hawaii <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men =us_whitealone_data$`...125`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...125`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Idaho
 bdh_wnhp_idaho <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...137`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...137`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Illinois
 bdh_wnhp_illinois <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...149`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...149`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Indiana
 bdh_wnhp_indiana <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...161`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...161`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Iowa
 bdh_wnhp_iowa <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...173`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...173`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Kansas
 bdh_wnhp_kansas <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...185`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...185`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Kentucky
 bdh_wnhp_kentucky <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...197`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...197`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Louisiana
 bdh_wnhp_louisiana <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...209`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...209`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Maine
 bdh_wnhp_maine <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...221`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...221`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Maryland
 bdh_wnhp_maryland <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...233`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...233`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Massachusetts
 bdh_wnhp_massachusetts <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...245`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...245`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Michigan
 bdh_wnhp_michigan <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...257`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...257`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Minnesota
 bdh_wnhp_minnesota <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...269`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...269`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Mississippi
 bdh_wnhp_mississippi <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...281`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...281`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Missouri
 bdh_wnhp_missouri <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men =us_whitealone_data$`...293`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...293`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Montana
 bdh_wnhp_montana <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...305`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...305`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Nebraska
 bdh_wnhp_nebraska <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...317`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...317`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Nevada
 bdh_wnhp_nevada <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...329`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...329`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # New Hampshire
 bdh_wnhp_newhampshire <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...341`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...341`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # New Jersey
 bdh_wnhp_newjersey <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...353`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...353`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # New Mexico
 bdh_wnhp_newmexico <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...365`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...365`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # New York
 bdh_wnhp_newyork <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...377`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...377`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # North Carolina
 bdh_wnhp_northcarolina <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...389`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...389`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # North Dakota
 bdh_wnhp_northdakota <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...401`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...401`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Ohio
 bdh_wnhp_ohio <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...413`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...413`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Oklahoma
 bdh_wnhp_oklahoma <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...425`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...425`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Oregon
 bdh_wnhp_oregon <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_women = us_whitealone_data$`...437`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...437`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Pennsylvania
 bdh_wnhp_pennsylvania <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...449`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...449`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Rhode Island
 bdh_wnhp_rhodeisland <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...461`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...461`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # South Carolina
 bdh_wnhp_southcarolina <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...473`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...473`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # South Dakota
 bdh_wnhp_southdakota <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...485`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...485`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Tennessee
 bdh_wnhp_tennessee <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...497`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...497`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Texas
 bdh_wnhp_texas <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...509`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...509`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Utah
 bdh_wnhp_utah <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...521`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...521`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Vermont
 bdh_wnhp_vermont <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...533`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...533`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Virginia
 bdh_wnhp_virginia <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...545`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...545`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Washington
 bdh_wnhp_washington <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...557`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...557`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # West Virginia
 bdh_wnhp_westvirginia <- tibble(
-  Years =us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...569`,
+  Years =us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...569`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Wisconsin
 bdh_wnhp_wisconsin <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...581`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...581`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Wyoming
 bdh_wnhp_wyoming <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...593`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...593`,
   Race = "White alone, not Hispanic or Latino"
 )
 
 # Puerto Rico
 bdh_wnhp_puertorico <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_wnhp_men = us_whitealone_data$`...605`,
+  Years = us_WhitealonenotHispanicorLatino_data$Years,
+  Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...605`,
   Race = "White alone, not Hispanic or Latino"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+3.  **Male, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_blackalone_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...9`,
+  Race = "Black Alone"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...21`,
+  Race = "Black Alone"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...33`,
+  Race = "Black Alone"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...45`,
+  Race = "Black Alone"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...53`,
+  Race = "Black Alone"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...65`,
+  Race = "Black Alone"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...77`,
+  Race = "Black Alone"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...89`,
+  Race = "Black Alone"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...101`,
+  Race = "Black Alone"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...113`,
+  Race = "Black Alone"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...125`,
+  Race = "Black Alone"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...137`,
+  Race = "Black Alone"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...149`,
+  Race = "Black Alone"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...161`,
+  Race = "Black Alone"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...173`,
+  Race = "Black Alone"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...185`,
+  Race = "Black Alone"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...197`,
+  Race = "Black Alone"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...209`,
+  Race = "Black Alone"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...221`,
+  Race = "Black Alone"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...233`,
+  Race = "Black Alone"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...245`,
+  Race = "Black Alone"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...257`,
+  Race = "Black Alone"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...269`,
+  Race = "Black Alone"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...281`,
+  Race = "Black Alone"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...293`,
+  Race = "Black Alone"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...305`,
+  Race = "Black Alone"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...317`,
+  Race = "Black Alone"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...329`,
+  Race = "Black Alone"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...341`,
+  Race = "Black Alone"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...353`,
+  Race = "Black Alone"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...365`,
+  Race = "Black Alone"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...377`,
+  Race = "Black Alone"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...389`,
+  Race = "Black Alone"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...401`,
+  Race = "Black Alone"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...413`,
+  Race = "Black Alone"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...425`,
+  Race = "Black Alone"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...437`,
+  Race = "Black Alone"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...449`,
+  Race = "Black Alone"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...461`,
+  Race = "Black Alone"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...473`,
+  Race = "Black Alone"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...485`,
+  Race = "Black Alone"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...497`,
+  Race = "Black Alone"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...509`,
+  Race = "Black Alone"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...521`,
+  Race = "Black Alone"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...533`,
+  Race = "Black Alone"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...545`,
+  Race = "Black Alone"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...557`,
+  Race = "Black Alone"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years =us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...569`,
+  Race = "Black Alone"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...581`,
+  Race = "Black Alone"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...593`,
+  Race = "Black Alone"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_blackalone_data$Years,
+  Percentage_wnhp_men = us_blackalone_data$`...605`,
+  Race = "Black Alone"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+4.  **Male, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_AmericanIndianorAlaskaNativeAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher****")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...9`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...21`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...33`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...45`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...53`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...65`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...77`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...89`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...101`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...113`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...125`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...137`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...149`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...161`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...173`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...185`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...197`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...209`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...221`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...233`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...245`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...257`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...269`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...281`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...293`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...305`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...317`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...329`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...341`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...353`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...365`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...377`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...389`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...401`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...413`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...425`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...437`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...449`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...461`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...473`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...485`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...497`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...509`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...521`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...533`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...545`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...557`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years =us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...569`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...581`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...593`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_AmericanIndianorAlaskaNativeAlone_data$Years,
+  Percentage_wnhp_men = us_AmericanIndianorAlaskaNativeAlone_data$`...605`,
+  Race = "American Indian or Alaska Native Alone"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+5.  **Male, Asian Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_Asianalone_data <- filter(acs_data, Label == "Bachelor's degree or higher*****")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...9`,
+  Race = "Asian Alone"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...21`,
+  Race = "Asian Alone"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...33`,
+  Race = "Asian Alone"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...45`,
+  Race = "Asian Alone"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...53`,
+  Race = "Asian Alone"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...65`,
+  Race = "Asian Alone"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...77`,
+  Race = "Asian Alone"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...89`,
+  Race = "Asian Alone"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...101`,
+  Race = "Asian Alone"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...113`,
+  Race = "Asian Alone"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...125`,
+  Race = "Asian Alone"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...137`,
+  Race = "Asian Alone"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...149`,
+  Race = "Asian Alone"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...161`,
+  Race = "Asian Alone"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...173`,
+  Race = "Asian Alone"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...185`,
+  Race = "Asian Alone"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...197`,
+  Race = "Asian Alone"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...209`,
+  Race = "Asian Alone"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...221`,
+  Race = "Asian Alone"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...233`,
+  Race = "Asian Alone"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...245`,
+  Race = "Asian Alone"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...257`,
+  Race = "Asian Alone"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...269`,
+  Race = "Asian Alone"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...281`,
+  Race = "Asian Alone"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...293`,
+  Race = "Asian Alone"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...305`,
+  Race = "Asian Alone"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...317`,
+  Race = "Asian Alone"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...329`,
+  Race = "Asian Alone"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...341`,
+  Race = "Asian Alone"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...353`,
+  Race = "Asian Alone"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...365`,
+  Race = "Asian Alone"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...377`,
+  Race = "Asian Alone"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...389`,
+  Race = "Asian Alone"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...401`,
+  Race = "Asian Alone"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...413`,
+  Race = "Asian Alone"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...425`,
+  Race = "Asian Alone"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...437`,
+  Race = "Asian Alone"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...449`,
+  Race = "Asian Alone"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...461`,
+  Race = "Asian Alone"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...473`,
+  Race = "Asian Alone"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...485`,
+  Race = "Asian Alone"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...497`,
+  Race = "Asian Alone"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...509`,
+  Race = "Asian Alone"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...521`,
+  Race = "Asian Alone"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...533`,
+  Race = "Asian Alone"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...545`,
+  Race = "Asian Alone"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...557`,
+  Race = "Asian Alone"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years =us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...569`,
+  Race = "Asian Alone"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...581`,
+  Race = "Asian Alone"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...593`,
+  Race = "Asian Alone"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_Asianalone_data$Years,
+  Percentage_wnhp_men = us_Asianalone_data$`...605`,
+  Race = "Asian Alone"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+6.  **Male, Native Hawaiian and Other Pacific Islander Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_NativeHawaiianAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...9`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...21`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...33`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...45`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...53`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...65`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...77`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...89`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...101`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...113`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...125`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...137`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...149`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...161`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...173`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...185`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...197`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...209`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...221`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...233`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...245`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...257`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...269`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...281`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...293`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...305`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...317`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...329`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...341`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...353`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...365`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...377`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...389`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...401`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...413`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...425`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...437`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...449`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...461`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...473`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...485`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...497`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...509`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...521`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...533`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...545`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...557`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...569`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...581`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...593`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_NativeHawaiianAlone_data$Years,
+  Percentage_wnhp_men = us_NativeHawaiianAlone_data$`...605`,
+  Race = "Native Hawaiian and Other Pacific Islander Alone"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+7.  **Male, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_SomeotherraceAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher*******")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...9`,
+  Race = "Some other race Alone"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...21`,
+  Race = "Some other race Alone"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...33`,
+  Race = "Some other race Alone"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...45`,
+  Race = "Some other race Alone"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...53`,
+  Race = "Some other race Alone"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...65`,
+  Race = "Some other race Alone"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...77`,
+  Race = "Some other race Alone"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...89`,
+  Race = "Some other race Alone"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...101`,
+  Race = "Some other race Alone"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...113`,
+  Race = "Some other race Alone"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...125`,
+  Race = "Some other race Alone"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...137`,
+  Race = "Some other race Alone"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...149`,
+  Race = "Some other race Alone"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...161`,
+  Race = "Some other race Alone"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...173`,
+  Race = "Some other race Alone"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...185`,
+  Race = "Some other race Alone"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...197`,
+  Race = "Some other race Alone"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...209`,
+  Race = "Some other race Alone"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...221`,
+  Race = "Some other race Alone"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...233`,
+  Race = "Some other race Alone"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...245`,
+  Race = "Some other race Alone"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...257`,
+  Race = "Some other race Alone"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...269`,
+  Race = "Some other race Alone"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...281`,
+  Race = "Some other race Alone"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...293`,
+  Race = "Some other race Alone"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...305`,
+  Race = "Some other race Alone"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...317`,
+  Race = "Some other race Alone"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...329`,
+  Race = "Some other race Alone"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...341`,
+  Race = "Some other race Alone"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...353`,
+  Race = "Some other race Alone"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...365`,
+  Race = "Some other race Alone"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...377`,
+  Race = "Some other race Alone"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...389`,
+  Race = "Some other race Alone"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...401`,
+  Race = "Some other race Alone"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...413`,
+  Race = "Some other race Alone"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...425`,
+  Race = "Some other race Alone"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...437`,
+  Race = "Some other race Alone"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...449`,
+  Race = "Some other race Alone"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...461`,
+  Race = "Some other race Alone"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...473`,
+  Race = "Some other race Alone"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...485`,
+  Race = "Some other race Alone"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...497`,
+  Race = "Some other race Alone"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...509`,
+  Race = "Some other race Alone"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...521`,
+  Race = "Some other race Alone"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...533`,
+  Race = "Some other race Alone"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...545`,
+  Race = "Some other race Alone"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...557`,
+  Race = "Some other race Alone"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...569`,
+  Race = "Some other race Alone"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...581`,
+  Race = "Some other race Alone"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...593`,
+  Race = "Some other race Alone"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_SomeotherraceAlone_data$Years,
+  Percentage_wnhp_men = us_SomeotherraceAlone_data$`...605`,
+  Race = "Some other race Alone"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+8.  **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_Twoormoreraces_data <- filter(acs_data, Label == "Bachelor's degree or higher********")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...9`,
+  Race = "Two or more races,"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...21`,
+  Race = "Two or more races,"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...33`,
+  Race = "Two or more races,"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...45`,
+  Race = "Two or more races,"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...53`,
+  Race = "Two or more races,"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...65`,
+  Race = "Two or more races,"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...77`,
+  Race = "Two or more races,"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...89`,
+  Race = "Two or more races,"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...101`,
+  Race = "Two or more races,"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...113`,
+  Race = "Two or more races,"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...125`,
+  Race = "Two or more races,"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...137`,
+  Race = "Two or more races,"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...149`,
+  Race = "Two or more races,"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...161`,
+  Race = "Two or more races,"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...173`,
+  Race = "Two or more races,"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...185`,
+  Race = "Two or more races,"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...197`,
+  Race = "Two or more races,"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...209`,
+  Race = "Two or more races,"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...221`,
+  Race = "Two or more races,"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...233`,
+  Race = "Two or more races,"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...245`,
+  Race = "Two or more races,"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...257`,
+  Race = "Two or more races,"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...269`,
+  Race = "Two or more races,"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...281`,
+  Race = "Two or more races,"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...293`,
+  Race = "Two or more races,"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...305`,
+  Race = "Two or more races,"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...317`,
+  Race = "Two or more races,"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...329`,
+  Race = "Two or more races,"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...341`,
+  Race = "Two or more races,"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...353`,
+  Race = "Two or more races,"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...365`,
+  Race = "Two or more races,"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...377`,
+  Race = "Two or more races,"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...389`,
+  Race = "Two or more races,"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...401`,
+  Race = "Two or more races,"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...413`,
+  Race = "Two or more races,"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...425`,
+  Race = "Two or more races,"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...437`,
+  Race = "Two or more races,"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...449`,
+  Race = "Two or more races,"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...461`,
+  Race = "Two or more races,"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...473`,
+  Race = "Two or more races,"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...485`,
+  Race = "Two or more races,"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...497`,
+  Race = "Two or more races,"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...509`,
+  Race = "Two or more races,"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...521`,
+  Race = "Two or more races,"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...533`,
+  Race = "Two or more races,"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...545`,
+  Race = "Two or more races,"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...557`,
+  Race = "Two or more races,"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...569`,
+  Race = "Two or more races,"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...581`,
+  Race = "Two or more races,"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...593`,
+  Race = "Two or more races,"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_wnhp_men = us_Twoormoreraces_data$`...605`,
+  Race = "Two or more races,"
+)
+
+# Combine all states
+combined_data_wnhp <- bind_rows(
+  bdh_wnhp_alabama,
+  bdh_wnhp_alaska,
+  bdh_wnhp_arizona,
+  bdh_wnhp_arkansas,
+  bdh_wnhp_california,
+  bdh_wnhp_colorado,
+  bdh_wnhp_connecticut,
+  bdh_wnhp_delaware,
+  bdh_wnhp_florida,
+  bdh_wnhp_georgia,
+  bdh_wnhp_hawaii,
+  bdh_wnhp_idaho,
+  bdh_wnhp_illinois,
+  bdh_wnhp_indiana,
+  bdh_wnhp_iowa,
+  bdh_wnhp_kansas,
+  bdh_wnhp_kentucky,
+  bdh_wnhp_louisiana,
+  bdh_wnhp_maine,
+  bdh_wnhp_maryland,
+  bdh_wnhp_massachusetts,
+  bdh_wnhp_michigan,
+  bdh_wnhp_minnesota,
+  bdh_wnhp_mississippi,
+  bdh_wnhp_missouri,
+  bdh_wnhp_montana,
+  bdh_wnhp_nebraska,
+  bdh_wnhp_nevada,
+  bdh_wnhp_newhampshire,
+  bdh_wnhp_newjersey,
+  bdh_wnhp_newmexico,
+  bdh_wnhp_newyork,
+  bdh_wnhp_northcarolina,
+  bdh_wnhp_northdakota,
+  bdh_wnhp_ohio,
+  bdh_wnhp_oklahoma,
+  bdh_wnhp_oregon,
+  bdh_wnhp_pennsylvania,
+  bdh_wnhp_rhodeisland,
+  bdh_wnhp_southcarolina,
+  bdh_wnhp_southdakota,
+  bdh_wnhp_tennessee,
+  bdh_wnhp_texas,
+  bdh_wnhp_utah,
+  bdh_wnhp_vermont,
+  bdh_wnhp_virginia,
+  bdh_wnhp_washington,
+  bdh_wnhp_westvirginia,
+  bdh_wnhp_wisconsin,
+  bdh_wnhp_wyoming,
+  bdh_wnhp_puertorico
+)
+
+print(combined_data_wnhp)
+
+```
+
+9.  **Male, Hispanic or Latino Origin, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tibble)
+
+acs_data <- read_excel("dataset/acsfinale.xlsx")
+
+# Alabama
+us_HispanicorLatinoOrigin_data <- filter(acs_data, Label == "Bachelor's degree or higher*********")
+bdh_wnhp_alabama <- tibble(
+  Years =  us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...9`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Alaska
+bdh_wnhp_alaska <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...21`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Arizona
+bdh_wnhp_arizona <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...33`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Arkansas
+bdh_wnhp_arkansas <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...45`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# California
+bdh_wnhp_california <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...53`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Colorado
+bdh_wnhp_colorado <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...65`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Connecticut
+bdh_wnhp_connecticut <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...77`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Delaware
+bdh_wnhp_delaware <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...89`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Florida
+bdh_wnhp_florida <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...101`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Georgia
+bdh_wnhp_georgia <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...113`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Hawaii
+bdh_wnhp_hawaii <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...125`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Idaho
+bdh_wnhp_idaho <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...137`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Illinois
+bdh_wnhp_illinois <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...149`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Indiana
+bdh_wnhp_indiana <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...161`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Iowa
+bdh_wnhp_iowa <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...173`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Kansas
+bdh_wnhp_kansas <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...185`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Kentucky
+bdh_wnhp_kentucky <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...197`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Louisiana
+bdh_wnhp_louisiana <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...209`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Maine
+bdh_wnhp_maine <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...221`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Maryland
+bdh_wnhp_maryland <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...233`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Massachusetts
+bdh_wnhp_massachusetts <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...245`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Michigan
+bdh_wnhp_michigan <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...257`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Minnesota
+bdh_wnhp_minnesota <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...269`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Mississippi
+bdh_wnhp_mississippi <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...281`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Missouri
+bdh_wnhp_missouri <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...293`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Montana
+bdh_wnhp_montana <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...305`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Nebraska
+bdh_wnhp_nebraska <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...317`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Nevada
+bdh_wnhp_nevada <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...329`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# New Hampshire
+bdh_wnhp_newhampshire <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...341`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# New Jersey
+bdh_wnhp_newjersey <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...353`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# New Mexico
+bdh_wnhp_newmexico <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...365`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# New York
+bdh_wnhp_newyork <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...377`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# North Carolina
+bdh_wnhp_northcarolina <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...389`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# North Dakota
+bdh_wnhp_northdakota <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...401`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Ohio
+bdh_wnhp_ohio <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...413`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Oklahoma
+bdh_wnhp_oklahoma <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...425`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Oregon
+bdh_wnhp_oregon <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...437`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Pennsylvania
+bdh_wnhp_pennsylvania <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...449`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Rhode Island
+bdh_wnhp_rhodeisland <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...461`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# South Carolina
+bdh_wnhp_southcarolina <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...473`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# South Dakota
+bdh_wnhp_southdakota <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...485`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Tennessee
+bdh_wnhp_tennessee <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...497`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Texas
+bdh_wnhp_texas <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...509`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Utah
+bdh_wnhp_utah <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...521`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Vermont
+bdh_wnhp_vermont <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...533`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Virginia
+bdh_wnhp_virginia <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...545`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Washington
+bdh_wnhp_washington <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...557`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# West Virginia
+bdh_wnhp_westvirginia <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...569`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Wisconsin
+bdh_wnhp_wisconsin <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...581`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Wyoming
+bdh_wnhp_wyoming <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...593`,
+  Race = "Hispanic or Latino Origin"
+)
+
+# Puerto Rico
+bdh_wnhp_puertorico <- tibble(
+  Years = us_HispanicorLatinoOrigin_data$Years,
+  Percentage_wnhp_men = us_HispanicorLatinoOrigin_data$`...605`,
+  Race = "Hispanic or Latino Origin"
 )
 
 # Combine all states

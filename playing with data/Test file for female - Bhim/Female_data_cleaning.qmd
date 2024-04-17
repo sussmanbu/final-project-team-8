@@ -3239,17 +3239,17 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
+us_Twoormoreraces_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_tmr_alabama <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_tmr_women = us_whitealone_data$`Alabama...13`,
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_tmr_women = us_Twoormoreraces_data$`Alabama...13`,
   Race = "Two or more races"
 )
 
 # Alaska
 bdh_tmr_alaska <- tibble(
-  Years = us_whitealone_data$Years,
-  Percentage_tmr_women = us_whitealone_data$`...25`,
+  Years = us_Twoormoreraces_data$Years,
+  Percentage_tmr_women = us_Twoormoreraces_data$`...25`,
   Race = "Two or more races"
 )
 
