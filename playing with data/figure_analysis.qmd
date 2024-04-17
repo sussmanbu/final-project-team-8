@@ -1,0 +1,59 @@
+### starting to consider what figures to create
+
+```{r Importing Cleaned Datasets and Tidyverse}
+library(tidyverse)
+Emp_wb = read_csv('dataset/World_Bank_Employment_Data.csv', show_col_types = F)
+Educ_wb = read_csv('dataset/World_Bank_Educ_Data.csv', show_col_types = F)
+
+```
+
+
+```{r Creating Potential Plots}
+Emp_wb$Year <- as.Date(as.character(Emp_wb$Year), format = "%Y") 
+
+```
+
+```{r trying to make a map based on census data}
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(tidycensus))
+
+v2020 <- load_variables(2020, "acs5", cache = TRUE)
+
+concepts <- v2020 |>
+  filter(str_detect(concept, '^MEDIAN INCOME'))
+
+### Would like to analyze B19326_004 and B19326_005 (They were a dud, most likely skewed due to part-time workers)
+
+### Looking at C24040_002 and C24040_029 now which are
+##SEX BY INDUSTRY FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER for male and female
+
+
+vars_df <- v2020 |>
+  filter(name == 'C24040_002' | name == 'C24040_029') |>
+  mutate(
+    variable = name,
+    gender = if_else(
+      str_detect(label, 'Male'),
+      'Male',
+      'Female'
+    ),
+    .keep = 'none'
+  )
+
+gendered_employment <- get_acs(
+  geography = 'state',
+  variables = vars_df |> pull(variable),
+  year = 2020,
+  geometry = TRUE
+) |> 
+  left_join(vars_df) |>
+  select(-moe, -variable, -GEOID, -NAME) |>
+  pivot_wider(names_from = "gender", values_from = 'estimate')
+
+```
+
+
+
+
+
+
