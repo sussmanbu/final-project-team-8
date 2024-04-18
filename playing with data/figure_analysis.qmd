@@ -16,6 +16,7 @@ Emp_wb$Year <- as.Date(as.character(Emp_wb$Year), format = "%Y")
 ```{r trying to make a map based on census data}
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(tidycensus))
+suppressPackageStartupMessages(library(sf))
 
 v2020 <- load_variables(2020, "acs5", cache = TRUE)
 
@@ -47,13 +48,26 @@ gendered_employment <- get_acs(
   geometry = TRUE
 ) |> 
   left_join(vars_df) |>
-  select(-moe, -variable, -GEOID, -NAME) |>
-  pivot_wider(names_from = "gender", values_from = 'estimate')
+  select(-moe, -variable, -GEOID, -NAME) 
 
+total_employment <- gendered_employment |>
+  group_by(geometry) |>
+  summarise(total = sum(estimate))
+
+gendered_employment_final <- st_join(gendered_employment, total_employment, join = st_equals)
 ```
 
+```{r heatmap idea for median working population}
+gendered_employment_final |>
+  ggplot(aes(fill =  estimate/total)) + 
+  geom_sf() +
+  facet_wrap(~gender) +
+  coord_sf(crs = 5070) +
+  scale_fill_viridis_c()+
+  theme_minimal()
 
-
+### this creates two maps, which are representative of the proportion of full time, year round civillians in each state faceted by gender. I'm not sure if this is the best approach to data presentation, and I am open to other ideas
+```
 
 
 
