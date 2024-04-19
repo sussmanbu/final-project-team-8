@@ -3,7 +3,9 @@ title: "Female Data Cleaning"
 editor: visual
 ---
 
+
 Guys, please read the analysis approach before continuing.
+
 
 ```{r}
 # Analysis Approach:
@@ -30,7 +32,9 @@ Guys, please read the analysis approach before continuing.
 
 ```
 
+
 1.  **Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 ## Separating data for Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned) 
@@ -466,7 +470,9 @@ print(combined_data_femalewhitealone)
 
 ```
 
+
 2.  **Female, White-alone, not Hispanic or Latino, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(tidyverse)
@@ -892,7 +898,9 @@ print(combined_data_wnhp)
 
 ```
 
+
 3.  **Female, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -1318,7 +1326,9 @@ print(combined_data_blackalone)
 
 ```
 
+
 4.  **Female, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -1746,7 +1756,9 @@ print(combined_data_aianalone)
 
 ```
 
+
 5.  **Female, Asian Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -2174,7 +2186,9 @@ print(combined_data_asianalone)
 
 ```
 
+
 6.  **Female, Native Hawaiian and Other Pacific Islander Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -2600,7 +2614,9 @@ combined_data_nhopalone <- bind_rows(
 print(combined_data_nhopalone)
 ```
 
+
 7.  **Female, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 
@@ -3031,7 +3047,9 @@ print(combined_data_sor)
 
 ```
 
+
 8.  **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -3458,7 +3476,9 @@ print(combined_data_tmr)
 
 ```
 
+
 9.  **Female, Hispanic or Latino Origin, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+
 
 ```{r}
 library(readxl)
@@ -3884,6 +3904,8 @@ print(combined_data_hloorigin)
 
 ```
 
+
 *Initial Comments:*
 
 -   Guys, note that there are some N/As for American Indian or Alaska Native Alone Data, Some other race Alone, Hispanic/Latino Origin, . Should not be a problem though since we can easily filter them out.
+
