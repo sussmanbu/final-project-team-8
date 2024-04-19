@@ -3,35 +3,28 @@ title: "Blog Post 3"
 editor: visual
 ---
 
-A 2-step Approach ('a model within a model'): 
+A 2-step Approach ('a model within a model'):
 
-1. We find the relationship per State (via a linear model) to test the relationship of
-the percentage of a certain educational attainment to the median earnings of 
-females, according to the certain educational attainment over 2010 to 2022. 
+1.  We find the relationship per State (via a linear model) to test the relationship of the percentage of a certain educational attainment to the median earnings of females, according to the certain educational attainment over 2010 to 2022.
 
-Predictor: Percentage of educational attainment 
-Response: Median Earnings 
+Predictor: Percentage of educational attainment Response: Median Earnings
 
-2. We project the educational attainment of females per State according to their race, using past data from 2010 to 2022, by creating a linear model. 
+2.  We project the educational attainment of females per State according to their race, using past data from 2010 to 2022, by creating a linear model.
 
-Predictor: Time 
-Response: Percentage of Educational attainment 
+Predictor: Time Response: Percentage of Educational attainment
 
-3. After creating a linear model in Q2, we can get a prediction of educational attainment over the next 25 years. Then, we use this prediction to our first linear model, to project the median earnings of each race from each State. 
+3.  After creating a linear model in Q2, we can get a prediction of educational attainment over the next 25 years. Then, we use this prediction to our first linear model, to project the median earnings of each race from each State.
 
-Combine 
+Combine
 
-1. Do question 2 first, then do question 1. 
+1.  Do question 2 first, then do question 1.
 
+Divide:
 
-Divide: 
+Tianxiang - the first 25 states alphabetically Bhim - the rest
 
-Tianxiang - the first 25 states alphabetically 
-Bhim - the rest 
+Step by step. Then, reconvene in class.
 
-Step by step. Then, reconvene in class. 
+To make it fancy:
 
-
-To make it fancy: 
-
-Check the assumptions of linear regression after.  
+Check the assumptions of linear regression after.

@@ -3041,6 +3041,7 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
+
 us_twomore_data <- filter(acs_data, Label == "Bachelor's degree or higher********")
 bdh_tmr_alabama <- tibble(
   Years = us_twomore_data$Years,
