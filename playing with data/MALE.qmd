@@ -438,11 +438,8 @@ library(tibble)
 acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-<<<<<<< HEAD
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
-=======
 us_WhitealonenotHispanicorLatino_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
->>>>>>> cf2834f1983df7cf653371c26afdbf1763f72d07
 bdh_wnhp_alabama <- tibble(
   Years =  us_WhitealonenotHispanicorLatino_data$Years,
   Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...9`,
