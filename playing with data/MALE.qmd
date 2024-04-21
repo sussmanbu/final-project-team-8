@@ -2988,7 +2988,7 @@ print(combined_data_wnhp)
 
 ```
 
-8.  **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+8.  **Male, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
 library(tidyverse)
