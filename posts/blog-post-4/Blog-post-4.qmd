@@ -1,0 +1,10 @@
+### Blog Post 4
+04/08/2024
+
+While looking through our ACS data, we saw consistent, yearly data about the percentage of women that acquired at least a Bachelor’s degree in each of the 50 states and in Puerto Rico. We hope to be able to predict the percentage of women of a certain race that acquired at least a Bachelor’s Degree in a given year. Here, years and race would be predictor variables for the percentage of women that acquired at least a Bachelor’s Degree (response variable). Regarding regression models, we think a logistical regression would not fit as our predictor variables are not dichotomous or binary (they have more than two outputs). Therefore, we think a linear regression will fit more nicely.
+
+Interestingly, when looking at our cleaned data, we have already seen some interesting differences that we are excited to explore deeper in our analysis. Last but not least, we have also begun discussing strategies regarding data visualization. We have not come to any conclusions, but we hope to be able to incorporate some gendered differences (for given races). We hope to hone in on our ideas this coming week.
+
+{An excerpt of cleaned data can be found below} 
+
+[INSERT R CHUNK HERE]
