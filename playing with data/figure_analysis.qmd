@@ -7,7 +7,6 @@ Educ_wb = read_csv('dataset/World_Bank_Educ_Data.csv', show_col_types = F)
 
 ```
 
-
 ```{r Creating Potential Plots}
 Emp_wb$Year <- as.Date(as.character(Emp_wb$Year), format = "%Y") 
 
