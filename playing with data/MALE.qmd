@@ -7,11 +7,16 @@ editor: visual
 
 ```{r}
 library(readxl)
-library(dplyr)
-library(tibble)
+library(tidyverse)
 
-acs_data <- read_excel("dataset/acsfinale.xlsx")
+acs_data_test <- read_excel("dataset/acsfinale.xlsx")
 
+write_csv(acs_data, file = here::here('dataset', 'ACS_data_rendered.csv'))
+
+acs_data <- read.csv('dataset/ACS_data_rendered.csv')
+```
+
+```{r}
 # Alabama
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
@@ -431,18 +436,10 @@ print(combined_data_malewhitealone)
 2.  **Male, White-alone, not Hispanic or Latino, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
-<<<<<<< HEAD
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
-=======
 us_WhitealonenotHispanicorLatino_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
->>>>>>> cf2834f1983df7cf653371c26afdbf1763f72d07
 bdh_wnhp_alabama <- tibble(
   Years =  us_WhitealonenotHispanicorLatino_data$Years,
   Percentage_wnhp_men = us_WhitealonenotHispanicorLatino_data$`...9`,
@@ -861,11 +858,6 @@ print(combined_data_wnhp)
 3.  **Male, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_blackalone_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
@@ -1287,11 +1279,6 @@ print(combined_data_wnhp)
 4.  **Male, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_AmericanIndianorAlaskaNativeAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher****")
@@ -1713,11 +1700,6 @@ print(combined_data_wnhp)
 5.  **Male, Asian Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_Asianalone_data <- filter(acs_data, Label == "Bachelor's degree or higher*****")
@@ -2139,11 +2121,6 @@ print(combined_data_wnhp)
 6.  **Male, Native Hawaiian and Other Pacific Islander Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_NativeHawaiianAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
@@ -2565,11 +2542,6 @@ print(combined_data_wnhp)
 7.  **Male, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_SomeotherraceAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher*******")
@@ -2988,14 +2960,9 @@ print(combined_data_wnhp)
 
 ```
 
-8.  **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
+8.  **Male, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
 
 # Alabama
 us_Twoormoreraces_data <- filter(acs_data, Label == "Bachelor's degree or higher********")
@@ -3417,12 +3384,6 @@ print(combined_data_wnhp)
 9.  **Male, Hispanic or Latino Origin, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
 ```{r}
-library(tidyverse)
-library(dplyr)
-library(tibble)
-
-acs_data <- read_excel("dataset/acsfinale.xlsx")
-
 # Alabama
 us_HispanicorLatinoOrigin_data <- filter(acs_data, Label == "Bachelor's degree or higher*********")
 bdh_wnhp_alabama <- tibble(

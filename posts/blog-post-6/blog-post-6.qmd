@@ -1,0 +1,10 @@
+### Blog Post 6
+04/21/2024
+
+We have begun to consider different interactive approaches for our final product, and one of the widgets that stuck out to us the most was RPivottables, given the large amount of variables in our data, having a way for users to quickly filter through it to find what they are looking for would be ideal.
+
+In general, we have data that is differentiated solely by gender and data that is differentiated by both gender and race. We hope to isolate specific races and see how the gender gap for Bachelor Degree accomplishment differs from both the general census data (ie “white only vs total US”) and the between the different races (ie “white only vs black only”)
+
+To visualize this we think using the ggiraph widgets would be useful. We can use ggiraph to make ggplot graphs interactive. With the widget we can have general scatter plots for Time vs percentage of women that achieved at least a Bachelor’s Degree
+
+In terms of a thesis, we are beginning to close in on a definite statement but need more time with our data to present anything concrete. We have narrowed down our response variables to college education (% of Bachelor’s Degrees) and income. Based on casual observations, we can see the disparity between men and women in terms of these concepts. However, we need to conduct further analysis before we can decide exactly what it is that we are trying to show with all of our large collection of data. We plan to have our thesis statement fully fleshed out by the end of the week.
