@@ -59,6 +59,7 @@ total_employment <- gendered_employment |>
   summarise(total = sum(estimate))
 
 gendered_employment_final <- st_join(gendered_employment, total_employment, join = st_equals)
+
 ```
 
 ```{r heatmap idea for median working population}
