@@ -8,7 +8,7 @@ Interestingly, when looking at our cleaned data, we have already seen some inter
 
 {An excerpt of cleaned data can be found below}
 
-{**Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**}
+{**Male, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**}
 
 ```{r}
 
@@ -22,370 +22,362 @@ acs_data <- read_excel("dataset/acsfinale.xlsx")
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`Alabama...13`,
-  Race = "White Alone"
-)
+  Percentage_men = us_whitealone_data$`Alabama...9`,
+  Race = "White Alone")
 
 # Alaska
-
 bdh_whitealone_alaska <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...25`,
+  Percentage_men = us_whitealone_data$`...21`,
   Race = "White Alone"
 )
 
 
 # Arizona
-
 bdh_whitealone_arizona <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...37`,
+  Percentage_men = us_whitealone_data$`...33`,
   Race = "White Alone"
 )
 
 # Arkansas
-
 bdh_whitealone_arkansas <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...49`,
+  Percentage_men = us_whitealone_data$`...45`,
   Race = "White Alone"
 )
 
 # California
-
 bdh_whitealone_california <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...61`,
+  Percentage_men = us_whitealone_data$`...57`,
   Race = "White Alone"
 )
 
 # Colorado
-
 bdh_whitealone_colorado <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...73`,
+  Percentage_men = us_whitealone_data$`...69`,
   Race = "White Alone"
 )
 
 # Connecticut
 bdh_whitealone_connecticut <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...85`,
+  Percentage_men = us_whitealone_data$`...81`,
   Race = "White Alone"
 )
 
 # Delaware
-
 bdh_whitealone_delaware <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...97`,
+  Percentage_men = us_whitealone_data$`...93`,
   Race = "White Alone"
 )
 
 # Florida
-
 bdh_whitealone_florida <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...109`,
+  Percentage_men = us_whitealone_data$`...105`,
   Race = "White Alone"
 )
 
 # Georgia
 bdh_whitealone_georgia <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...121`,
+  Percentage_men = us_whitealone_data$`...117`,
   Race = "White Alone"
 )
 
 # Hawaii
 bdh_whitealone_hawaii <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...133`,
+  Percentage_men = us_whitealone_data$`...129`,
   Race = "White Alone"
 )
 
 # Idaho
 bdh_whitealone_idaho <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...145`,
+  Percentage_men = us_whitealone_data$`...141`,
   Race = "White Alone"
 )
 
 # Illinois
 bdh_whitealone_illinois <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...157`,
+  Percentage_men = us_whitealone_data$`...153`,
   Race = "White Alone"
 )
 
 # Indiana
 bdh_whitealone_indiana <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...169`,
+  Percentage_men = us_whitealone_data$`...165`,
   Race = "White Alone"
 )
 
 # Iowa
 bdh_whitealone_iowa <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...181`,
+  Percentage_men = us_whitealone_data$`...177`,
   Race = "White Alone"
 )
 
 # Kansas
 bdh_whitealone_kansas <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...193`,
+  Percentage_men = us_whitealone_data$`...189`,
   Race = "White Alone"
 )
 
 # Kentucky
 bdh_whitealone_kentucky <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...205`,
+  Percentage_men = us_whitealone_data$`...201`,
   Race = "White Alone"
 )
 
 # Louisiana
 bdh_whitealone_louisiana <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...217`,
+  Percentage_men = us_whitealone_data$`...213`,
   Race = "White Alone"
 )
 
 # Maine
 bdh_whitealone_maine <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...229`,
+  Percentage_men = us_whitealone_data$`...225`,
   Race = "White Alone"
 )
 
 # Maryland
 bdh_whitealone_maryland <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...241`,
+  Percentage_men = us_whitealone_data$`...237`,
   Race = "White Alone"
 )
 
 # Massachusetts
 bdh_whitealone_massachusetts <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...253`,
+  Percentage_men = us_whitealone_data$`...249`,
   Race = "White Alone"
 )
 
 # Michigan
 bdh_whitealone_michigan <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...265`,
+  Percentage_men = us_whitealone_data$`...261`,
   Race = "White Alone"
 )
 
 # Minnesota
 bdh_whitealone_minnesota <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...277`,
+  Percentage_men = us_whitealone_data$`...273`,
   Race = "White Alone"
 )
 
 # Mississippi
 bdh_whitealone_mississippi <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...289`,
+  Percentage_men = us_whitealone_data$`...285`,
   Race = "White Alone"
 )
 
 # Missouri
 bdh_whitealone_missouri <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...301`,
+  Percentage_men = us_whitealone_data$`...397`,
   Race = "White Alone"
 )
 
 # Montana
 bdh_whitealone_montana <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...313`,
+  Percentage_men = us_whitealone_data$`...309`,
   Race = "White Alone"
 )
 
 # Nebraska
 bdh_whitealone_nebraska <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...325`,
+  Percentage_men = us_whitealone_data$`...321`,
   Race = "White Alone"
 )
 
 # Nevada
 bdh_whitealone_nevada <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...337`,
+  Percentage_men = us_whitealone_data$`...333`,
   Race = "White Alone"
 )
 
 # New Hampshire
 bdh_whitealone_newhampshire <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...349`,
+  Percentage_men = us_whitealone_data$`...345`,
   Race = "White Alone"
 )
 
 # New Jersey
 bdh_whitealone_newjersey <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...361`,
+  Percentage_men = us_whitealone_data$`...357`,
   Race = "White Alone"
 )
 
 # New Mexico
 bdh_whitealone_newmexico <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...373`,
+  Percentage_men = us_whitealone_data$`...369`,
   Race = "White Alone"
 )
 
 # New York
 bdh_whitealone_newyork <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...385`,
+  Percentage_men = us_whitealone_data$`...381`,
   Race = "White Alone"
 )
 
 # North Carolina
 bdh_whitealone_northcarolina <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...397`,
+  Percentage_men = us_whitealone_data$`...393`,
   Race = "White Alone"
 )
 
 # North Dakota
 bdh_whitealone_northdakota <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...409`,
+  Percentage_men = us_whitealone_data$`...405`,
   Race = "White Alone"
 )
 
 # Ohio
 bdh_whitealone_ohio <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...421`,
+  Percentage_men = us_whitealone_data$`...417`,
   Race = "White Alone"
 )
 
 # Oklahoma
 bdh_whitealone_oklahoma <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...433`,
+  Percentage_men = us_whitealone_data$`...429`,
   Race = "White Alone"
 )
 
 # Oregon
 bdh_whitealone_oregon <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...445`,
+  Percentage_men = us_whitealone_data$`...441`,
   Race = "White Alone"
 )
 
 # Pennsylvania
 bdh_whitealone_pennsylvania <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...457`,
+  Percentage_men = us_whitealone_data$`...453`,
   Race = "White Alone"
 )
 
 # Rhode Island
 bdh_whitealone_rhodeisland <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...469`,
+  Percentage_men = us_whitealone_data$`...465`,
   Race = "White Alone"
 )
 
 # South Carolina
 bdh_whitealone_southcarolina <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...481`,
+  Percentage_men = us_whitealone_data$`...477`,
   Race = "White Alone"
 )
 
 # South Dakota
 bdh_whitealone_southdakota <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...493`,
+  Percentage_men = us_whitealone_data$`...489`,
   Race = "White Alone"
 )
 
 # Tennessee
 bdh_whitealone_tennessee <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...505`,
+  Percentage_men = us_whitealone_data$`...501`,
   Race = "White Alone"
 )
 
 # Texas
 bdh_whitealone_texas <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...517`,
+  Percentage_men = us_whitealone_data$`...513`,
   Race = "White Alone"
 )
 
 # Utah
 bdh_whitealone_utah <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...529`,
+  Percentage_men = us_whitealone_data$`...525`,
   Race = "White Alone"
 )
 
 # Vermont
 bdh_whitealone_vermont <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...541`,
+  Percentage_men = us_whitealone_data$`...537`,
   Race = "White Alone"
 )
 
 # Virginia
 bdh_whitealone_virginia <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...553`,
+  Percentage_men = us_whitealone_data$`...549`,
   Race = "White Alone"
 )
 
 # Washington
 bdh_whitealone_washington <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...565`,
+  Percentage_men = us_whitealone_data$`...561`,
   Race = "White Alone"
 )
 
 # West Virginia
 bdh_whitealone_westvirginia <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...577`,
+  Percentage_men = us_whitealone_data$`...573`,
   Race = "White Alone"
 )
 
 # Wisconsin
 bdh_whitealone_wisconsin <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...589`,
-  Race = "White Alone"
+  Percentage_men = us_whitealone_data$`...585`,
+ Race = "White Alone"
 )
 
 # Wyoming
 bdh_whitealone_wyoming <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...601`,
+  Percentage_men = us_whitealone_data$`...597`,
   Race = "White Alone"
 )
 
 # Puerto Rico
 bdh_whitealone_puertorico <- tibble(
   Years = us_whitealone_data$Years,
-  Percentage_women = us_whitealone_data$`...601`,
+  Percentage_men = us_whitealone_data$`...597`,
   Race = "White Alone"
 )
 
 # Combine all tibbles into one
-combined_data_femalewhitealone <- bind_rows(
+combined_data_malewhitealone <- bind_rows(
   bdh_whitealone_alabama,
   bdh_whitealone_alaska,
   bdh_whitealone_arizona,
@@ -439,5 +431,5 @@ combined_data_femalewhitealone <- bind_rows(
   bdh_whitealone_puertorico
 )
 
-print(combined_data_femalewhitealone)
+print(combined_data_malewhitealone)
 ```
