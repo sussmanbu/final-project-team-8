@@ -9,10 +9,14 @@ editor: visual
 library(readxl)
 library(tidyverse)
 
+acs_data_test <- read_excel("dataset/acsfinale.xlsx")
+
+write_csv(acs_data_test, file = here::here('dataset', 'ACS_data_rendered.csv'))
+
 acs_data <- read.csv('dataset/ACS_data_rendered.csv')
 ```
 
-```{r "White Alone"}
+```{r}
 # Alabama
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
@@ -431,7 +435,7 @@ print(combined_data_malewhitealone)
 
 2.  **Male, White-alone, not Hispanic or Latino, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
-```{r "White alone, not Hispanic or Latino"}
+```{r}
 
 # Alabama
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
@@ -853,7 +857,7 @@ print(combined_data_wnhp)
 
 3.  **Male, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
-```{r "Black Alone"}
+```{r}
 
 # Alabama
 us_blackalone_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
@@ -1274,7 +1278,7 @@ print(combined_data_wnhp)
 
 4.  **Male, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 
-```{r "American Indian or Alaska Native Alone"}
+```{r}
 
 # Alabama
 us_AmericanIndianorAlaskaNativeAlone_data <- filter(acs_data, Label == "Bachelor's degree or higher****")
