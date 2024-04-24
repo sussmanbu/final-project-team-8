@@ -48,9 +48,9 @@ us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
   Years = us_whitealone_data$Years,
   Percentage_women = us_whitealone_data$`Alabama...13`,
-  Race = "White Alone"
-)
+  Race = "White Alone",
   State = "Alabama"
+)
 
 # Alaska
 bdh_whitealone_alaska <- tibble(
