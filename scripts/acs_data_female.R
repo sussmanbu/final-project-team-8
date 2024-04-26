@@ -1,48 +1,10 @@
----
-title: "Female Data Cleaning"
-editor: visual
----
-
-Guys, please read the analysis approach before continuing.
-
-```{r}
-# Analysis Approach:
-# Dependent Variables:
-# Percentage of Bachelor’s degrees earned by women of different racial backgrounds (White, Black, Asian, etc.)
-# Independent Variable:
-# Year
-
-# Data Granularity:
-# State-level data
-# Segmented by female race. There are 9 classifications, listed below:
-  # 'White Alone'
-  # 'White Alone, not Hispanic or Latino'
-  # 'Black Alone'
-  # 'American Indian or Alaska Native Alone'
-  # 'Asian Alone' 
-  # 'Native Hawaiian and Other Pacific Islander Alone' 
-  # 'Some other race alone'
-  # 'Two or more races' 
-  # 'Hispanic or Latino Origin'
-
-# Hypothesis:
-# The percentage of Bachelor's degrees earned by women of different racial backgrounds has changed over time, influenced by various factors. 
-
-```
-
-```{r}
 library(readxl)
 library(dplyr)
 library(tibble)
 
 acs_data <- read.csv('dataset/ACS_data_rendered.csv')
-```
 
-1.  **Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
-## Separating data for Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned) 
-
+#1.  **Female, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_whitealone_data <- filter(acs_data, Label == "Bachelor's degree or higher*")
 bdh_whitealone_alabama <- tibble(
@@ -509,11 +471,7 @@ combined_data_femalewhitealone <- bind_rows(
 
 print(combined_data_femalewhitealone)
 
-```
-
-2.  **Female, White-alone, not Hispanic or Latino, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+#2.  **Female, White-alone, not Hispanic or Latino, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_whitealonen_data <- filter(acs_data, Label == "Bachelor's degree or higher**")
 bdh_wnhp_alabama <- tibble(
@@ -980,11 +938,7 @@ combined_data_wnhp <- bind_rows(
 
 print(combined_data_wnhp)
 
-```
-
-3.  **Female, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+# 3.  **Female, Black Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_blackalone_data <- filter(acs_data, Label == "Bachelor's degree or higher***")
 bdh_blackalone_alabama <- tibble(
@@ -1450,12 +1404,7 @@ combined_data_blackalone <- bind_rows(
 
 print(combined_data_blackalone)
 
-
-```
-
-4.  **Female, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+# 4.**Female, American Indian or Alaska Native Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_aianalone_data <- filter(acs_data, Label == "Bachelor's degree or higher****")
 bdh_aianalone_alabama <- tibble(
@@ -1922,12 +1871,7 @@ combined_data_aianalone <- bind_rows(
 
 print(combined_data_aianalone)
 
-
-```
-
-5.  **Female, Asian Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+#5.  **Female, Asian Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_asianalone_data <- filter(acs_data, Label == "Bachelor's degree or higher*****")
 bdh_asianalone_alabama <- tibble(
@@ -2395,12 +2339,7 @@ combined_data_asianalone <- bind_rows(
 
 print(combined_data_asianalone)
 
-
-```
-
-6.  **Female, Native Hawaiian and Other Pacific Islander Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+# 6.**Female, Native Hawaiian and Other Pacific Islander Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_hawaiian_data <- filter(acs_data, Label == "Bachelor's degree or higher******")
 bdh_nhopalone_alabama <- tibble(
@@ -2866,11 +2805,8 @@ combined_data_nhopalone <- bind_rows(
 )
 
 print(combined_data_nhopalone)
-```
 
-7.  **Female, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+# 7.**Female, Some other race Alone, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_other_data <- filter(acs_data, Label == "Bachelor's degree or higher*******")
 bdh_sor_alabama <- tibble(
@@ -3338,12 +3274,7 @@ combined_data_sor <- bind_rows(
 
 print(combined_data_sor)
 
-
-```
-
-8.  **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+#8. **Female, Two or more races, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Alabama
 us_twomore_data <- filter(acs_data, Label == "Bachelor's degree or higher********")
 bdh_tmr_alabama <- tibble(
@@ -3811,11 +3742,7 @@ combined_data_tmr <- bind_rows(
 
 print(combined_data_tmr)
 
-```
-
-9.  **Female, Hispanic or Latino Origin, Across all U.S. States + Puerto Rico (Status: Cleaned)**
-
-```{r}
+#9.  **Female, Hispanic or Latino Origin, Across all U.S. States + Puerto Rico (Status: Cleaned)**
 # Puerto Rico
 us_hislat_data <- filter(acs_data, Label == "Bachelor's degree or higher*********")
 bdh_hloorigin_puertorico <- tibble(
@@ -4280,9 +4207,3 @@ combined_data_hloorigin <- bind_rows(
 )
 
 print(combined_data_hloorigin)
-
-```
-
-*Initial Comments:*
-
--   Guys, note that there are some N/As for American Indian or Alaska Native Alone Data, Some other race Alone, Hispanic/Latino Origin, . Should not be a problem though since we can easily filter them out.
