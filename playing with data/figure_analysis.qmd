@@ -24,6 +24,14 @@ concepts <- v2020 |>
 
 ### Would like to analyze B19326_004 and B19326_005 (They were a dud, most likely skewed due to part-time workers)
 
+### poverty data from ACS
+poverty_test <- get_acs(
+  geography = 'state',
+  variables = 'B17001A_001',
+  year = 2020,
+  geometry = TRUE
+)
+
 ### Looking at C24040_002 and C24040_029 now which are
 ##SEX BY INDUSTRY FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER for male and female
 
@@ -47,7 +55,8 @@ gendered_employment <- get_acs(
   geometry = TRUE
 ) |> 
   left_join(vars_df) |>
-  select(-moe, -variable, -GEOID, -NAME) 
+  select(-moe, -variable, -GEOID) 
+### name is state data
 
 gendered_employment_split <- gendered_employment |>
   pivot_wider(names_from = 'gender', values_from = 'estimate')
@@ -82,15 +91,40 @@ income_data_clean <- income_data|>
   select(-c(1,2)) |>
   group_by(`Measure Names`) |>
   pivot_wider(names_from = `Measure Names`, values_from = `Measure Values`) |> arrange(desc(Year))
-
-
-
-
-
-
 ```
 
+```{r final ACS Data}
+desired_vars = c('B17001A_032', 'B17001A_046','B17001B_032','B17001B_046','B17001C_032','B17001C_046','B17001D_032','B17001D_046','B17001E_032','B17001E_046','B17001F_032','B17001F_046','B17001G_032','B17001G_046','B17001H_032','B17001H_046','B17001I_032','B17001I_046')
 
+v2020 <- load_variables(2020, "acs5", cache = TRUE)
+
+poverty_data <- v2020 |>
+  filter(name %in% desired_vars) |>
+  mutate(
+    variable = name,
+    gender = if_else(
+      str_detect(label, 'Male'),
+      'Male',
+      'Female'
+    ),
+   race = str_extract(concept, "\\((.*?)\\)"),
+    .keep= 'none'
+  )
+
+poverty_data$race <- gsub("[\\(\\)]", "", trimws(poverty_data$race))
+
+poverty_final <- get_acs(
+  geography = 'state',
+  variables = poverty_data |> pull(variable),
+  year = 2020,
+  geometry = TRUE
+) |> 
+  left_join(poverty_data) |>
+  select(-moe, -variable, -GEOID) |>
+  pivot_wider(names_from = c(gender, race), values_from = estimate)
+
+#### This data refers to the raw number of people in each state who live above the poverty line, fauceted by race and gender.
+```
 
 
 
