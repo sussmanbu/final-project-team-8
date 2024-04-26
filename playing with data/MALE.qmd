@@ -16,10 +16,7 @@ acs_data <- read.csv('dataset/ACS_data_rendered.csv')
 
 state_names <- c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Puerto Rico")
 
-race_names <- c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American   
-                Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific 
-                Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino 
-                Origin")
+race_names <- c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin")
 ```
 
 ```{r}
