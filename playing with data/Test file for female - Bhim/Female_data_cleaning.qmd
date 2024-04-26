@@ -34,6 +34,7 @@ Guys, please read the analysis approach before continuing.
 suppressMessages(library(readxl))
 suppressMessages(library(dplyr))
 suppressMessages(library(tibble))
+suppressMessages(library(tidyverse))
 
 acs_data <- read.csv('dataset/ACS_data_rendered.csv')
 
@@ -71,5 +72,10 @@ create_dataframe <- function(race_names, state_names, acs_data) {
   return(race_data)
 }
 
-create_dataframe(race_names, state_names, acs_data)
+female_data <- create_dataframe(race_names, state_names, acs_data)
+```
+
+
+```{r}
+write_csv(female_data, here::here('dataset', 'ACS_Female_Final.csv'))
 ```
