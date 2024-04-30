@@ -94,7 +94,7 @@ income_data_clean <- income_data|>
 ```
 
 ```{r final ACS Data}
-desired_vars = c('B17001A_032', 'B17001A_046','B17001B_032','B17001B_046','B17001C_032','B17001C_046','B17001D_032','B17001D_046','B17001E_032','B17001E_046','B17001F_032','B17001F_046','B17001G_032','B17001G_046','B17001H_032','B17001H_046','B17001I_032','B17001I_046')
+desired_vars = c('B17001A_032','B17001A_001', 'B17001A_046','B17001B_001','B17001B_032','B17001B_046','B17001C_001','B17001C_032','B17001C_046','B17001D_001','B17001D_032','B17001D_046','B17001E_001','B17001E_032','B17001E_046','B17001F_001','B17001F_032','B17001F_046','B17001G_001','B17001G_032','B17001G_046','B17001H_001','B17001H_032','B17001H_046','B17001I_001','B17001I_032','B17001I_046')
 
 v2020 <- load_variables(2020, "acs5", cache = TRUE)
 
@@ -105,7 +105,11 @@ poverty_data <- v2020 |>
     gender = if_else(
       str_detect(label, 'Male'),
       'Male',
-      'Female'
+      if_else(
+        str_detect(label, 'Female'),
+        'Female',
+        'Total'
+      )
     ),
    race = str_extract(concept, "\\((.*?)\\)"),
     .keep= 'none'
@@ -113,14 +117,6 @@ poverty_data <- v2020 |>
 
 poverty_data$race <- gsub("[\\(\\)]", "", trimws(poverty_data$race))
 
-total <- get_acs(
-  geography = 'state',
-  variables = 'B17001A_001',
-  year = 2020,
-  geometry = TRUE
-) |>
-  select(-moe, -variable, -GEOID, -NAME, -geometry) |>
-  rename(TOTAL = estimate)
 
 poverty_final <- get_acs(
   geography = 'state',
@@ -129,27 +125,36 @@ poverty_final <- get_acs(
   geometry = TRUE
 ) |> 
   left_join(poverty_data) |>
-  select(-moe, -variable, -GEOID) |>
-  pivot_wider(names_from = c(gender, race), values_from = estimate) |>
-  st_join(total, join = st_equals)
+  select(-moe, -variable, -GEOID) 
+
+poverty_totals <- poverty_final %>%
+  group_by(NAME, race) %>%
+  mutate(total = estimate[gender == "Total"]) |>
+  mutate(proportion = estimate/total) |>
+  filter(proportion != 1) |>
+  select(-estimate, -NAME, -total) |>
+  ungroup() |>
+  pivot_wider(names_from = c(gender,race), values_from = proportion)
 
 
 
 #### This data refers to the raw number of people in each state who live above the poverty line, fauceted by race and gender.
 ```
+
+
+
 ```{r map idea}
-column_names <- poverty_final %>%
-  select(-NAME, -geometry, -TOTAL) %>%
-  names()
+column_names <- names(poverty_totals)[-which(names(poverty_totals) == "geometry")]
 
 for (x in column_names) {
   print(
-    ggplot(data = poverty_final, aes(fill = .data[[x]]/`TOTAL`)) +
+    ggplot(data = poverty_totals, aes(fill = .data[[x]])) +
       geom_sf() +
       coord_sf(crs = 5070) +
-      scale_fill_viridis_c(option = 'plasma') +
+      scale_fill_viridis_c(option = 'plasma', limits = c(.15,.62)) +
       theme_minimal() +
-      theme(legend.title = element_blank())
+      theme(legend.title = element_blank()) +
+      labs(title = x)
   )
 }
 ```
