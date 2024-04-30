@@ -48,11 +48,10 @@ gendered_raced_data <- function(race_names, state_names, data) {
 ```
 
 ```{r}
-<<<<<<< HEAD:playing with data/Test file for female - Bhim/Female_data_cleaning.qmd
 write_csv(female_data, here::here('dataset', 'ACS_Female_Final.csv'))
 ```
-=======
+
+```{r}
 data <- gendered_raced_data(race_names, state_names, acs_data)
 write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))
 ```
->>>>>>> 48d3e9abaf23ca39c036cc658d38e6d4d6ee39ed:playing with data/ACS Cleaning.qmd
