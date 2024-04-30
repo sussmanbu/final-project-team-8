@@ -75,7 +75,6 @@ create_dataframe <- function(race_names, state_names, acs_data) {
 female_data <- create_dataframe(race_names, state_names, acs_data)
 ```
 
-
 ```{r}
 write_csv(female_data, here::here('dataset', 'ACS_Female_Final.csv'))
 ```

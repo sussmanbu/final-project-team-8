@@ -71,6 +71,18 @@ source(
   echo = TRUE
 )
 ```
+
+
+```{r Department of Labor}
+source(
+  'scripts/Income_data_cleaning.R',
+  echo = TRUE
+)
+
+### link instead 
+```
+
+
 ----
 
 ## Rubric: On this page

@@ -113,6 +113,15 @@ poverty_data <- v2020 |>
 
 poverty_data$race <- gsub("[\\(\\)]", "", trimws(poverty_data$race))
 
+total <- get_acs(
+  geography = 'state',
+  variables = 'B17001A_001',
+  year = 2020,
+  geometry = TRUE
+) |>
+  select(-moe, -variable, -GEOID, -NAME, -geometry) |>
+  rename(TOTAL = estimate)
+
 poverty_final <- get_acs(
   geography = 'state',
   variables = poverty_data |> pull(variable),
@@ -121,12 +130,26 @@ poverty_final <- get_acs(
 ) |> 
   left_join(poverty_data) |>
   select(-moe, -variable, -GEOID) |>
-  pivot_wider(names_from = c(gender, race), values_from = estimate)
+  pivot_wider(names_from = c(gender, race), values_from = estimate) |>
+  st_join(total, join = st_equals)
+
+
 
 #### This data refers to the raw number of people in each state who live above the poverty line, fauceted by race and gender.
 ```
+```{r map idea}
+column_names <- poverty_final %>%
+  select(-NAME, -geometry, -TOTAL) %>%
+  names()
 
-
-
-
-
+for (x in column_names) {
+  print(
+    ggplot(data = poverty_final, aes(fill = .data[[x]]/`TOTAL`)) +
+      geom_sf() +
+      coord_sf(crs = 5070) +
+      scale_fill_viridis_c(option = 'plasma') +
+      theme_minimal() +
+      theme(legend.title = element_blank())
+  )
+}
+```
