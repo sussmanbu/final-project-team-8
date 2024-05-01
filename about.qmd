@@ -13,14 +13,11 @@ about:
     - icon: github
       text: Github
       href: https://github.com/sussmanbu/
-
 ---
-
 
 This comes from the file `about.qmd`.
 
-This is a website for the final project for MA[46]15 Data Science with R by Team TEAMNAME.
-The members of this team are below.
+This is a website for the final project for MA\[46\]15 Data Science with R by Team 8. The members of this team are below.
 
 ## Zixin(Alice)Zhang
 
@@ -30,11 +27,11 @@ Alice is a senior student major in Economics.
 
 Dylon is a senior student majoring in Economics and Mathematics.
 
-## Bhimraj Singh Bhuller 
+## Bhimraj Singh Bhuller
 
-Bhimraj is a sophomore pursuing a dual degree program in B.A. in Economics and Mathematics and M.A. in Economics. He finds joy in using knowledge to enhance lives and processes. Economics is his playground, and he is an overenthusiastic problem-crusher. When not decoding economic mysteries, he is on a book binge or catching up with friends and family. 
+Bhimraj is a sophomore pursuing a dual degree program in B.A. in Economics and Mathematics and M.A. in Economics. He finds joy in using knowledge to enhance lives and processes. Economics is his playground, and he is an overenthusiastic problem-crusher. When not decoding economic mysteries, he is on a book binge or catching up with friends and family.
 
-In the economics arena, he is heads over heels for macroeconomics. Reading financial crisis books is a passion, giving him a lowdown on economic rollercoasters.Beyond that, he kicks a ball around, and travel to broaden his perspectives. 
+In the economics arena, he is heads over heels for macroeconomics. Reading financial crisis books is a passion, giving him a lowdown on economic rollercoasters.Beyond that, he kicks a ball around, and travel to broaden his perspectives.
 
 ## Tianxiang Chen
 
