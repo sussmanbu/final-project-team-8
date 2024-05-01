@@ -5,7 +5,11 @@ toc: true
 draft: FALSE
 ---
 
-![](images/The_Big_Picture_2.jpeg)
+![*Image: Demonstrators carry signs during the 2020 Women’s March on Jan. 18 in Washington, D.C. (Zach Gibson/Getty Images)*](https://www.pewresearch.org/wp-content/uploads/2020/07/FT_20.07.07_ActivismGender_feature.jpg)
+
+# **Unveiling the Racial Education Divide: Women vs. Men in Every State - Who Wins the Race to Success?**
+
+By Team 8
 
 This comes from the file `big_picture.Rmd`.
 
