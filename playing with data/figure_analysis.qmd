@@ -93,7 +93,7 @@ income_data_clean <- income_data|>
   pivot_wider(names_from = `Measure Names`, values_from = `Measure Values`) |> arrange(desc(Year))
 ```
 
-```{r Alternate concept}
+```{r ACS Poverty Status Data}
 desired_vars = c('B17001A_032','B17001A_003','B17001A_017', 'B17001A_046','B17001B_003','B17001B_017','B17001B_032','B17001B_046','B17001C_003','B17001C_017','B17001C_032','B17001C_046','B17001D_003','B17001D_017','B17001D_032','B17001D_046','B17001E_003','B17001E_017','B17001E_032','B17001E_046','B17001F_003','B17001F_017','B17001F_032','B17001F_046','B17001G_003','B17001G_017','B17001G_032','B17001G_046','B17001H_003','B17001H_017','B17001H_032','B17001H_046','B17001I_003','B17001I_017','B17001I_032','B17001I_046')
 
 v2020 <- load_variables(2020, "acs5", cache = TRUE)
@@ -133,15 +133,35 @@ poverty_final <- get_acs(
     proportion = (estimate[status == 'Above Poverty Line']/gendered_total)
   ) |>
   filter(status != 'Below Poverty Line') |>
+  ungroup() 
+
+### creating difference table
+poverty_diff <- poverty_final |>
+  select(-estimate, -status, -gendered_total)
+
+poverty_diff <- as_tibble(poverty_diff)
+
+poverty_diff <- poverty_diff %>% select(-geometry)
+
+poverty_diff_table <- poverty_diff |>
+  group_by(race, NAME) |>
+  mutate(`Percent Difference` = ((proportion[gender == 'Male'] - proportion[gender == 'Female'])*100)) |>
+  filter(gender == 'Male') |>
   ungroup() |>
+  select(-gender, -proportion) |>
+  pivot_wider(names_from = race, values_from = `Percent Difference`)
+### This table shows the percent difference between the proportions of males who live above the poverty line and females, split by race and state. It is a way of showing the raw data of the differeneces we can observe on the heat maps between races.
+
+### creating plotted data  
+poverty_plot <- poverty_final |>
   select(-estimate, -NAME, -status, -gendered_total) |>
   pivot_wider(names_from = c(gender,race), values_from = proportion, names_sep = ' ')
   
-column_names <- names(poverty_final)[-which(names(poverty_final) == "geometry")]
+column_names <- names(poverty_plot)[-which(names(poverty_plot) == "geometry")]
 
 for (x in column_names) {
   print(
-    ggplot(data = poverty_final, aes(fill = .data[[x]])) +
+    ggplot(data = poverty_plot, aes(fill = .data[[x]])) +
       geom_sf() +
       coord_sf(crs = 5070) +
       scale_fill_viridis_c(option = 'plasma', limits = c(.3,1)) +
