@@ -1,6 +1,6 @@
 ---
 title: "Big Picture"
-description: "A 538/Upshot style article about the data."
+description: "Unveiling the Racial Education Divide: Women vs. Men in Every State - Who Wins the Race to Success?"
 toc: true
 draft: FALSE
 ---
@@ -10,6 +10,26 @@ draft: FALSE
 # **Unveiling the Racial Education Divide: Women vs. Men in Every State - Who Wins the Race to Success?**
 
 By Team 8
+
+In the pursuit of success, education is a key element, but what happens if the path of education is not equal to all? This project examines America's educational landscape, and examines how race and gender affect educational opportunities in the United States. Our goal is to expose inequalities, address challenges and spark conversations to transcend statistics to heal the gender-racial education divide in the country.
+
+Exploration starts by mapping out the educational voyage of women and men across the fifty states and Puerto Rico.
+
+Things to include:
+
+Intro: Hook, common ground, intervention.
+
+1.  Educational attainment- percentage of women bachelor's degree of higher across US states, faceted by race . Aim, to group said percentages into across 50 states for 12 years. Make a linear model to project what they can be. Then, do the same for men.
+    1.  After we can compare the differences of projection (gaps maybe) within women and races
+
+    2.  Also compares each women-race pair with men-race pair for projections on educatoinal attainment levels (specifically percentage of bachelor's degree of higher)
+
+        (All to answer – who wins the race to success)
+2.  Project will also include comparisons of men and women workforce across states (glimpse - background) using heatmaps (simplify what heatmap means to readers)
+3.  Driven by a passion of Economics, since authors are mostly economists, can't resist the temptation for pay-gap analysis using income data from the Department of Labor for each men-race and women-race pair across the years from 1960 up to 2022. Also will develop linear regression model for this for each men-race, and women-race pair
+4.  Ensuring all process are done efficiently methods , repeatble , etc.
+
+Note: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)
 
 This comes from the file `big_picture.Rmd`.
 
