@@ -47,9 +47,6 @@ gendered_raced_data <- function(race_names, state_names, data) {
 
 ```
 
-```{r}
-write_csv(female_data, here::here('dataset', 'ACS_Female_Final.csv'))
-```
 
 ```{r}
 data <- gendered_raced_data(race_names, state_names, acs_data)
