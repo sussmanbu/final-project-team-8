@@ -78,7 +78,7 @@ gendered_employment_split |>
   scale_fill_viridis_c(option = 'plasma')+
   theme_minimal()
 
-### this creates two maps, which are representative of the proportion of full time, year round civillians in each state faceted by gender. I'm not sure if this is the best approach to data presentation, and I am open to other ideas
+### this creates two maps, which are representative of the proportion of full time, year round civilians in each state faceted by gender. I'm not sure if this is the best approach to data presentation, and I am open to other ideas
 ```
 
 ```{r dept of labor stuff}
