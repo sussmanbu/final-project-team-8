@@ -44,6 +44,37 @@ gendered_raced_data <- function(race_names, state_names, data) {
   return(race_data)
 }
 
+Median_Income_Data <- function (state_names, data) {
+  state_data <- list()
+  for (index in 1:51) {
+    state = state_names[index]
+    bach_data <- filter(acs_data, Label == "Bachelor's degree")
+    grad_data <- filter(acs_data, Label == "Graduate or professional degree")
+    male <- 7 + 12 * (index - 1)
+    female <- 11 + 12 * (index - 1)
+    both <- state
+    state_data[[state]] <- tibble(
+      State = state,
+      Years = bach_data$Years,
+      Median_Bach = bach_data[[both]],
+      Bach_M_Median = bach_data[[paste0("...", male)]],
+      Bach_F_Median = bach_data[[paste0("...", female)]],
+      Median_Grad = grad_data[[both]],
+      Grad_M_Median = grad_data[[paste0("...", male)]],
+      Grad_F_Median = grad_data[[paste0("...", female)]]
+    ) 
+    
+  }
+  combined_state <- bind_rows(state_data)
+  combined_state <- combined_state %>% 
+    filter(Years > 2014)
+  
+  return(combined_state)
+}
+
+data2 <- Median_Income_Data(state_names, acs_data)
+write_csv(data2, here::here('dataset', 'ACS_Median_Income.csv'))
+
 # Save Data
 data <- gendered_raced_data(race_names, state_names, acs_data)
 write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))
