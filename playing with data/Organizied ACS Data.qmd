@@ -11,7 +11,6 @@ acs_stuff <- read.csv('dataset/ACS_Gender_and_Race.csv')
 income_data <- read.csv('dataset/dofl_income_clean.csv')
 ```
 
-
 ```{r}
 # numeric for percentage
 acs_stuff$Male_P_Bach <- as.numeric(gsub("%", "", acs_stuff$Male_P_Bach))
@@ -25,7 +24,6 @@ acs_stuff %>% group_by(Race) %>%
     prop_m_to_f = bach_perc_female/bach_perc_male
   )
 ```
-
 
 ```{r}
 # numeric for median data
