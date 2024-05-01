@@ -13,21 +13,114 @@ By Team 8
 
 In the pursuit of success, education is a key element, but what happens if the path of education is not equal to all? This project examines America's educational landscape, and examines how race and gender affect educational opportunities in the United States. Our goal is to expose inequalities, address challenges and spark conversations to transcend statistics to heal the gender-racial education divide in the country.
 
-Exploration starts by mapping out the educational voyage of women and men across the fifty states and Puerto Rico.
+The project confronts the stark disparities within and between gender and racial groups. A canvas of educational attainment paints a picture of untapped potential, begging the question: who truly wins the race to success?
 
-Things to include:
+```{r echo=FALSE, results ='hide', message = FALSE}
 
-Intro: Hook, common ground, intervention.
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(tidycensus))
+suppressPackageStartupMessages(library(sf))
 
-1.  Educational attainment- percentage of women bachelor's degree of higher across US states, faceted by race . Aim, to group said percentages into across 50 states for 12 years. Make a linear model to project what they can be. Then, do the same for men.
-    1.  After we can compare the differences of projection (gaps maybe) within women and races
+v2020 <- load_variables(2020, "acs5", cache = TRUE)
 
-    2.  Also compares each women-race pair with men-race pair for projections on educatoinal attainment levels (specifically percentage of bachelor's degree of higher)
+concepts <- v2020 |>
+  filter(str_detect(concept, '^MEDIAN INCOME'))
 
-        (All to answer – who wins the race to success)
-2.  Project will also include comparisons of men and women workforce across states (glimpse - background) using heatmaps (simplify what heatmap means to readers)
-3.  Driven by a passion of Economics, since authors are mostly economists, can't resist the temptation for pay-gap analysis using income data from the Department of Labor for each men-race and women-race pair across the years from 1960 up to 2022. Also will develop linear regression model for this for each men-race, and women-race pair
-4.  Ensuring all process are done efficiently methods , repeatble , etc.
+### Would like to analyze B19326_004 and B19326_005 (They were a dud, most likely skewed due to part-time workers)
+
+### poverty data from ACS
+poverty_test <- get_acs(
+  geography = 'state',
+  variables = 'B17001A_001',
+  year = 2020,
+  geometry = TRUE
+)
+
+### Looking at C24040_002 and C24040_029 now which are
+##SEX BY INDUSTRY FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER for male and female
+
+
+vars_df <- v2020 |>
+  filter(name == 'C24040_002' | name == 'C24040_029') |>
+  mutate(
+    variable = name,
+    gender = if_else(
+      str_detect(label, 'Male'),
+      'Male',
+      'Female'
+    ),
+    .keep = 'none'
+  )
+
+gendered_employment <- get_acs(
+  geography = 'state',
+  variables = vars_df |> pull(variable),
+  year = 2020,
+  geometry = TRUE
+) |> 
+  left_join(vars_df) |>
+  select(-moe, -variable, -GEOID) 
+### name is state data
+
+gendered_employment_split <- gendered_employment |>
+  pivot_wider(names_from = 'gender', values_from = 'estimate')
+  
+
+gendered_employment_split |>
+  ggplot(aes(fill =  `Male`/`Female`)) + 
+  geom_sf() +
+  coord_sf(crs = 5070) +
+  scale_fill_viridis_c(option = 'plasma')+
+  labs(fill = "Ratio ",
+       title = "Ratio of Male to Female Employment in 2020, by State", caption= "Source: Cleaned American Community Survey Data") +
+  theme_minimal()
+```
+
+The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
+
+\[A graph here\]
+
+Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
+
+\[Results here\]
+
+This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races.
+
+```{r echo=FALSE, results ='hide', message = FALSE}
+library(shiny)
+
+# Defining User Interface 
+ui <- fluidPage(
+  titlePanel("Image Viewer"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("image_select", "Select an image:",
+                  choices = c("Image 1" = "image1.jpg",
+                              "Image 2" = "image2.jpg",
+                              "Image 3" = "image3.jpg"),
+                  selected = "image1.jpg")
+    ),
+    
+    mainPanel(
+      uiOutput("image_output")
+    )
+  )
+)
+
+# Defining the server logic
+server <- function(input, output) {
+  output$image_output <- renderUI({
+    img <- tags$img(src = input$image_select, width = "100%")
+    img
+  })
+}
+
+# Running the application
+shinyApp(ui = ui, server = server)
+```
+
+This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
 
 Note: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)
 
