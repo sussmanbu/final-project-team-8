@@ -94,6 +94,9 @@ income_data_clean <- income_data|>
 ```
 
 ```{r ACS Poverty Status Data}
+library(tidycensus)
+
+
 desired_vars = c('B17001A_032','B17001A_003','B17001A_017', 'B17001A_046','B17001B_003','B17001B_017','B17001B_032','B17001B_046','B17001C_003','B17001C_017','B17001C_032','B17001C_046','B17001D_003','B17001D_017','B17001D_032','B17001D_046','B17001E_003','B17001E_017','B17001E_032','B17001E_046','B17001F_003','B17001F_017','B17001F_032','B17001F_046','B17001G_003','B17001G_017','B17001G_032','B17001G_046','B17001H_003','B17001H_017','B17001H_032','B17001H_046','B17001I_003','B17001I_017','B17001I_032','B17001I_046')
 
 v2020 <- load_variables(2020, "acs5", cache = TRUE)
@@ -150,7 +153,7 @@ poverty_diff_table <- poverty_diff |>
   ungroup() |>
   select(-gender, -proportion) |>
   pivot_wider(names_from = race, values_from = `Percent Difference`)
-### This table shows the percent difference between the proportions of males who live above the poverty line and females, split by race and state. It is a way of showing the raw data of the differeneces we can observe on the heat maps between races.
+### This table shows the percent difference between the proportions of males who live above the poverty line and females, split by race and state. It is a way of showing the raw data of the differences we can observe on the heat maps between races.
 
 ### creating plotted data  
 poverty_plot <- poverty_final |>
@@ -160,15 +163,15 @@ poverty_plot <- poverty_final |>
 column_names <- names(poverty_plot)[-which(names(poverty_plot) == "geometry")]
 
 for (x in column_names) {
-  print(
-    ggplot(data = poverty_plot, aes(fill = .data[[x]])) +
-      geom_sf() +
-      coord_sf(crs = 5070) +
-      scale_fill_viridis_c(option = 'plasma', limits = c(.3,1)) +
-      theme_minimal() +
-      theme(legend.title = element_blank()) +
-      labs(title = x)
-  )
+  p <- ggplot(data = poverty_plot, aes(fill = .data[[x]])) +
+    geom_sf() +
+    coord_sf(crs = 5070) +
+    scale_fill_viridis_c(option = 'plasma', limits = c(0.3, 1)) +
+    theme_minimal() +
+    theme(legend.title = element_blank()) +
+    labs(title = x, caption = "Source: ACS Poverty Status Data, Extracted with tidycensus.")
+  
+  ggsave(paste0(x, ".jpg"), plot = p, device = "jpg")
 }
 ```
 
