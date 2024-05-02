@@ -88,81 +88,55 @@ This project also investigates the amount of females and males above the poverty
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
+library(ggplot2)
+library(dplyr)
 
-# Defining User Interface 
 ui <- fluidPage(
-  titlePanel("Image Viewer"),
+  titlePanel("Percentage of people who have a Bachelor's degree or higher, by Gender and Race"),
   
   sidebarLayout(
     sidebarPanel(
-      selectInput("image_select", "Select a gender:",
-                  choices = c("Male" = "image1.jpg",
-                              "Female" = "image2.jpg",
-                              "Image 3" = "image3.jpg"),
-                  selected = "image1.jpg")
-    ), 
-
-    
-    mainPanel(
-      uiOutput("image_output")
-    )
-  )
-)
-
-# Defining the server logic
-server <- function(input, output) {
-  output$image_output <- renderUI({
-    img <- tags$img(src = input$image_select, width = "100%")
-    img
-  })
-}
-
-# Running the application
-shinyApp(ui = ui, server = server)
-```
-
-```{r}
-library(datasets)
-
-# Use a fluid Bootstrap layout
-fluidPage(    
-    
-  # Give the page a title
-  titlePanel("Telephones by region"),
-  
-  # Generate a row with a sidebar
-  sidebarLayout(      
-    
-    # Define the sidebar with one input
-    sidebarPanel(
-      selectInput("region", "Region:", 
-                  choices=colnames(WorldPhones)),
-      hr(),
-      helpText("Data from AT&T (1961) The World's Telephones.")
+      selectInput("Race", "Select Race:", choices = c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin"))
     ),
-    
-    # Create a spot for the barplot
     mainPanel(
-      plotOutput("phonePlot")  
+      plotOutput("male_plot"),
+      plotOutput("female_plot")
     )
-    
   )
 )
 
-# Define a server for the Shiny app
-function(input, output) {
+server <- function(input, output){
+  data <- read.csv('dataset/ACS_Gender_and_Race.csv')
   
-  # Fill in the spot we created for a plot
-  output$phonePlot <- renderPlot({
+  output$male_plot <- renderPlot({
+    # Convert Male_P_Bach to numeric
+    data$Male_P_Bach <- as.numeric(sub("%", "", data$Male_P_Bach))
+    filtered_data_m <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for male percentages
+    ggplot(filtered_data_m, aes(x = factor(Years), y = Male_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "yellow") +  
+      labs(x = "Years", y = "% of Male with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
+  })
+
+  output$female_plot <- renderPlot({
+    # Convert Female_P_Bach to numeric
+    data$Female_P_Bach <- as.numeric(sub("%", "", data$Female_P_Bach))
     
-    # Render a barplot
-    barplot(WorldPhones[,input$region]*1000, 
-            main=input$region,
-            ylab="Number of Telephones",
-            xlab="Year")
+    filtered_data_f <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for female percentages
+    ggplot(filtered_data_f, aes(x = factor(Years), y = Female_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "lightblue") +  
+      labs(x = "Years", y = "% of Female with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
   })
 }
 
+shinyApp(ui, server)
 ```
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
