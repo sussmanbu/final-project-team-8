@@ -14,7 +14,7 @@ state_names <- c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colo
 race_names <- c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin")
 ```
 
-```{r}
+```{r percentage data}
 gendered_raced_data <- function(race_names, state_names, data) {
   race_data <- list()
   for (race in race_names) {
@@ -47,8 +47,60 @@ gendered_raced_data <- function(race_names, state_names, data) {
 
 ```
 
+```{r numerical data}
+gendered_raced_data_num <- function(race_names, state_names, data) {
+  race_data <- list()
+  for (race in race_names) {
+    state_data <- list()
+    for (index in 1:51) {
+      state = state_names[index]
+      multiplier <- which(race_names == race) 
+      string2 <- rep("*", multiplier)
+      label <- paste("Bachelor's degree or higher", paste(string2, collapse = ""), 
+                     sep = "")
+      filtered_data <- filter(acs_data, Label == label)
+      number_m_bach <- 7 + 12 * (index - 1)
+      number_f_bach <- 11 + 12 * (index - 1)
+      state_data[[state]] <- tibble(
+        State = state,
+        Years = filtered_data$Years,
+        `Bachelor Attainment (Male)` = filtered_data[[paste0("...", number_m_bach)]],
+        `Bachelor Attainment (Female)` = filtered_data[[paste0("...", number_f_bach)]],
+        Race = race
+      )
+    }
+    combined_state <- bind_rows(state_data)
+    race_data[[race]] <- combined_state
+  }
+  # if you want separate tables for each race, comment out this line of data
+  race_data <- bind_rows(race_data)
+  
+  return(race_data)
+}
+
+```
 
 ```{r}
 data <- gendered_raced_data(race_names, state_names, acs_data)
 write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))
+```
+
+```{r prep numerical data for GLM}
+num_data <- gendered_raced_data_num(race_names, state_names, acs_data)
+
+prepped_num <- num_data|>
+   mutate(`Bachelor Attainment (Male)` = as.numeric(gsub("[^0-9.]", "", `Bachelor Attainment (Male)`)),
+         `Bachelor Attainment (Female)` = as.numeric(gsub("[^0-9.]", "", `Bachelor Attainment (Female)`)))|>
+  group_by(Years, Race) %>%
+  summarise(`Total Male` = sum(`Bachelor Attainment (Male)`, na.rm = TRUE),
+            `Total Female` = sum(`Bachelor Attainment (Female)`, na.rm = TRUE)) #|>
+  #pivot_wider(names_from = Race, values_from = c(`Total Male`,`Total Female`), names_sep = ' ')
+
+prepped_num$Race <- str_replace(prepped_num$Race, "Native Hawaiian and Other Pacific Islander Alone", "NHPI")
+
+prepped_num$Race <- str_replace(prepped_num$Race, "American Indian or Alaska Native Alone", "AIAN")
+
+prepped_num$Race <- str_replace(prepped_num$Race, "White alone, not Hispanic or Latino", 'White, Not Hispanic')
+
+write_csv(prepped_num, here::here('dataset', 'Numerical_ACS_Gender_and_Race.csv'))
 ```
