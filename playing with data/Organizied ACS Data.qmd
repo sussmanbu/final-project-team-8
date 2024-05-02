@@ -29,3 +29,30 @@ acs_stuff %>% group_by(Race) %>%
 # numeric for median data
 view(income_data)
 ```
+
+```{r}
+# Load necessary libraries
+library(tidyverse)
+
+# Load the data
+data <- read_csv('dataset/ACS_Gender_and_Race.csv')
+
+# Select a specific state for the analysis
+selected_state <- "California"
+data_filtered <- filter(data, State == selected_state)
+
+# Create the plot
+plot <- ggplot(data_filtered, aes(x = Race, y = Male_P_Bach, fill = "Male")) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  geom_bar(aes(y = Female_P_Bach, fill = "Female"), stat = "identity", position = position_dodge()) +
+  labs(title = paste("Bachelor's Degree Attainment by Gender in", selected_state),
+       x = "Race",
+       y = "Percentage (%)",
+       fill = "Gender") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# Print the plot
+print(plot)
+
+```
