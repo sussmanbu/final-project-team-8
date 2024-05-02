@@ -1,4 +1,4 @@
-### starting to consider what figures to create
+### Starting to Consider What Figures to Create
 
 ```{r Importing Cleaned Datasets and Tidyverse}
 library(tidyverse)
@@ -151,6 +151,3 @@ for (x in column_names) {
   )
 }
 ```
-
-
-
