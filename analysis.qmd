@@ -23,6 +23,8 @@ The code below shows an example of loading the loan refusal data set (which you 
 
 ```{r}
 library(tidyverse)
+library(ggplot2)
+library(tidyr)
 #print(getwd())
 #data <- read_csv(here::here("dataset/loan_refusal_clean.csv"))
 #load(here::here("dataset/loan_refusal.RData"))
@@ -31,7 +33,28 @@ library(tidyverse)
 
 ```{r graphs for this page}
 data <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+data2 <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
 data$Years <- as.Date(paste0(data$Years, "-01-01"))
+data2$Years <- as.Date(paste0(data2$Years, "-01-01"))
+
+
+data2_bach <- data2 %>% na.omit() %>% 
+  group_by(Years) %>%
+  summarize(
+    Bach_M_Median = sum(Bach_M_Median) / n(),
+    Bach_F_Median = sum(Bach_F_Median) / n(),
+    Difference = Bach_M_Median - Bach_F_Median
+  ) %>% 
+  pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
+
+data2_grad <- data2 %>% na.omit() %>% 
+  group_by(Years) %>%
+  summarize(
+    Grad_M_Median = sum(Grad_M_Median) / n(),
+    Grad_F_Median = sum(Grad_F_Median) / n(),
+    Difference = Grad_M_Median - Grad_F_Median
+  ) %>% 
+  pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
 
 ### Graph 1 
 ggplot(data = data, aes(x = Years)) + 
@@ -46,6 +69,38 @@ ggplot(data = data, aes(x = Years)) +
   labs(color = 'Gender',
        y = 'Bachelors Attainment (Thousands)')
 
+
+### Graph 2
+ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
+  geom_line(stat = "identity", position = "dodge") +
+  ylim(0, 80000) +
+  labs(title = "Bachelor Median Salary by Gender",
+       subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
+       x = "Year",
+       y = "Median Salary") +
+  scale_fill_manual(values = c("Difference" = "green", 
+                               "Bach_M_Median" = "blue", 
+                               "Bach_F_Median" = "red"),
+                    name = "Gender",
+                    labels = c("Difference" = "Male - Female",
+                               "Bach_M_Median" = "Male",
+                               "Bach_F_Median" = "Female"))
+
+### Graph 3
+ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
+  geom_line(stat = "identity", position = "dodge") +
+  ylim(0, 100000) +
+  labs(title = "Gradute Median Salary by Gender",
+       subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
+       x = "Year",
+       y = "Median Salary") +
+  scale_fill_manual(values = c("Difference" = "green", 
+                               "Grad_M_Median" = "blue", 
+                               "Grad_F_Median" = "red"),
+                    name = "Gender",
+                    labels = c("Difference" = "Male - Female",
+                               "Grad_M_Median" = "Male",
+                               "Grad_F_Median" = "Female"))
 
 
 ```
