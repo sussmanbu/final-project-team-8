@@ -31,7 +31,7 @@ library(tidyr)
 #print(ls())
 ```
 
-```{r graphs for this page}
+```{r graphs for this page, echo = FALSE}
 data <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
 data2 <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
 data$Years <- as.Date(paste0(data$Years, "-01-01"))
@@ -72,33 +72,34 @@ ggplot(data = data, aes(x = Years)) +
 
 ### Graph 2
 ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
-  geom_line(stat = "identity", position = "dodge") +
+  geom_line(stat = "identity") +
   ylim(0, 80000) +
   labs(title = "Bachelor Median Salary by Gender",
        subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
        x = "Year",
        y = "Median Salary") +
-  scale_fill_manual(values = c("Difference" = "green", 
+  scale_color_manual(values = c("Difference" = "green", 
                                "Bach_M_Median" = "blue", 
                                "Bach_F_Median" = "red"),
                     name = "Gender",
-                    labels = c("Difference" = "Male - Female",
+                    labels = c("Difference" = "Difference",
                                "Bach_M_Median" = "Male",
                                "Bach_F_Median" = "Female"))
+  
 
 ### Graph 3
 ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
-  geom_line(stat = "identity", position = "dodge") +
+  geom_line(stat = "identity") +
   ylim(0, 100000) +
   labs(title = "Gradute Median Salary by Gender",
        subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
        x = "Year",
        y = "Median Salary") +
-  scale_fill_manual(values = c("Difference" = "green", 
+  scale_color_manual(values = c("Difference" = "green", 
                                "Grad_M_Median" = "blue", 
                                "Grad_F_Median" = "red"),
                     name = "Gender",
-                    labels = c("Difference" = "Male - Female",
+                    labels = c("Difference" = "Difference",
                                "Grad_M_Median" = "Male",
                                "Grad_F_Median" = "Female"))
 
