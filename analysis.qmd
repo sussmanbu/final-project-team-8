@@ -23,17 +23,126 @@ The code below shows an example of loading the loan refusal data set (which you 
 
 ```{r}
 library(tidyverse)
+library(ggplot2)
+library(tidyr)
 #print(getwd())
 #data <- read_csv(here::here("dataset/loan_refusal_clean.csv"))
 #load(here::here("dataset/loan_refusal.RData"))
 #print(ls())
 ```
 
+```{r graphs for this page, echo = FALSE}
+data <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+data2 <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
+data$Years <- as.Date(paste0(data$Years, "-01-01"))
+data2$Years <- as.Date(paste0(data2$Years, "-01-01"))
+
+
+data2_bach <- data2 %>% na.omit() %>% 
+  group_by(Years) %>%
+  summarize(
+    Bach_M_Median = sum(Bach_M_Median) / n(),
+    Bach_F_Median = sum(Bach_F_Median) / n(),
+    Difference = Bach_M_Median - Bach_F_Median
+  ) %>% 
+  pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
+
+data2_grad <- data2 %>% na.omit() %>% 
+  group_by(Years) %>%
+  summarize(
+    Grad_M_Median = sum(Grad_M_Median) / n(),
+    Grad_F_Median = sum(Grad_F_Median) / n(),
+    Difference = Grad_M_Median - Grad_F_Median
+  ) %>% 
+  pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
+
+### Graph 1 
+ggplot(data = data, aes(x = Years)) + 
+  geom_line(aes(y = `Total Male`/1000, color = 'Total Male')) +
+  geom_line(aes(y = `Total Female`/1000, color = 'Total Female')) +
+  facet_wrap(~Race, scales = 'free') +
+  theme_minimal() +
+  theme(strip.text = element_text(size = 6),
+        axis.text.x = element_text(size = 6),  
+        axis.text.y = element_text(size = 6)) +
+  scale_color_manual(values = c('Total Male' = 'blue', 'Total Female' = 'red')) +
+  labs(color = 'Gender',
+       y = 'Bachelors Attainment (Thousands)')
+
+
+### Graph 2
+ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
+  geom_line(stat = "identity") +
+  ylim(0, 80000) +
+  labs(title = "Bachelor Median Salary by Gender",
+       subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
+       x = "Year",
+       y = "Median Salary") +
+  scale_color_manual(values = c("Difference" = "green", 
+                               "Bach_M_Median" = "blue", 
+                               "Bach_F_Median" = "red"),
+                    name = "Gender",
+                    labels = c("Difference" = "Difference",
+                               "Bach_M_Median" = "Male",
+                               "Bach_F_Median" = "Female"))
+  
+
+### Graph 3
+ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
+  geom_line(stat = "identity") +
+  ylim(0, 100000) +
+  labs(title = "Gradute Median Salary by Gender",
+       subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
+       x = "Year",
+       y = "Median Salary") +
+  scale_color_manual(values = c("Difference" = "green", 
+                               "Grad_M_Median" = "blue", 
+                               "Grad_F_Median" = "red"),
+                    name = "Gender",
+                    labels = c("Difference" = "Difference",
+                               "Grad_M_Median" = "Male",
+                               "Grad_F_Median" = "Female"))
+
+
+```
 ## Note on Attribution
 
 In general, you should try to provide links to relevant resources, especially those that helped you. You don't have to link to every StackOverflow post you used but if there are explainers on aspects of the data or specific models that you found helpful, try to link to those. Also, try to link to other sources that might support (or refute) your analysis. These can just be regular hyperlinks. You don't need a formal citation.
 
 If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
+
+```{r Statistical Models}
+### importing data for first model
+acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
+bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+
+###Summarize Income data
+acs_income_mean <- acs_income|>
+  select(Years, Bach_M_Median, Bach_F_Median, Median_Bach)|>
+  group_by(Years)|>
+  summarise(
+    `Average Median Income Bachelors (Male)` = mean(Bach_M_Median),
+    `Average Median Income Bachelors (Female)` = mean(Bach_F_Median),
+    `Average Median Income Bachelors` = mean(Median_Bach, na.rm = T)
+  )
+
+### preliminary model of income data checking (first need to see distribution)
+ggplot(data = acs_income_mean, aes(x = Years)) + geom_line(aes(y = `Average Median Income Bachelors`, color = "total")) + geom_line(aes(y = `Average Median Income Bachelors (Male)`, color = 'male')) + geom_line(aes(y = `Average Median Income Bachelors (Female)`, color = 'female')) + scale_color_manual(values = c('total' = 'black', 'male' = 'blue', 'female' = 'red')) + theme_minimal()
+
+### looking at this graph, it is clear to see the data in general follows a linear trend. I have decided to use a VAR model. We can also see that the changes in each group by year are consistent
+
+### model 1 (VAR) of AVG. Median Income
+
+### Installing Packages
+install.packages("vars")
+library(vars)
+
+model1 <- VAR(acs_income_mean[, -1], p = 2)
+
+tidied <- broom::tidy(model1)
+
+```
+
 
 ```         
 > To be or not to be.

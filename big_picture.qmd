@@ -82,42 +82,120 @@ The project begins by mapping the educational voyage of women and men across the
 
 Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
 
-\[Results here\]
+```{r echo=FALSE, results ='hide', message = FALSE}
+library(shiny)
+
+
+ui <- fluidPage(
+  
+
+  titlePanel("Analyzing Gender Disparities: Proportions of Males Above Poverty Line Compared to Females, by Race and State"),
+  
+
+  sidebarLayout(
+    sidebarPanel(
+      # Input: Select gender
+      selectInput("gender", "Select gender:",
+                  choices = c("Male", "Female")),
+      
+      # Input: Select race
+      selectInput("race", "Select race:",
+                  choices = c("White Alone", 
+                              "White alone, not Hispanic or Latino", 
+                              "Black Alone", 
+                              "American Indian and Alaska Native Alone", 
+                              "Asian Alone", 
+                              "Native Hawaiian and Other Pacific Islander Alone", 
+                              "Some other race Alone", 
+                              "Two or more races", 
+                              "Hispanic or Latino Origin"))
+    ),
+    
+    # Show the image
+    mainPanel(
+      # Display the selected image
+      imageOutput("image")
+    )
+  )
+)
+
+# Define server logic
+server <- function(input, output) {
+  
+  # Render the selected image
+  output$image <- renderImage({
+    # Construct the file path based on selected gender and race
+    gender <- input$gender
+    race <- input$race
+    file_path <- paste0(gender, " ", race, ".jpg")
+    
+    # Return the image
+    list(src = file_path,
+         contentType = 'image/jpeg',
+         width = '100%',
+         height = 'auto')
+  },
+  deleteFile = FALSE)
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
+
+```
 
 This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races.
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
+library(ggplot2)
+library(dplyr)
 
-# Defining User Interface 
 ui <- fluidPage(
-  titlePanel("Image Viewer"),
+  titlePanel("Percentage of people who have a Bachelor's degree or higher, by Gender and Race"),
   
   sidebarLayout(
     sidebarPanel(
-      selectInput("image_select", "Select an image:",
-                  choices = c("Image 1" = "image1.jpg",
-                              "Image 2" = "image2.jpg",
-                              "Image 3" = "image3.jpg"),
-                  selected = "image1.jpg")
+      selectInput("Race", "Select Race:", choices = c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin"))
     ),
-    
     mainPanel(
-      uiOutput("image_output")
+      plotOutput("male_plot"),
+      plotOutput("female_plot")
     )
   )
 )
 
-# Defining the server logic
-server <- function(input, output) {
-  output$image_output <- renderUI({
-    img <- tags$img(src = input$image_select, width = "100%")
-    img
+server <- function(input, output){
+  data <- read.csv('dataset/ACS_Gender_and_Race.csv')
+  
+  output$male_plot <- renderPlot({
+    # Convert Male_P_Bach to numeric
+    data$Male_P_Bach <- as.numeric(sub("%", "", data$Male_P_Bach))
+    filtered_data_m <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for male percentages
+    ggplot(filtered_data_m, aes(x = factor(Years), y = Male_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "yellow") +  
+      labs(x = "Years", y = "% of Male with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
+  })
+
+  output$female_plot <- renderPlot({
+    # Convert Female_P_Bach to numeric
+    data$Female_P_Bach <- as.numeric(sub("%", "", data$Female_P_Bach))
+    
+    filtered_data_f <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for female percentages
+    ggplot(filtered_data_f, aes(x = factor(Years), y = Female_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "lightblue") +  
+      labs(x = "Years", y = "% of Female with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
   })
 }
 
-# Running the application
-shinyApp(ui = ui, server = server)
+shinyApp(ui, server)
 ```
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
