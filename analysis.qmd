@@ -55,6 +55,39 @@ In general, you should try to provide links to relevant resources, especially th
 
 If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
 
+```{r Statistical Models}
+### importing data for first model
+acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
+bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+
+###Summarize Income data
+acs_income_mean <- acs_income|>
+  select(Years, Bach_M_Median, Bach_F_Median, Median_Bach)|>
+  group_by(Years)|>
+  summarise(
+    `Average Median Income Bachelors (Male)` = mean(Bach_M_Median),
+    `Average Median Income Bachelors (Female)` = mean(Bach_F_Median),
+    `Average Median Income Bachelors` = mean(Median_Bach, na.rm = T)
+  )
+
+### preliminary model of income data checking (first need to see distribution)
+ggplot(data = acs_income_mean, aes(x = Years)) + geom_line(aes(y = `Average Median Income Bachelors`, color = "total")) + geom_line(aes(y = `Average Median Income Bachelors (Male)`, color = 'male')) + geom_line(aes(y = `Average Median Income Bachelors (Female)`, color = 'female')) + scale_color_manual(values = c('total' = 'black', 'male' = 'blue', 'female' = 'red')) + theme_minimal()
+
+### looking at this graph, it is clear to see the data in general follows a linear trend. I have decided to use a VAR model. We can also see that the changes in each group by year are consistent
+
+### model 1 (VAR) of AVG. Median Income
+
+### Installing Packages
+install.packages("vars")
+library(vars)
+
+model1 <- VAR(acs_income_mean[, -1], p = 2)
+
+tidied <- broom::tidy(model1)
+
+```
+
+
 ```         
 > To be or not to be.
 ```

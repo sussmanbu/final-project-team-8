@@ -53,8 +53,8 @@ gendered_employment <- get_acs(
   variables = vars_df |> pull(variable),
   year = 2020,
   geometry = TRUE
-) |> 
-  left_join(vars_df) |>
+) %>% 
+  left_join(vars_df) %>%
   select(-moe, -variable, -GEOID) 
 ### name is state data
 
