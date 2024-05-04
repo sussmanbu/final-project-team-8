@@ -5,9 +5,11 @@ toc: true
 draft: false
 ---
 
-# **Data Page** 
+# **Data Page**
 
 ![](images/dataclean.jpg)
+
+**Intro paragraph here.**
 
 **Data set 1: American Community Survey (ACS) - Educational Attainment**
 
@@ -39,7 +41,6 @@ We call the functions to write two new dataframes. Then we write the data frames
 
 The cleaning script for dataset one can be found below:
 
-
 **Data set 2: U.S. Department of Labor (DOL) Data - Median Annual Earnings**
 
 Our secondary dataset is from the U.S. Department of Labor (DOL), specifically through the Bureau of Labor Statistics (BLS). The data set is named “Median annual earnings by sex, race, and Hispanic ethnicity”, providing data from 1960 - 2022 regarding the median average earnings of males and females, faceted to races and states. The U.S. Bureau of Labor Statistics collects, analyzes, and publishes reliable information on socioeconomic status. The link to this DOL dataset is <https://bit.ly/3JAw0qz>. 
@@ -67,20 +68,6 @@ We transformed the dataset from a long to a wide format using ‘pivot_wider’,
 
 Another dataset we used is from the American Community Survey (ACS), which provides data from 2015 - 2020 regarding poverty status of males, and females, faceted to race and state The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, "acs5", cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.
 
-## iii) Deciphering the variables in the data sets
+(Include variables, and cleaning process)
 
-**American Community Survey (ACS)**
-
-(Variables in dataset 3 not yet)
-
-**U.S. Department of Labor (DOL) Data**
-
-Regarding the World Bank database, its variables contain time, educational attainment, employment rate, unemployment rate, and gender. The time variable is broken down by year and ranges from 1960 to 2023. The educational attainment variable is broken down by at least master or doctoral and is shown as a percentage through the gender variable. The employment rate and unemployment rate are shown as a percentage by gender, and are related to the education level by age.
-
-## iv) Data Cleaning Process
-
--   Cleaning Dataset 1:
-
--   Cleaning Dataset 2:
-
-##  
+## 
