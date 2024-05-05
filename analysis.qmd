@@ -109,6 +109,7 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
 
 
 ```
+
 ## Note on Attribution
 
 In general, you should try to provide links to relevant resources, especially those that helped you. You don't have to link to every StackOverflow post you used but if there are explainers on aspects of the data or specific models that you found helpful, try to link to those. Also, try to link to other sources that might support (or refute) your analysis. These can just be regular hyperlinks. You don't need a formal citation.
@@ -172,6 +173,7 @@ knitr::kable(combined_table)
 
 ### This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged
 ```
+
 ```{r model 3}
 bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
 
@@ -210,9 +212,9 @@ modeling_data <- dofl_merge |>
   mutate(Bachelors_Attainment = bachelor_merge$`Bachelors Attainment`)
 
 
-```         
-> To be or not to be.
 ```
+
+> To be or not to be. \`\`\`
 
 > To be or not to be.
 
