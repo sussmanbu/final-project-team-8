@@ -9,7 +9,7 @@ draft: false
 
 ![](images/dataclean.jpg)
 
-This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL). 
+This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL).
 
 **Data set 1: American Community Survey (ACS) - Educational Attainment**
 
@@ -123,15 +123,14 @@ data <- gendered_raced_data(race_names, state_names, acs_data)
 write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))
 ```
 
-The cleaning script for dataset one can be found below:
+The cleaning script for dataset 1 can be found below:
 
 ```{r}
 source(
-  'scripts/acs_data_bach_percentage/R',
+  'scripts/acs_data_bach_percentage.R',
   echo = TRUE
 )
 ```
-
 
 **Data set 2: U.S. Department of Labor (DOL) Data - Median Annual Earnings**
 
@@ -185,6 +184,4 @@ saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
 
 Another dataset we used is from the American Community Survey (ACS), which provides data from 2015 - 2020 regarding poverty status of males, and females, faceted to race and state The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, "acs5", cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.
 
-(Include variables, and cleaning process)
-
-## 
+In the poverty status dataset derived from the American Community Survey (ACS) for the years 2015 - 2020, several key variables are utilized to explore the socio-economic landscape across different demographics. The dependent variable in this analysis is the poverty status, which is defined as the proportion of individuals below the poverty line in each surveyed group. The independent variables include the year of the survey, which ranges from 2015 to 2020, and demographic identifiers such as race and state.
