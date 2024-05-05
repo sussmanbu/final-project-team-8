@@ -172,12 +172,13 @@ income_data_clean <- income_data_clean |>
   arrange(Year)
 ```
 
-\*4. Saving Cleaned Data
+*4. Saving Cleaned Data
 
 ```{r}
 write_csv(income_data_clean, file = here::here('dataset', 'dofl_income_clean.csv'))
 saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
 ```
+
 
 **Data set 3: American Community Survey (ACS) - Poverty Status**
 
