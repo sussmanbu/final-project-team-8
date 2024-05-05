@@ -9,7 +9,7 @@ draft: false
 
 ![](images/dataclean.jpg)
 
-This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL). 
+This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL).
 
 **Data set 1: American Community Survey (ACS) - Educational Attainment**
 
@@ -132,7 +132,6 @@ source(
 )
 ```
 
-
 **Data set 2: U.S. Department of Labor (DOL) Data - Median Annual Earnings**
 
 Our secondary dataset is from the U.S. Department of Labor (DOL), specifically through the Bureau of Labor Statistics (BLS). The data set is named “Median annual earnings by sex, race, and Hispanic ethnicity”, providing data from 1960 - 2022 regarding the median average earnings of males and females, faceted to races and states. The U.S. Bureau of Labor Statistics collects, analyzes, and publishes reliable information on socioeconomic status. The link to this DOL dataset is <https://bit.ly/3JAw0qz>.
@@ -173,13 +172,12 @@ income_data_clean <- income_data_clean |>
   arrange(Year)
 ```
 
-*4. Saving Cleaned Data
+\*4. Saving Cleaned Data
 
 ```{r}
 write_csv(income_data_clean, file = here::here('dataset', 'dofl_income_clean.csv'))
 saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
 ```
-
 
 **Data set 3: American Community Survey (ACS) - Poverty Status**
 
