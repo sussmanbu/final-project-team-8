@@ -25,6 +25,10 @@ The code below shows an example of loading the loan refusal data set (which you 
 library(tidyverse)
 library(ggplot2)
 library(tidyr)
+options(repos = c(CRAN = "https://mirrors.nics.utk.edu/cran/"))
+install.packages("vars")
+library(vars)
+
 #print(getwd())
 #data <- read_csv(here::here("dataset/loan_refusal_clean.csv"))
 #load(here::here("dataset/loan_refusal.RData"))
@@ -112,13 +116,12 @@ In general, you should try to provide links to relevant resources, especially th
 If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
 
 ```{r Statistical Models}
-### importing data for first model
+### importing data for first models
 acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
-bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
 
 ###Summarize Income data
-acs_income_mean <- acs_income|>
-  select(Years, Bach_M_Median, Bach_F_Median, Median_Bach)|>
+acs_income_mean <- acs_income |>
+ dplyr::select(Years, Bach_M_Median, Bach_F_Median, Median_Bach)|>
   group_by(Years)|>
   summarise(
     `Average Median Income Bachelors (Male)` = mean(Bach_M_Median),
@@ -133,16 +136,55 @@ ggplot(data = acs_income_mean, aes(x = Years)) + geom_line(aes(y = `Average Medi
 
 ### model 1 (VAR) of AVG. Median Income
 
-### Installing Packages
-install.packages("vars")
-library(vars)
-
-model1 <- VAR(acs_income_mean[, -1], p = 2)
+model1 <- VAR(acs_income_mean[, -1], p = 1)
 
 tidied <- broom::tidy(model1)
 
-```
+table1 <- tidied |>
+  filter(group == 'Average.Median.Income.Bachelors') 
 
+knitr::kable(table1)
+
+
+### model 2 ARIMA of each individual variable
+
+ar1 <- arima(acs_income_mean$`Average Median Income Bachelors`, order = c(1,1,1))
+
+ar1_t <- broom::tidy(ar1)
+
+ar2 <- arima(acs_income_mean$`Average Median Income Bachelors (Male)`, order = c(1,1,1))
+
+ar2_t <- broom::tidy(ar2)
+
+ar3 <- arima(acs_income_mean$`Average Median Income Bachelors (Female)`, order = c(1,1,1)) 
+
+ar3_t <- broom::tidy(ar3)
+
+combined_table <- bind_rows(
+  ar1_t %>% mutate(variable = "Average Median Income Bachelors"),
+  ar2_t %>% mutate(variable = "Average Median Income Bachelors (Male)"),
+  ar3_t %>% mutate(variable = "Average Median Income Bachelors (Female)")
+) |> filter(term == 'ar1')
+  
+
+# Print the combined table
+knitr::kable(combined_table)
+
+### This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged
+```
+```{r model 3}
+bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+
+dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
+
+dofl_prep <- dofl|>
+  pivot_longer(cols = -Year, names_to = 'Race', values_to = 'Income') |>
+  mutate(Gender = str_replace(str_replace(str_extract(Race, "Men|Women"), "Men", "Male"), "Women", "Female"))
+
+ggplot(data = dofl_prep, aes(x = Year, y = Income, color = Race)) +
+  geom_line() +
+  labs(x = "Years", y = "Income", color = "Race") +
+  theme_minimal()
 
 ```         
 > To be or not to be.
