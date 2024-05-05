@@ -171,15 +171,24 @@ income_data_clean <- income_data_clean |>
   arrange(Year)
 ```
 
-\*4. Saving Cleaned Data
+4\. Saving Cleaned Data
 
 ```{r}
 write_csv(income_data_clean, file = here::here('dataset', 'dofl_income_clean.csv'))
 saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
 ```
 
+The cleaning script for dataset 2 can be found below:
+
+```{r}
+invisible(source("scripts/Income_data_cleaning.R"))
+script_content <- readLines("scripts/Income_data_cleaning.R")
+cat(script_content, sep = "\n")
+
+```
+
 **Data set 3: American Community Survey (ACS) - Poverty Status**
 
 Another dataset we used is from the American Community Survey (ACS), which provides data from 2015 - 2020 regarding poverty status of males, and females, faceted to race and state The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, "acs5", cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.
 
-In the poverty status dataset derived from the American Community Survey (ACS) for the years 2015 - 2020, several key variables are utilized to explore the socio-economic landscape across different demographics. The dependent variable in this analysis is the poverty status, which is defined as the proportion of individuals below the poverty line in each surveyed group. The independent variables include the year of the survey, which ranges from 2015 to 2020, and demographic identifiers such as race and state.
+In the poverty status dataset derived from the American Community Survey (ACS) for the years 2015 - 2020, several key variables are utilized to explore the socioeconomic landscape across different demographics. The dependent variable in this analysis is the poverty status, which is defined as the proportion of individuals below the poverty line in each surveyed group. The independent variables include the year of the survey, which ranges from 2015 to 2020, and demographic identifiers such as race and state.

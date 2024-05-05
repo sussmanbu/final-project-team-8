@@ -1,8 +1,4 @@
----
-title: "ACS Data Cleaning"
-editor: visual
----
-  
+
 # Reading Data and Initializing Packages
 suppressMessages(library(readxl))
 suppressMessages(library(tidyverse))
