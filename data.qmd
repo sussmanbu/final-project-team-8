@@ -9,11 +9,11 @@ draft: false
 
 ![](images/dataclean.jpg)
 
-**Intro paragraph here.**
+This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL). 
 
 **Data set 1: American Community Survey (ACS) - Educational Attainment**
 
-Finding data on the educational attainment and income of women was easy, but searching for those data faced by a woman’s race was challenging. However, ultimately, we were able to find it. Our **main dataset** is named “Educational Attainment”  from the American Community Survey (ACS) by the United States Census Bureau which provides data from 2010 - 2022 regarding educational attainment of males and females, faceted to race and state. The American Community Survey is the U.S.’s premier source for socioeconomic information. This data set also provides general information on the poverty rate for ages 25 by educational attainment and the inflation-adjusted yearly median earnings by educational attainment - although these additional data are not faceted by race and can only help as background/general information. The link to the ACS dataset is <https://bit.ly/49WpvK9>. 
+Finding data on the educational attainment and income of women was easy, but searching for those data faced by a woman’s race was challenging. However, ultimately, we were able to find it. Our **main dataset** is named “Educational Attainment”  from the American Community Survey (ACS) by the United States Census Bureau which provides data from 2010 - 2022 regarding educational attainment of males and females, faceted to race and state. The American Community Survey is the U.S.’s premier source for socioeconomic information. This data set also provides general information on the poverty rate for ages 25 by educational attainment and the inflation-adjusted yearly median earnings by educational attainment - although these additional data are not faceted by race and can only help as background/general information. The link to the ACS dataset is <https://bit.ly/49WpvK9>.
 
 The ACS is specifically designed to assess various demographic, social, and economic conditions across the U.S. It helps measure the changes in the community over time. Gathering this data annually allows for the effective monitoring of trends and the ability to react to shifts in educational attainment, poverty rates, and other important socioeconomic factors. This survey plays a crucial role in public administration by guiding the allocation of federal and state funds, planning educational programs, and developing social services tailored to the needs of diverse populations.
 
@@ -25,25 +25,117 @@ To clean dataset 1, we followed the following steps:
 
 We begin by suppressing messages to keep your output clean while loading necessary libraries (‘readxl’ and ‘tidyverse’). This ensures that only essential output is displayed, making our script more readable and professional.
 
+```{r}
+# Reading Data and Initializing Packages
+suppressMessages(library(readxl))
+suppressMessages(library(tidyverse))
+
+acs_data <- read.csv('dataset/ACS_data_rendered.csv')
+```
+
 *2. Standardizing Reference Arrays*
 
-We define arrays for ‘state_names’ and ‘race_names’ to ensure consistency in how we reference these categories throughout our analysis. This is a form of data standardization, where we ensure that all data manipulation and analysis refer to the same set of standardized category names. 
+We define arrays for ‘state_names’ and ‘race_names’ to ensure consistency in how we reference these categories throughout our analysis. This is a form of data standardization, where we ensure that all data manipulation and analysis refer to the same set of standardized category names.
+
+```{r}
+state_names <- c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "Puerto Rico")
+
+race_names <- c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin")
+```
 
 *3. Creating two functions to pull data from the ACS*
 
 The first function uses a for loop to loop through each races in ‘race_names’ for each of the races used a nested ‘for loop’ to go through each of the states in ‘state_names’. In the nested for loop, we identify which columns we need to pull from for the gendered percentage attainment of bachelor degrees and transfer these columns into new data tibbles (organized by state). We then combine these tables to put it into one table.
 
+```{r}
+# function to extract Bachelor Attainment Percentage
+gendered_raced_data <- function(race_names, state_names, data) {
+  race_data <- list()
+  for (race in race_names) {
+    state_data <- list()
+    for (index in 1:51) {
+      state = state_names[index]
+      multiplier <- which(race_names == race) 
+      string2 <- rep("*", multiplier)
+      label <- paste("Bachelor's degree or higher", paste(string2, collapse = ""), 
+                     sep = "")
+      filtered_data <- filter(acs_data, Label == label)
+      number_m_bach <- 9 + 12 * (index - 1)
+      number_f_bach <- 13 + 12 * (index - 1)
+      state_data[[state]] <- tibble(
+        State = state,
+        Years = filtered_data$Years,
+        Male_P_Bach = filtered_data[[paste0("...", number_m_bach)]],
+        Female_P_Bach = filtered_data[[paste0("...", number_f_bach)]],
+        Race = race
+      )
+    }
+    combined_state <- bind_rows(state_data)
+    race_data[[race]] <- combined_state
+  }
+  race_data <- bind_rows(race_data)
+  
+  return(race_data)
+}
+```
+
 The second function works similarly to the first, except we do not have the outer for loop for the different races as the median income data is not categorized by race. We still loop through the different states and pull the columns containing the median incomes for people with bachelor degrees and people with graduate (or higher) degrees.
+
+```{r}
+Median_Income_Data <- function (state_names, data) {
+  state_data <- list()
+  for (index in 1:51) {
+    state = state_names[index]
+    bach_data <- filter(acs_data, Label == "Bachelor's degree")
+    grad_data <- filter(acs_data, Label == "Graduate or professional degree")
+    male <- 7 + 12 * (index - 1)
+    female <- 11 + 12 * (index - 1)
+    both <- state
+    state_data[[state]] <- tibble(
+      State = state,
+      Years = bach_data$Years,
+      Median_Bach = bach_data[[both]],
+      Bach_M_Median = bach_data[[paste0("...", male)]],
+      Bach_F_Median = bach_data[[paste0("...", female)]],
+      Median_Grad = grad_data[[both]],
+      Grad_M_Median = grad_data[[paste0("...", male)]],
+      Grad_F_Median = grad_data[[paste0("...", female)]]
+    ) 
+    
+  }
+  combined_state <- bind_rows(state_data)
+  combined_state <- combined_state %>% 
+    filter(Years > 2014)
+  
+  return(combined_state)
+}
+
+data2 <- Median_Income_Data(state_names, acs_data)
+write_csv(data2, here::here('dataset', 'ACS_Median_Income.csv'))
+```
 
 *4. Calling the functions and writing new CSV’s*
 
 We call the functions to write two new dataframes. Then we write the data frames into new CSV’s easily accessible without having to rerun the script.
 
+```{r}
+data <- gendered_raced_data(race_names, state_names, acs_data)
+write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))
+```
+
 The cleaning script for dataset one can be found below:
+
+```{r}
+source(
+  'scripts/acs_data_bach_percentage/R',
+  echo = TRUE
+)
+```
+
 
 **Data set 2: U.S. Department of Labor (DOL) Data - Median Annual Earnings**
 
-Our secondary dataset is from the U.S. Department of Labor (DOL), specifically through the Bureau of Labor Statistics (BLS). The data set is named “Median annual earnings by sex, race, and Hispanic ethnicity”, providing data from 1960 - 2022 regarding the median average earnings of males and females, faceted to races and states. The U.S. Bureau of Labor Statistics collects, analyzes, and publishes reliable information on socioeconomic status. The link to this DOL dataset is <https://bit.ly/3JAw0qz>. 
+Our secondary dataset is from the U.S. Department of Labor (DOL), specifically through the Bureau of Labor Statistics (BLS). The data set is named “Median annual earnings by sex, race, and Hispanic ethnicity”, providing data from 1960 - 2022 regarding the median average earnings of males and females, faceted to races and states. The U.S. Bureau of Labor Statistics collects, analyzes, and publishes reliable information on socioeconomic status. The link to this DOL dataset is <https://bit.ly/3JAw0qz>.
 
 The data from the DOL, specifically the median annual earnings by sex, race, and Hispanic ethnicity, are collected to track economic trends and labor market conditions. This information is critical for formulating labor policies, understanding income disparities, and enforcing laws around wages and employment equity
 
@@ -51,19 +143,44 @@ The dependent variable in this data is median annual earnings in 2021 CPI-U-RS a
 
 The data cleaning process for dataset 2 is below:
 
-**​​​​​​​​​​​​​​​​​​***1. Initial Data Reading and Package Loading*
+*1. Initial Data Reading and Package Loading*
 
-​​​​​​​​​​​​​​​​​​We loaded the data using ‘read_csv’ from the ‘readr’ package. This function is efficient for handling large datasets and allows easier manipulation of our dataset.
+We loaded the data using ‘read_csv’ from the ‘readr’ package. This function is efficient for handling large datasets and allows easier manipulation of our dataset.
+
+```{r}
+income_data = read_csv("dataset/Income_dofl.csv")
+```
 
 *2. Filtering Data Based on Specific Criteria*
 
 We filtered out records from 2013 and 2017 unless they were part of a new methodology implementation. In this way, we can ensure consistency in how data across different years were collected and reported.
 
+```{r}
+income_data_clean <- income_data|>
+  filter(Year != 2013 | `In / Out of New Methodology Implemented` == 'In')|>
+  filter(Year != 2017 | `In / Out of New Methodology Implemented` == 'In')|>
+```
+
 *3. Selecting and Pivoting Data for Analysis*
 
 We transformed the dataset from a long to a wide format using ‘pivot_wider’, making it easier to analyze income measures across different years. Columns were arranged by year to maintain a chronological order.
 
-\
+```{r}
+income_data_clean <- income_data_clean |>
+  select(-c(1,2)) |> 
+  group_by(`Measure Names`) |>
+  pivot_wider(names_from = `Measure Names`, values_from = `Measure Values`) |>
+  arrange(Year)
+```
+
+*4. Saving Cleaned Data
+
+```{r}
+write_csv(income_data_clean, file = here::here('dataset', 'dofl_income_clean.csv'))
+saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
+```
+
+
 **Data set 3: American Community Survey (ACS) - Poverty Status**
 
 Another dataset we used is from the American Community Survey (ACS), which provides data from 2015 - 2020 regarding poverty status of males, and females, faceted to race and state The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, "acs5", cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.
