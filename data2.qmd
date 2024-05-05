@@ -7,7 +7,7 @@ draft: false
 
 # **Data Page**
 
-![](images/dataclean.jpg)
+![](images/crt-resources-sm-02.jpg)
 
 This page serves as a gateway of the sources of our data and the cleaning process. Based on the research topic to understand racial education division, we gathered three datasets, capturing variables like educational attainment, income levels, and poverty status across different demographics in the United States. Our primary data sources include the American Community Survey (ACS) and the U.S. Department of Labor (DOL).
 
