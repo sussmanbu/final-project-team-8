@@ -185,6 +185,30 @@ ggplot(data = dofl_prep, aes(x = Year, y = Income, color = Race)) +
   geom_line() +
   labs(x = "Years", y = "Income", color = "Race") +
   theme_minimal()
+### Above is a line graph of income data for each race and gender
+
+
+## merging attainment data with income
+dofl_merge <- dofl_prep |>
+  mutate(Race = str_replace_all(Race, c(" Men" = "", " Women" = ""))) |>
+  filter(Year >= 2015) |>
+  filter(Race != 'Total') |>
+  arrange(Race)
+
+desired_races <- c("White", "Black", "Hispanic", "White, non-Hispanic", "Asian")
+
+bachelor_merge <- bachelors_attinment |>
+  mutate(Race = str_replace_all(Race, c(" Alone" = '', "Not Hispanic"= 'non-Hispanic',' or Latino Origin' = ''))) |>
+  filter(Race %in% desired_races) |>
+  pivot_longer(cols = c("Total Male", "Total Female"), 
+               names_to = "Gender",
+               values_to = "Bachelors Attainment") |>
+  mutate(Gender = str_replace_all(Gender, c('Total ' = ''))) |>
+  arrange(Race)
+
+modeling_data <- dofl_merge |>
+  mutate(Bachelors_Attainment = bachelor_merge$`Bachelors Attainment`)
+
 
 ```         
 > To be or not to be.
