@@ -51,9 +51,7 @@ bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainm
 
 We hypothesized that a good estimator for average would be the rate at which people achieve bachelor degrees. With this in mind, we wanted to see the rates of bachelor degree attainment for different races. 
 
-### Graph 1
-
-
+### Graphs 1 and 2: Bachelor Attainment
 ```{r graphs for this page, echo = FALSE}
 ### Graph 1 
 ggplot(data = data, aes(x = Years)) + 
@@ -81,11 +79,35 @@ bachelors_attainment %>% group_by(Race) %>%
     Female = sum(Female_P_Bach, na.rm = TRUE) / n()
   )
 ```
-Building off of Graph 1, while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor's Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees.
-
-### Graphs 2 and 3
-```{r}
+```{r echo = FALSE}
 ### Graph 2
+
+# organizing raced percentage data
+bach_prop <- acs_stuff %>% group_by(Race) %>%
+  summarize(
+    bach_perc_male = sum(Male_P_Bach, na.rm = TRUE) / n(),
+    bach_perc_female = sum(Female_P_Bach, na.rm = TRUE) / n(),
+    prop_m_to_f = bach_perc_female/bach_perc_male
+  )
+
+ggplot(bach_prop, aes(x = Race, y = prop_m_to_f, fill = prop_m_to_f)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proportion of Men to Females Bachelor's Degrees By Race", 
+       subtitle = "Higher Proportion Means More Men than Women with Degrees",
+       x = "Race", 
+       y = "Preportion",
+       fill = "Prop of Men to Women" ) +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels
+        plot.margin = margin(0, 0, 0, 2.5, "cm"))
+```
+
+Building off of Graph 1, table 1 shows that while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor's Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees. 
+
+Graph 2 is just a visualization of the proportion of Male Bachelor Attainment to Female Bachelor Attainment. A darker and shorter bar means that there are proportionally more men than women getting bachelor's degrees for that race. A lighter and taller bar means the opposite: there are proportionally more women than men getting bachelor's degrees for that race.
+
+### Graphs 3 and 4: Median Income by Degree
+```{r}
+### Graph 3
 data2_bach <- acs_income %>% na.omit() %>% 
   group_by(Years) %>%
   summarize(
@@ -118,11 +140,11 @@ ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
                     labels = c("Difference" = "Difference",
                                "Bach_M_Median" = "Male",
                                "Bach_F_Median" = "Female"))
-### Graph 3
+### Graph 4
 ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
   geom_line(stat = "identity") +
   ylim(0, 100000) +
-  labs(title = "Gradute Median Salary by Gender",
+  labs(title = "Graduate Median Salary by Gender",
        subtitle = "Salaries in 2022 Inflation-Adjusted US Dollars",
        x = "Year",
        y = "Median Salary") +
@@ -134,39 +156,13 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
                                "Grad_M_Median" = "Male",
                                "Grad_F_Median" = "Female"))
 ```
+Graphs three and four show median gendered salary for People with Bachelor's Degrees and Graduate Degrees respectively. In both cases there is a significant difference between Male and Female salaries. Interestingly the quantity of the pay gap has remained the same, but because of inflation this gap has become a slightly smaller percent difference.
 
-Graphs two and three 
+Looking at these graphs, it is clear to see the data in general follows a linear trend. We have decided to initially use a VAR model to study our data. Our hope is to see if gendering the average median income is statistically significant. 
 
+## Modeling
 
-```{r echo = FALSE}
-### Graph 4
-
-# organizing raced percentage data
-bach_prop <- acs_stuff %>% group_by(Race) %>%
-  summarize(
-    bach_perc_male = sum(Male_P_Bach, na.rm = TRUE) / n(),
-    bach_perc_female = sum(Female_P_Bach, na.rm = TRUE) / n(),
-    prop_m_to_f = bach_perc_female/bach_perc_male
-  )
-
-ggplot(bach_prop, aes(x = Race, y = prop_m_to_f, fill = prop_m_to_f)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Proportion of Men to Females Bachelor's Degrees By Race", 
-       subtitle = "Higher Proportion Means More Men than Women with Degrees",
-       x = "Race", 
-       y = "Preportion",
-       fill = "Prop of Men to Women" ) +
-   theme(axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels
-        plot.margin = margin(0, 0, 0, 2.5, "cm"))
-```
-
-## Note on Attribution
-
-In general, you should try to provide links to relevant resources, especially those that helped you. You don't have to link to every StackOverflow post you used but if there are explainers on aspects of the data or specific models that you found helpful, try to link to those. Also, try to link to other sources that might support (or refute) your analysis. These can just be regular hyperlinks. You don't need a formal citation.
-
-If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
-
-\###
+### Model 1: VAR of Average Median Income
 
 ```{r Statistical Models}
 ###Summarize Income data
@@ -178,24 +174,7 @@ acs_income_mean <- acs_income |>
     `Average Median Income Bachelors (Female)` = mean(Bach_F_Median),
     `Average Median Income Bachelors` = mean(Median_Bach, na.rm = T)
   )
-
-### Graph 5
-### preliminary model of income data checking (first need to see distribution)
-ggplot(data = acs_income_mean, aes(x = Years)) + 
-  geom_line(aes(y = `Average Median Income Bachelors`, color = "total")) + 
-  geom_line(aes(y = `Average Median Income Bachelors (Male)`, color = 'male')) + 
-  geom_line(aes(y = `Average Median Income Bachelors (Female)`, color = 'female')) +
-  scale_color_manual(values = c('total' = 'black', 
-                                'male' = 'blue', 
-                                'female' = 'red')) + 
-  theme_minimal()
 ```
-
-looking at this graph, it is clear to see the data in general follows a linear trend. We have decided to use a VAR model to see if gendering the average median income is statistically significant. We can also see that the changes in each group by year are consistent
-
-## Modeling
-
-#### Model 1: VAR of Average Median Income
 
 ```{r model_1}
 ### model 1 (VAR) of AVG. Median Income
@@ -212,8 +191,8 @@ knitr::kable(table1)
 
 When you regress the gendered average median income for people who have achieved bachelors against the Total Average Median Income (TAMI) for the same group, there are no significant p-values. The smallest p-value of the female data is at p = .099 implying that given the TAMI, there is about a 10% chance to get a set of statistics that is as far or further away from the TAMI given that there is no correlation between Average Female Median Income and TAMI.
 
+### Model 2: ARIMA of Gendered Average Median Income
 ```{r model_2}
-### model 2 ARIMA of each individual variable
 
 ar1 <- arima(acs_income_mean$`Average Median Income Bachelors`, order = c(1,1,1))
 
@@ -239,9 +218,13 @@ knitr::kable(combined_table)
 ```
 In this ARIMA model, we took the 15 years of income data from the ACS and used it to predict the future change in income. The ar1 estimators basically show how much the a given year's income data is affected by the prior year's income data. Because all three (combined, male, and female) data have similar coefficients (all within a range of ±.03), we can assume that our variables all share similar levels of autocorrelation. This means they have similar momentum in time, which implies that the pay gap between men and women is relatively unchanged as both men and women receive similar changes in rates. 
 
-This makes sense with the first model, because the pay gap has remained relatively the same, it is hard to show that just being female makes a significant change Average Median Income. 
+This makes sense with the first model, because the pay gap has remained relatively the same, it is hard to show that just being female makes a significant change Average Median Income. This supports the conclusions we came to from our third and fourth graphs.
 
-```{r model_3}
+Because just gendering the data was not statistically significant, we decided to see if separating by both gender and race gives us more significant changes.
+
+### Graph 5
+
+```{r}
 dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
 
 dofl_prep <- dofl|>
@@ -286,13 +269,13 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
   facet_wrap(~Race, scales = 'free') + 
   theme_minimal() +
   labs(x = "Income (in thousands)", 
-       y = "Proportion Bachelor's Attainment",
+       y = "Rate of Bachelor's Attainment",
        color = "Gender",
        title = "Relationship Between Income, Bachelor's Attainment, and Gender Across Races")
-
-### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
+This graph shoes how both bachelor attainment and gender affects income. It is clear to see the distinction between males and Females in this data for every racial group. Every race except Asian people have similar relationships between income, bachelor's attainment, and gender. In general, especially with white people, it looks like males go to college less while they get paid more. The opposite seems to be true for Asian people. Asian males tend to go to college more and get paid more, while females Males tend to go to college less and get paid less. In general, the groups themselves (grouped by both Race and Gender) follow a mostly linear trend. This data appears to be suitable for linear regression.
 
+### Model 3: Linear Regression
 ```{r}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
