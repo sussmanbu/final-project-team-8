@@ -175,7 +175,11 @@ knitr::kable(combined_table)
 ```
 
 ```{r model 3}
-bachelors_attinment <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
+
+bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
+
+bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Female_P_Bach)) / 100
 
 dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
 
@@ -195,25 +199,53 @@ dofl_merge <- dofl_prep |>
   mutate(Race = str_replace_all(Race, c(" Men" = "", " Women" = ""))) |>
   filter(Year >= 2015) |>
   filter(Race != 'Total') |>
-  arrange(Race)
+  arrange(Race) |>
+  arrange(Gender)
 
 desired_races <- c("White", "Black", "Hispanic", "White, non-Hispanic", "Asian")
 
-bachelor_merge <- bachelors_attinment |>
-  mutate(Race = str_replace_all(Race, c(" Alone" = '', "Not Hispanic"= 'non-Hispanic',' or Latino Origin' = ''))) |>
+bachelor_merge <- bachelors_attainment |>
+  mutate(Race = str_replace_all(Race, c(" Alone" = '', "not Hispanic"= 'non-Hispanic',' or Latino' = '', ' alone' = '', ' Origin' = ''))) |>
   filter(Race %in% desired_races) |>
-  pivot_longer(cols = c("Total Male", "Total Female"), 
+  group_by(Race, Years)|>
+  summarise(`Percent Male` =mean(Male_P_Bach, na.rm = T),
+            `Percent Female` = mean(Female_P_Bach, na.rm = T)) |>
+  pivot_longer(cols = c("Percent Male", "Percent Female"), 
                names_to = "Gender",
                values_to = "Bachelors Attainment") |>
-  mutate(Gender = str_replace_all(Gender, c('Total ' = ''))) |>
-  arrange(Race)
+  mutate(Gender = str_replace_all(Gender, c('Percent ' = ''))) |>
+  arrange(Race) |>
+  arrange(Gender)
 
 modeling_data <- dofl_merge |>
   mutate(Bachelors_Attainment = bachelor_merge$`Bachelors Attainment`)
 
+ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, color = Gender)) + 
+  geom_point() + 
+  facet_wrap(~Race, scales = 'free') + 
+  theme_minimal() +
+  labs(x = "Income (in thousands)", 
+       y = "Proportion Bachelor's Attainment",
+       color = "Gender",
+       title = "Relationship Between Income, Bachelor's Attainment, and Gender Across Races")
 
+### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
 
+
+```{r model}
+
+modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
+modeling_data$Income <- scale(modeling_data$Income)
+
+glm_model <- glm(Income ~ Race * Gender + Bachelors_Attainment, data = modeling_data, family = gaussian())
+
+
+tidy_summary <- broom::tidy(glm_model)
+print(tidy_summary)
+
+
+```
 > To be or not to be. \`\`\`
 
 > To be or not to be.
