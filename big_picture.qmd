@@ -76,7 +76,7 @@ gendered_employment_split |>
   theme_minimal()
 ```
 
-## Charting Educational Journeys
+## Charting Educational Journies
 
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
 
@@ -144,45 +144,12 @@ knitr::include_graphics("bigpic_medianincome/graph_median_income.png")
 
 ## Gender and Race Dynamics Above the Poverty Line
 
-This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities.
+This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities. To visualize this data, we created an interactable Shiny App that can be accessed [Here](https://dylonth.shinyapps.io/final/)
 
-```{r echo=FALSE, message=FALSE, results='hide'}
-library(shiny)
 
-ui <- fluidPage(
-  titlePanel("Analyzing Gender Disparities: Proportions of Males and Females Above Poverty Line, by Race and State"),
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("gender", "Select gender:", choices = c("Male", "Female")),
-      selectInput("race", "Select race:", choices = c(
-        "White Alone", 
-        "White alone, not Hispanic or Latino", 
-        "Black Alone", 
-        "American Indian and Alaska Native Alone", 
-        "Asian Alone", 
-        "Native Hawaiian and Other Pacific Islander Alone", 
-        "Some other race Alone", 
-        "Two or more races", 
-        "Hispanic or Latino Origin"))
-    ),
-    mainPanel(
-      imageOutput("image")
-    )
-  )
-)
 
-server <- function(input, output) {
-  output$image <- renderImage({
-    gender <- input$gender
-    race <- input$race
-    file_path <- paste0("bigpic_povertyimage/", gender, " ", race, ".jpg")
-    list(src = file_path, contentType = 'image/jpeg', width = '100%', height = 'auto')
-  }, deleteFile = FALSE)
-}
+## Using Statistical Techniques to Analyze Disparity
 
-shinyApp(ui = ui, server = server)
-```
-
-## **\[NOT DONE YET THIS PART: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
+This project uses a variety of statistical techniques to try to answer 
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
