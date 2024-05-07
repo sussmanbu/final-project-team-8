@@ -24,8 +24,3 @@ acs_stuff %>% group_by(Race) %>%
     prop_m_to_f = bach_perc_female/bach_perc_male
   )
 ```
-
-```{r}
-# numeric for median data
-view(income_data)
-```

@@ -1,6 +1,6 @@
 ---
 title: Analysis
-description: Here we provide a detailed analysis using more sophisticated statistics techniques.
+description: "Here we provide a detailed analysis using more sophisticated statistics techniques."
 toc: true
 draft: false
 ---
@@ -17,7 +17,7 @@ While the exact number of figures and tables will vary and depend on your analys
 
 The style of this paper should aim to be that of an academic paper. I don't expect this to be of publication quality but you should keep that aim in mind. Avoid using "we" too frequently, for example "We also found that ...". Describe your methodology and your findings but don't describe your whole process.
 
-### Example of loading data
+## Loading in Data
 
 The code below shows an example of loading the loan refusal data set (which you should delete at some point).
 
@@ -29,21 +29,27 @@ options(repos = c(CRAN = "https://mirrors.nics.utk.edu/cran/"))
 install.packages("vars")
 library(vars)
 
-#print(getwd())
-#data <- read_csv(here::here("dataset/loan_refusal_clean.csv"))
-#load(here::here("dataset/loan_refusal.RData"))
-#print(ls())
-```
-
-```{r graphs for this page, echo = FALSE}
 data <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
-data2 <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
+acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
 data$Years <- as.Date(paste0(data$Years, "-01-01"))
 data2$Years <- as.Date(paste0(data2$Years, "-01-01"))
+acs_stuff <- read.csv('dataset/ACS_Gender_and_Race.csv')
+
+# numeric for percentage
+acs_stuff$Male_P_Bach <- as.numeric(gsub("%", "", acs_stuff$Male_P_Bach))
+acs_stuff$Female_P_Bach <- as.numeric(gsub("%", "", acs_stuff$Female_P_Bach))
 
 
-data2_bach <- data2 %>% na.omit() %>% 
-  group_by(Years) %>%
+```
+
+## Exploratory Data Analysis
+
+### 
+
+```{r graphs for this page, echo = FALSE}
+view(acs_income)
+data2_bach <- acs_income %>% na.omit() %>% 
+  group_by(Year) %>%
   summarize(
     Bach_M_Median = sum(Bach_M_Median) / n(),
     Bach_F_Median = sum(Bach_F_Median) / n(),
@@ -51,7 +57,7 @@ data2_bach <- data2 %>% na.omit() %>%
   ) %>% 
   pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
 
-data2_grad <- data2 %>% na.omit() %>% 
+data2_grad <- acs_income %>% na.omit() %>% 
   group_by(Years) %>%
   summarize(
     Grad_M_Median = sum(Grad_M_Median) / n(),
@@ -74,7 +80,11 @@ ggplot(data = data, aes(x = Years)) +
        y = 'Bachelors Attainment (Thousands)')
 
 
-### Graph 2
+```
+
+asfdadf
+
+```{### Graph 2}
 ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
   geom_line(stat = "identity") +
   ylim(0, 80000) +
@@ -107,7 +117,28 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
                                "Grad_M_Median" = "Male",
                                "Grad_F_Median" = "Female"))
 
+```
 
+```{r echo = false}
+### Graph 4
+
+# organizing raced percentage data
+bach_prop <- acs_stuff %>% group_by(Race) %>%
+  summarize(
+    bach_perc_male = sum(Male_P_Bach, na.rm = TRUE) / n(),
+    bach_perc_female = sum(Female_P_Bach, na.rm = TRUE) / n(),
+    prop_m_to_f = bach_perc_female/bach_perc_male
+  )
+
+ggplot(bach_prop, aes(x = Race, y = prop_m_to_f, fill = prop_m_to_f)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Proportion of Men to Females Bachelor's Degrees By Race", 
+       subtitle = "Higher Proportion Means More Men than Women with Degrees",
+       x = "Race", 
+       y = "Preportion",
+       fill = "Prop of Men to Women" ) +
+   theme(axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels
+        plot.margin = margin(0, 0, 0, 2.5, "cm"))
 ```
 
 ## Note on Attribution
@@ -116,10 +147,9 @@ In general, you should try to provide links to relevant resources, especially th
 
 If you are directly quoting from a source, please make that clear. You can show quotes using `>` like this
 
-```{r Statistical Models}
-### importing data for first models
-acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
+\###
 
+```{r Statistical Models}
 ###Summarize Income data
 acs_income_mean <- acs_income |>
  dplyr::select(Years, Bach_M_Median, Bach_F_Median, Median_Bach)|>
@@ -130,11 +160,25 @@ acs_income_mean <- acs_income |>
     `Average Median Income Bachelors` = mean(Median_Bach, na.rm = T)
   )
 
+### Graph 5
 ### preliminary model of income data checking (first need to see distribution)
-ggplot(data = acs_income_mean, aes(x = Years)) + geom_line(aes(y = `Average Median Income Bachelors`, color = "total")) + geom_line(aes(y = `Average Median Income Bachelors (Male)`, color = 'male')) + geom_line(aes(y = `Average Median Income Bachelors (Female)`, color = 'female')) + scale_color_manual(values = c('total' = 'black', 'male' = 'blue', 'female' = 'red')) + theme_minimal()
+ggplot(data = acs_income_mean, aes(x = Years)) + 
+  geom_line(aes(y = `Average Median Income Bachelors`, color = "total")) + 
+  geom_line(aes(y = `Average Median Income Bachelors (Male)`, color = 'male')) + 
+  geom_line(aes(y = `Average Median Income Bachelors (Female)`, color = 'female')) +
+  scale_color_manual(values = c('total' = 'black', 
+                                'male' = 'blue', 
+                                'female' = 'red')) + 
+  theme_minimal()
+```
 
-### looking at this graph, it is clear to see the data in general follows a linear trend. I have decided to use a VAR model. We can also see that the changes in each group by year are consistent
+looking at this graph, it is clear to see the data in general follows a linear trend. We have decided to use a VAR model to see if gendering the average median income is statistically significant. We can also see that the changes in each group by year are consistent
 
+## Modeling
+
+#### Model 1: VAR of Average Median Income
+
+```{r model_1}
 ### model 1 (VAR) of AVG. Median Income
 
 model1 <- VAR(acs_income_mean[, -1], p = 1)
@@ -145,8 +189,11 @@ table1 <- tidied |>
   filter(group == 'Average.Median.Income.Bachelors') 
 
 knitr::kable(table1)
+```
 
+When you regress the gendered average median income for people who have achieved bachelors against the Total Average Median Income (TAMI) for the same group, there are no significant p-values. The smallest p-value of the female data is at p = .099 implying that given the TAMI, there is about a 10% chance to get a set of statistics that is as far or further away from the TAMI given that there is no correlation between Average Female Median Income and TAMI.
 
+```{r model_2}
 ### model 2 ARIMA of each individual variable
 
 ar1 <- arima(acs_income_mean$`Average Median Income Bachelors`, order = c(1,1,1))
@@ -170,11 +217,13 @@ combined_table <- bind_rows(
 
 # Print the combined table
 knitr::kable(combined_table)
-
-### This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged
 ```
 
-```{r model 3}
+This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged
+
+With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.
+
+```{r model_3}
 bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
 
 bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
@@ -232,26 +281,22 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 ### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
 
-
-```{r model}
-
+```{r model_4}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
 
-glm_model <- glm(Income ~ Race + Gender + Bachelors_Attainment, data = modeling_data, family = gaussian())
-
-glm_model2 <- glm(Income ~ Race + Gender, data = modeling_data, family = gaussian())
+glm_model <- glm(Income ~ Race + Gender + Bachelors_Attainment, 
+                 data = modeling_data, family = gaussian())
 
 tidy_summary <- broom::tidy(glm_model)
-print(tidy_summary)
+tidy_summary
+
+glm_model2 <- glm(Income ~ Race + Gender, 
+                  data = modeling_data, family = gaussian())
 
 tidy2summary <- broom::tidy(glm_model2)
-print(tidy2summary)
-
+tidy2summary
 ```
-> To be or not to be. \`\`\`
-
-> To be or not to be.
 
 ------------------------------------------------------------------------
 
