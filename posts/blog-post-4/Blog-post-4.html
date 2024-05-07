@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Team 8 Final Project – blog-post-4</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Team 8 Final Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../big_picture.html" rel="" target="">
+ <span class="menu-text">Big Picture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../analysis.html" rel="" target="">
+ <span class="menu-text">Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../data.html" rel="" target="">
+ <span class="menu-text">Data</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+<section id="blog-post-4" class="level3">
+<h3 class="anchored" data-anchor-id="blog-post-4">Blog Post 4</h3>
+<p>04/08/2024</p>
+<p>While looking through our ACS data, we saw consistent, yearly data about the percentage of women that acquired at least a Bachelor’s degree in each of the 50 states and in Puerto Rico. We hope to be able to predict the percentage of women of a certain race that acquired at least a Bachelor’s Degree in a given year. Here, years and race would be predictor variables for the percentage of women that acquired at least a Bachelor’s Degree (response variable). Regarding regression models, we think a logistical regression would not fit as our predictor variables are not dichotomous or binary (they have more than two outputs). Therefore, we think a linear regression will fit more nicely.</p>
+<p>Interestingly, when looking at our cleaned data, we have already seen some interesting differences that we are excited to explore deeper in our analysis. Last but not least, we have also begun discussing strategies regarding data visualization. We have not come to any conclusions, but we hope to be able to incorporate some gendered differences (for given races). We hope to hone in on our ideas this coming week.</p>
+<p>{An excerpt of cleaned data can be found below}</p>
+<p>{<strong>Male, White-alone, Across all U.S. States + Puerto Rico (Status: Cleaned)</strong>}</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>acs_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"dataset/acsfinale.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `Alabama` -&gt; `Alabama...3`
+• `Alabama` -&gt; `Alabama...4`
+• `Alabama` -&gt; `Alabama...5`
+• `Alabama` -&gt; `Alabama...6`
+• `Alabama` -&gt; `Alabama...7`
+• `Alabama` -&gt; `Alabama...8`
+• `Alabama` -&gt; `Alabama...9`
+• `Alabama` -&gt; `Alabama...10`
+• `Alabama` -&gt; `Alabama...11`
+• `Alabama` -&gt; `Alabama...12`
+• `Alabama` -&gt; `Alabama...13`
+• `Alabama` -&gt; `Alabama...14`
+• `` -&gt; `...16`
+• `` -&gt; `...17`
+• `` -&gt; `...18`
+• `` -&gt; `...19`
+• `` -&gt; `...20`
+• `` -&gt; `...21`
+• `` -&gt; `...22`
+• `` -&gt; `...23`
+• `` -&gt; `...24`
+• `` -&gt; `...25`
+• `` -&gt; `...26`
+• `` -&gt; `...28`
+• `` -&gt; `...29`
+• `` -&gt; `...30`
+• `` -&gt; `...31`
+• `` -&gt; `...32`
+• `` -&gt; `...33`
+• `` -&gt; `...34`
+• `` -&gt; `...35`
+• `` -&gt; `...36`
+• `` -&gt; `...37`
+• `` -&gt; `...38`
+• `` -&gt; `...40`
+• `` -&gt; `...41`
+• `` -&gt; `...42`
+• `` -&gt; `...43`
+• `` -&gt; `...44`
+• `` -&gt; `...45`
+• `` -&gt; `...46`
+• `` -&gt; `...47`
+• `` -&gt; `...48`
+• `` -&gt; `...49`
+• `` -&gt; `...50`
+• `` -&gt; `...52`
+• `` -&gt; `...53`
+• `` -&gt; `...54`
+• `` -&gt; `...55`
+• `` -&gt; `...56`
+• `` -&gt; `...57`
+• `` -&gt; `...58`
+• `` -&gt; `...59`
+• `` -&gt; `...60`
+• `` -&gt; `...61`
+• `` -&gt; `...62`
+• `` -&gt; `...64`
+• `` -&gt; `...65`
+• `` -&gt; `...66`
+• `` -&gt; `...67`
+• `` -&gt; `...68`
+• `` -&gt; `...69`
+• `` -&gt; `...70`
+• `` -&gt; `...71`
+• `` -&gt; `...72`
+• `` -&gt; `...73`
+• `` -&gt; `...74`
+• `` -&gt; `...76`
+• `` -&gt; `...77`
+• `` -&gt; `...78`
+• `` -&gt; `...79`
+• `` -&gt; `...80`
+• `` -&gt; `...81`
+• `` -&gt; `...82`
+• `` -&gt; `...83`
+• `` -&gt; `...84`
+• `` -&gt; `...85`
+• `` -&gt; `...86`
+• `` -&gt; `...88`
+• `` -&gt; `...89`
+• `` -&gt; `...90`
+• `` -&gt; `...91`
+• `` -&gt; `...92`
+• `` -&gt; `...93`
+• `` -&gt; `...94`
+• `` -&gt; `...95`
+• `` -&gt; `...96`
+• `` -&gt; `...97`
+• `` -&gt; `...98`
+• `` -&gt; `...100`
+• `` -&gt; `...101`
+• `` -&gt; `...102`
+• `` -&gt; `...103`
+• `` -&gt; `...104`
+• `` -&gt; `...105`
+• `` -&gt; `...106`
+• `` -&gt; `...107`
+• `` -&gt; `...108`
+• `` -&gt; `...109`
+• `` -&gt; `...110`
+• `` -&gt; `...112`
+• `` -&gt; `...113`
+• `` -&gt; `...114`
+• `` -&gt; `...115`
+• `` -&gt; `...116`
+• `` -&gt; `...117`
+• `` -&gt; `...118`
+• `` -&gt; `...119`
+• `` -&gt; `...120`
+• `` -&gt; `...121`
+• `` -&gt; `...122`
+• `` -&gt; `...124`
+• `` -&gt; `...125`
+• `` -&gt; `...126`
+• `` -&gt; `...127`
+• `` -&gt; `...128`
+• `` -&gt; `...129`
+• `` -&gt; `...130`
+• `` -&gt; `...131`
+• `` -&gt; `...132`
+• `` -&gt; `...133`
+• `` -&gt; `...134`
+• `` -&gt; `...136`
+• `` -&gt; `...137`
+• `` -&gt; `...138`
+• `` -&gt; `...139`
+• `` -&gt; `...140`
+• `` -&gt; `...141`
+• `` -&gt; `...142`
+• `` -&gt; `...143`
+• `` -&gt; `...144`
+• `` -&gt; `...145`
+• `` -&gt; `...146`
+• `` -&gt; `...148`
+• `` -&gt; `...149`
+• `` -&gt; `...150`
+• `` -&gt; `...151`
+• `` -&gt; `...152`
+• `` -&gt; `...153`
+• `` -&gt; `...154`
+• `` -&gt; `...155`
+• `` -&gt; `...156`
+• `` -&gt; `...157`
+• `` -&gt; `...158`
+• `` -&gt; `...160`
+• `` -&gt; `...161`
+• `` -&gt; `...162`
+• `` -&gt; `...163`
+• `` -&gt; `...164`
+• `` -&gt; `...165`
+• `` -&gt; `...166`
+• `` -&gt; `...167`
+• `` -&gt; `...168`
+• `` -&gt; `...169`
+• `` -&gt; `...170`
+• `` -&gt; `...172`
+• `` -&gt; `...173`
+• `` -&gt; `...174`
+• `` -&gt; `...175`
+• `` -&gt; `...176`
+• `` -&gt; `...177`
+• `` -&gt; `...178`
+• `` -&gt; `...179`
+• `` -&gt; `...180`
+• `` -&gt; `...181`
+• `` -&gt; `...182`
+• `` -&gt; `...184`
+• `` -&gt; `...185`
+• `` -&gt; `...186`
+• `` -&gt; `...187`
+• `` -&gt; `...188`
+• `` -&gt; `...189`
+• `` -&gt; `...190`
+• `` -&gt; `...191`
+• `` -&gt; `...192`
+• `` -&gt; `...193`
+• `` -&gt; `...194`
+• `` -&gt; `...196`
+• `` -&gt; `...197`
+• `` -&gt; `...198`
+• `` -&gt; `...199`
+• `` -&gt; `...200`
+• `` -&gt; `...201`
+• `` -&gt; `...202`
+• `` -&gt; `...203`
+• `` -&gt; `...204`
+• `` -&gt; `...205`
+• `` -&gt; `...206`
+• `` -&gt; `...208`
+• `` -&gt; `...209`
+• `` -&gt; `...210`
+• `` -&gt; `...211`
+• `` -&gt; `...212`
+• `` -&gt; `...213`
+• `` -&gt; `...214`
+• `` -&gt; `...215`
+• `` -&gt; `...216`
+• `` -&gt; `...217`
+• `` -&gt; `...218`
+• `` -&gt; `...220`
+• `` -&gt; `...221`
+• `` -&gt; `...222`
+• `` -&gt; `...223`
+• `` -&gt; `...224`
+• `` -&gt; `...225`
+• `` -&gt; `...226`
+• `` -&gt; `...227`
+• `` -&gt; `...228`
+• `` -&gt; `...229`
+• `` -&gt; `...230`
+• `` -&gt; `...232`
+• `` -&gt; `...233`
+• `` -&gt; `...234`
+• `` -&gt; `...235`
+• `` -&gt; `...236`
+• `` -&gt; `...237`
+• `` -&gt; `...238`
+• `` -&gt; `...239`
+• `` -&gt; `...240`
+• `` -&gt; `...241`
+• `` -&gt; `...242`
+• `` -&gt; `...244`
+• `` -&gt; `...245`
+• `` -&gt; `...246`
+• `` -&gt; `...247`
+• `` -&gt; `...248`
+• `` -&gt; `...249`
+• `` -&gt; `...250`
+• `` -&gt; `...251`
+• `` -&gt; `...252`
+• `` -&gt; `...253`
+• `` -&gt; `...254`
+• `` -&gt; `...256`
+• `` -&gt; `...257`
+• `` -&gt; `...258`
+• `` -&gt; `...259`
+• `` -&gt; `...260`
+• `` -&gt; `...261`
+• `` -&gt; `...262`
+• `` -&gt; `...263`
+• `` -&gt; `...264`
+• `` -&gt; `...265`
+• `` -&gt; `...266`
+• `` -&gt; `...268`
+• `` -&gt; `...269`
+• `` -&gt; `...270`
+• `` -&gt; `...271`
+• `` -&gt; `...272`
+• `` -&gt; `...273`
+• `` -&gt; `...274`
+• `` -&gt; `...275`
+• `` -&gt; `...276`
+• `` -&gt; `...277`
+• `` -&gt; `...278`
+• `` -&gt; `...280`
+• `` -&gt; `...281`
+• `` -&gt; `...282`
+• `` -&gt; `...283`
+• `` -&gt; `...284`
+• `` -&gt; `...285`
+• `` -&gt; `...286`
+• `` -&gt; `...287`
+• `` -&gt; `...288`
+• `` -&gt; `...289`
+• `` -&gt; `...290`
+• `` -&gt; `...292`
+• `` -&gt; `...293`
+• `` -&gt; `...294`
+• `` -&gt; `...295`
+• `` -&gt; `...296`
+• `` -&gt; `...297`
+• `` -&gt; `...298`
+• `` -&gt; `...299`
+• `` -&gt; `...300`
+• `` -&gt; `...301`
+• `` -&gt; `...302`
+• `` -&gt; `...304`
+• `` -&gt; `...305`
+• `` -&gt; `...306`
+• `` -&gt; `...307`
+• `` -&gt; `...308`
+• `` -&gt; `...309`
+• `` -&gt; `...310`
+• `` -&gt; `...311`
+• `` -&gt; `...312`
+• `` -&gt; `...313`
+• `` -&gt; `...314`
+• `` -&gt; `...316`
+• `` -&gt; `...317`
+• `` -&gt; `...318`
+• `` -&gt; `...319`
+• `` -&gt; `...320`
+• `` -&gt; `...321`
+• `` -&gt; `...322`
+• `` -&gt; `...323`
+• `` -&gt; `...324`
+• `` -&gt; `...325`
+• `` -&gt; `...326`
+• `` -&gt; `...328`
+• `` -&gt; `...329`
+• `` -&gt; `...330`
+• `` -&gt; `...331`
+• `` -&gt; `...332`
+• `` -&gt; `...333`
+• `` -&gt; `...334`
+• `` -&gt; `...335`
+• `` -&gt; `...336`
+• `` -&gt; `...337`
+• `` -&gt; `...338`
+• `` -&gt; `...340`
+• `` -&gt; `...341`
+• `` -&gt; `...342`
+• `` -&gt; `...343`
+• `` -&gt; `...344`
+• `` -&gt; `...345`
+• `` -&gt; `...346`
+• `` -&gt; `...347`
+• `` -&gt; `...348`
+• `` -&gt; `...349`
+• `` -&gt; `...350`
+• `` -&gt; `...352`
+• `` -&gt; `...353`
+• `` -&gt; `...354`
+• `` -&gt; `...355`
+• `` -&gt; `...356`
+• `` -&gt; `...357`
+• `` -&gt; `...358`
+• `` -&gt; `...359`
+• `` -&gt; `...360`
+• `` -&gt; `...361`
+• `` -&gt; `...362`
+• `` -&gt; `...364`
+• `` -&gt; `...365`
+• `` -&gt; `...366`
+• `` -&gt; `...367`
+• `` -&gt; `...368`
+• `` -&gt; `...369`
+• `` -&gt; `...370`
+• `` -&gt; `...371`
+• `` -&gt; `...372`
+• `` -&gt; `...373`
+• `` -&gt; `...374`
+• `` -&gt; `...376`
+• `` -&gt; `...377`
+• `` -&gt; `...378`
+• `` -&gt; `...379`
+• `` -&gt; `...380`
+• `` -&gt; `...381`
+• `` -&gt; `...382`
+• `` -&gt; `...383`
+• `` -&gt; `...384`
+• `` -&gt; `...385`
+• `` -&gt; `...386`
+• `` -&gt; `...388`
+• `` -&gt; `...389`
+• `` -&gt; `...390`
+• `` -&gt; `...391`
+• `` -&gt; `...392`
+• `` -&gt; `...393`
+• `` -&gt; `...394`
+• `` -&gt; `...395`
+• `` -&gt; `...396`
+• `` -&gt; `...397`
+• `` -&gt; `...398`
+• `` -&gt; `...400`
+• `` -&gt; `...401`
+• `` -&gt; `...402`
+• `` -&gt; `...403`
+• `` -&gt; `...404`
+• `` -&gt; `...405`
+• `` -&gt; `...406`
+• `` -&gt; `...407`
+• `` -&gt; `...408`
+• `` -&gt; `...409`
+• `` -&gt; `...410`
+• `` -&gt; `...412`
+• `` -&gt; `...413`
+• `` -&gt; `...414`
+• `` -&gt; `...415`
+• `` -&gt; `...416`
+• `` -&gt; `...417`
+• `` -&gt; `...418`
+• `` -&gt; `...419`
+• `` -&gt; `...420`
+• `` -&gt; `...421`
+• `` -&gt; `...422`
+• `` -&gt; `...424`
+• `` -&gt; `...425`
+• `` -&gt; `...426`
+• `` -&gt; `...427`
+• `` -&gt; `...428`
+• `` -&gt; `...429`
+• `` -&gt; `...430`
+• `` -&gt; `...431`
+• `` -&gt; `...432`
+• `` -&gt; `...433`
+• `` -&gt; `...434`
+• `` -&gt; `...436`
+• `` -&gt; `...437`
+• `` -&gt; `...438`
+• `` -&gt; `...439`
+• `` -&gt; `...440`
+• `` -&gt; `...441`
+• `` -&gt; `...442`
+• `` -&gt; `...443`
+• `` -&gt; `...444`
+• `` -&gt; `...445`
+• `` -&gt; `...446`
+• `` -&gt; `...448`
+• `` -&gt; `...449`
+• `` -&gt; `...450`
+• `` -&gt; `...451`
+• `` -&gt; `...452`
+• `` -&gt; `...453`
+• `` -&gt; `...454`
+• `` -&gt; `...455`
+• `` -&gt; `...456`
+• `` -&gt; `...457`
+• `` -&gt; `...458`
+• `` -&gt; `...460`
+• `` -&gt; `...461`
+• `` -&gt; `...462`
+• `` -&gt; `...463`
+• `` -&gt; `...464`
+• `` -&gt; `...465`
+• `` -&gt; `...466`
+• `` -&gt; `...467`
+• `` -&gt; `...468`
+• `` -&gt; `...469`
+• `` -&gt; `...470`
+• `` -&gt; `...472`
+• `` -&gt; `...473`
+• `` -&gt; `...474`
+• `` -&gt; `...475`
+• `` -&gt; `...476`
+• `` -&gt; `...477`
+• `` -&gt; `...478`
+• `` -&gt; `...479`
+• `` -&gt; `...480`
+• `` -&gt; `...481`
+• `` -&gt; `...482`
+• `` -&gt; `...484`
+• `` -&gt; `...485`
+• `` -&gt; `...486`
+• `` -&gt; `...487`
+• `` -&gt; `...488`
+• `` -&gt; `...489`
+• `` -&gt; `...490`
+• `` -&gt; `...491`
+• `` -&gt; `...492`
+• `` -&gt; `...493`
+• `` -&gt; `...494`
+• `` -&gt; `...496`
+• `` -&gt; `...497`
+• `` -&gt; `...498`
+• `` -&gt; `...499`
+• `` -&gt; `...500`
+• `` -&gt; `...501`
+• `` -&gt; `...502`
+• `` -&gt; `...503`
+• `` -&gt; `...504`
+• `` -&gt; `...505`
+• `` -&gt; `...506`
+• `` -&gt; `...508`
+• `` -&gt; `...509`
+• `` -&gt; `...510`
+• `` -&gt; `...511`
+• `` -&gt; `...512`
+• `` -&gt; `...513`
+• `` -&gt; `...514`
+• `` -&gt; `...515`
+• `` -&gt; `...516`
+• `` -&gt; `...517`
+• `` -&gt; `...518`
+• `` -&gt; `...520`
+• `` -&gt; `...521`
+• `` -&gt; `...522`
+• `` -&gt; `...523`
+• `` -&gt; `...524`
+• `` -&gt; `...525`
+• `` -&gt; `...526`
+• `` -&gt; `...527`
+• `` -&gt; `...528`
+• `` -&gt; `...529`
+• `` -&gt; `...530`
+• `` -&gt; `...532`
+• `` -&gt; `...533`
+• `` -&gt; `...534`
+• `` -&gt; `...535`
+• `` -&gt; `...536`
+• `` -&gt; `...537`
+• `` -&gt; `...538`
+• `` -&gt; `...539`
+• `` -&gt; `...540`
+• `` -&gt; `...541`
+• `` -&gt; `...542`
+• `` -&gt; `...544`
+• `` -&gt; `...545`
+• `` -&gt; `...546`
+• `` -&gt; `...547`
+• `` -&gt; `...548`
+• `` -&gt; `...549`
+• `` -&gt; `...550`
+• `` -&gt; `...551`
+• `` -&gt; `...552`
+• `` -&gt; `...553`
+• `` -&gt; `...554`
+• `` -&gt; `...556`
+• `` -&gt; `...557`
+• `` -&gt; `...558`
+• `` -&gt; `...559`
+• `` -&gt; `...560`
+• `` -&gt; `...561`
+• `` -&gt; `...562`
+• `` -&gt; `...563`
+• `` -&gt; `...564`
+• `` -&gt; `...565`
+• `` -&gt; `...566`
+• `` -&gt; `...568`
+• `` -&gt; `...569`
+• `` -&gt; `...570`
+• `` -&gt; `...571`
+• `` -&gt; `...572`
+• `` -&gt; `...573`
+• `` -&gt; `...574`
+• `` -&gt; `...575`
+• `` -&gt; `...576`
+• `` -&gt; `...577`
+• `` -&gt; `...578`
+• `` -&gt; `...580`
+• `` -&gt; `...581`
+• `` -&gt; `...582`
+• `` -&gt; `...583`
+• `` -&gt; `...584`
+• `` -&gt; `...585`
+• `` -&gt; `...586`
+• `` -&gt; `...587`
+• `` -&gt; `...588`
+• `` -&gt; `...589`
+• `` -&gt; `...590`
+• `` -&gt; `...592`
+• `` -&gt; `...593`
+• `` -&gt; `...594`
+• `` -&gt; `...595`
+• `` -&gt; `...596`
+• `` -&gt; `...597`
+• `` -&gt; `...598`
+• `` -&gt; `...599`
+• `` -&gt; `...600`
+• `` -&gt; `...601`
+• `` -&gt; `...602`
+• `` -&gt; `...604`
+• `` -&gt; `...605`
+• `` -&gt; `...606`
+• `` -&gt; `...607`
+• `` -&gt; `...608`
+• `` -&gt; `...609`
+• `` -&gt; `...610`
+• `` -&gt; `...611`
+• `` -&gt; `...612`
+• `` -&gt; `...613`
+• `` -&gt; `...614`
+• `` -&gt; `...616`
+• `` -&gt; `...617`
+• `` -&gt; `...618`
+• `` -&gt; `...619`
+• `` -&gt; `...620`
+• `` -&gt; `...621`
+• `` -&gt; `...622`
+• `` -&gt; `...623`
+• `` -&gt; `...624`
+• `` -&gt; `...625`
+• `` -&gt; `...626`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alabama</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>us_whitealone_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> <span class="st">"Bachelor's degree or higher*"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_alabama <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">Alabama...9</span><span class="st">`</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Alaska</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_alaska <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...21</span><span class="st">`</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Arizona</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_arizona <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...33</span><span class="st">`</span>,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Arkansas</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_arkansas <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...45</span><span class="st">`</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># California</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_california <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...57</span><span class="st">`</span>,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Colorado</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_colorado <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...69</span><span class="st">`</span>,</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Connecticut</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_connecticut <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...81</span><span class="st">`</span>,</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Delaware</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_delaware <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...93</span><span class="st">`</span>,</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Florida</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_florida <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...105</span><span class="st">`</span>,</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Georgia</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_georgia <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...117</span><span class="st">`</span>,</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Hawaii</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_hawaii <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...129</span><span class="st">`</span>,</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Idaho</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_idaho <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...141</span><span class="st">`</span>,</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="co"># Illinois</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_illinois <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...153</span><span class="st">`</span>,</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Indiana</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_indiana <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...165</span><span class="st">`</span>,</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Iowa</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_iowa <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...177</span><span class="st">`</span>,</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="co"># Kansas</span></span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_kansas <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...189</span><span class="st">`</span>,</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Kentucky</span></span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_kentucky <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...201</span><span class="st">`</span>,</span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="co"># Louisiana</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_louisiana <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...213</span><span class="st">`</span>,</span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Maine</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_maine <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...225</span><span class="st">`</span>,</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Maryland</span></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_maryland <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...237</span><span class="st">`</span>,</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Massachusetts</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_massachusetts <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...249</span><span class="st">`</span>,</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Michigan</span></span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_michigan <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...261</span><span class="st">`</span>,</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Minnesota</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_minnesota <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...273</span><span class="st">`</span>,</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="co"># Mississippi</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_mississippi <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...285</span><span class="st">`</span>,</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Missouri</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_missouri <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...397</span><span class="st">`</span>,</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a><span class="co"># Montana</span></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_montana <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...309</span><span class="st">`</span>,</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="co"># Nebraska</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_nebraska <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...321</span><span class="st">`</span>,</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a><span class="co"># Nevada</span></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_nevada <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...333</span><span class="st">`</span>,</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="co"># New Hampshire</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_newhampshire <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...345</span><span class="st">`</span>,</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="co"># New Jersey</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_newjersey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...357</span><span class="st">`</span>,</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a><span class="co"># New Mexico</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_newmexico <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...369</span><span class="st">`</span>,</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="co"># New York</span></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_newyork <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...381</span><span class="st">`</span>,</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a><span class="co"># North Carolina</span></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_northcarolina <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...393</span><span class="st">`</span>,</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="co"># North Dakota</span></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_northdakota <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...405</span><span class="st">`</span>,</span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a><span class="co"># Ohio</span></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_ohio <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...417</span><span class="st">`</span>,</span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a><span class="co"># Oklahoma</span></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_oklahoma <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...429</span><span class="st">`</span>,</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="co"># Oregon</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_oregon <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...441</span><span class="st">`</span>,</span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a><span class="co"># Pennsylvania</span></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_pennsylvania <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...453</span><span class="st">`</span>,</span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Rhode Island</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_rhodeisland <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...465</span><span class="st">`</span>,</span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a><span class="co"># South Carolina</span></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_southcarolina <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...477</span><span class="st">`</span>,</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a><span class="co"># South Dakota</span></span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_southdakota <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...489</span><span class="st">`</span>,</span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a><span class="co"># Tennessee</span></span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_tennessee <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...501</span><span class="st">`</span>,</span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a><span class="co"># Texas</span></span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_texas <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...513</span><span class="st">`</span>,</span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Utah</span></span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_utah <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...525</span><span class="st">`</span>,</span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a><span class="co"># Vermont</span></span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_vermont <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...537</span><span class="st">`</span>,</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a><span class="co"># Virginia</span></span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_virginia <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...549</span><span class="st">`</span>,</span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a><span class="co"># Washington</span></span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_washington <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...561</span><span class="st">`</span>,</span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a><span class="co"># West Virginia</span></span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_westvirginia <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...573</span><span class="st">`</span>,</span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a><span class="co"># Wisconsin</span></span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_wisconsin <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...585</span><span class="st">`</span>,</span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a> <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a><span class="co"># Wyoming</span></span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_wyoming <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...597</span><span class="st">`</span>,</span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a><span class="co"># Puerto Rico</span></span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a>bdh_whitealone_puertorico <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a>  <span class="at">Years =</span> us_whitealone_data<span class="sc">$</span>Years,</span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a>  <span class="at">Percentage_men =</span> us_whitealone_data<span class="sc">$</span><span class="st">`</span><span class="at">...597</span><span class="st">`</span>,</span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="st">"White Alone"</span></span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a><span class="co"># Combine all tibbles into one</span></span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a>combined_data_malewhitealone <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_alabama,</span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_alaska,</span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_arizona,</span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_arkansas,</span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_california,</span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_colorado,</span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_connecticut,</span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_delaware,</span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_florida,</span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_georgia,</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_hawaii,</span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_idaho,</span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_illinois,</span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_indiana,</span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_iowa,</span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_kansas,</span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_kentucky,</span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_louisiana,</span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_maine,</span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_maryland,</span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_massachusetts,</span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_michigan,</span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_minnesota,</span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_mississippi,</span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_missouri,</span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_montana,</span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_nebraska,</span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_nevada,</span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_newhampshire,</span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_newjersey,</span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_newmexico,</span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_newyork,</span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_northcarolina,</span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_northdakota,</span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_ohio,</span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_oklahoma,</span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_oregon,</span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_pennsylvania,</span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_rhodeisland,</span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_southcarolina,</span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_southdakota,</span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_tennessee,</span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_texas,</span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_utah,</span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_vermont,</span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_virginia,</span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_washington,</span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_westvirginia,</span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_wisconsin,</span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_wyoming,</span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a>  bdh_whitealone_puertorico</span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(combined_data_malewhitealone)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 408 × 3
+   Years Percentage_men Race       
+   &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      
+ 1  2022 31.3%          White Alone
+ 2  2021 30.4%          White Alone
+ 3  2020 28.9%          White Alone
+ 4  2019 28.5%          White Alone
+ 5  2018 28.4%          White Alone
+ 6  2017 28.7%          White Alone
+ 7  2016 27.8%          White Alone
+ 8  2015 26.6%          White Alone
+ 9  2022 34.1%          White Alone
+10  2021 33.8%          White Alone
+# ℹ 398 more rows</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

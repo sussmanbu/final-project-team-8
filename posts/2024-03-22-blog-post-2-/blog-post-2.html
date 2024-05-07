@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
-<meta name="dcterms.date" content="2024-02-23">
 
-<title>Team 8 Final Project - Blog Post 1</title>
+<title>Team 8 Final Project - Blog Post 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -110,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Blog Post 1</h1>
+      <h1 class="title">Blog Post 2</h1>
                       </div>
   </div>
     
@@ -118,19 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta">
 
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">February 23, 2024</p>
-      </div>
-    </div>
     
-      <div>
-      <div class="quarto-title-meta-heading">Modified</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date-modified">February 23, 2024</p>
-      </div>
-    </div>
       
     </div>
     
@@ -145,23 +165,99 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>The purpose of this blog post is to highlight three potential data sets that our group may focus on for our final project.</p>
-<section id="data-set-1-death-rates-for-suicide-by-race-age-and-hispanic-origin-in-the-united-states" class="level2">
-<h2 class="anchored" data-anchor-id="data-set-1-death-rates-for-suicide-by-race-age-and-hispanic-origin-in-the-united-states">Data Set #1: Death rates for suicide by race, age, and Hispanic origin in the United States</h2>
-<p>This data set was gathered from data.gov, a free database provided by the U.S. Government (https://catalog.data.gov/dataset/death-rates-for-suicide-by-sex-race-hispanic-origin-and-age-united-states-020c1). This data set has 6390 objects and 13 columns, and describes U.S. suicide rates from the years 1950 to 2018. Data before 1980 is a decade apart (1950, 1960, 1970, 1980) but yearly after 1980.</p>
-<p>There is a large variety of groups that this data set is separated by, including aggregate data, gender, race, and age. This data was collected by the National Center for Health Statistics, and is highly categorized to the point where grabbing specific information from it has potential to be easy, but proper sorting may prove to be a challenge. Cleaning of the data appears to be unnecessary. While this topic is quite bleak, it could provide valuable insight into the well being of many demographics in the United States.</p>
-</section>
-<section id="data-set-2-usa-unemployment-rates-by-demographics-race" class="level2">
-<h2 class="anchored" data-anchor-id="data-set-2-usa-unemployment-rates-by-demographics-race">Data Set #2: USA Unemployment Rates by Demographics &amp; Race</h2>
-<p>The data set is from Kaggle: https://www.kaggle.com/datasets/asaniczka/unemployment-rates-by-demographics-1978-2023?resource=download This data set from Kaggle titled “Unemployment Rates by Demographics 1978-2023” contains data related to unemployment rates segmented by various demographic factors in the U.S. over a period spanning from 1978 to 2023. The data set includes 122 columns, including information of unemployment rates for various age groups, education levels, genders, races, and more. The data set includes 537 rows, which the frequency of data collecting is monthly from December 1978 to July 2023.</p>
-<p>The data is sourced from the Economic Policy Institute’s State of Working America Data Library and economic research conducted by the Federal Reserve Bank of St.&nbsp;Louis. The purpose is to monitor and analyze employment trends in the population. I think we are able to load/clean this data because the segmentation is clear in columns so it is easy for us to screen out the exact data columns we are looking for for our main research focus and topic. There is no N/A in this data set. The main questions I hope to address with this dataset is to find relationship between education level and unemployment rate and find the trend for different demographic groups across time span.</p>
-</section>
-<section id="data-set-3-educational-attainment-of-genders-and-race-groups-across-various-age-groups-us-census-bureau" class="level2">
-<h2 class="anchored" data-anchor-id="data-set-3-educational-attainment-of-genders-and-race-groups-across-various-age-groups-us-census-bureau">Data Set #3: Educational Attainment of Genders and Race Groups across various age groups (US Census Bureau)</h2>
-<p>The data set is from the United States Census Bureau as part of the Bureau’s ‘American Community Survey’. The data set can be accessed by the following link: <a href="https://bit.ly/49WpvK9" class="uri">https://bit.ly/49WpvK9</a>. This data set comprises of educational attainment of different age groups, the educational attainment of different race categories, the poverty rate for ages 25 by educational attainment level, and the inflation-adjusted yearly median earnings by race and educational attainment. We selected this data set as it contains a wealth of useful information, and ultimately contains figures for those stated variables for females (also comes complete with percentages also!). In addition, the data also includes specific margin of errors (at 90% margin of error) for each data point it includes - hence boosting its reliability.</p>
-<p>The data set ranges from 2010 to 2022. A challenge is that the data set does not put all the data across 2010 - 2022 in one file (i.e., it separates them for observations for each year, resulting in 12 separate files). As of now, we have tried merging them into one file to ease reading. Nonetheless, we acknowledge that the data is not tidy and extensive data tidying is needed to process the data into the format we want. Technically, each separate file consists of 71 rows and 13 columns. There are also some parts of the data which are not available (i.e., denoted by ‘(X)’) - although only a negligible amount.</p>
-<p>Ultimately, we conclude that this data set could prove extremely useful if we are able to ‘tidy’ it well.</p>
-<p>(Further information: For more supporting documentation on the accuracy of this data set (e.g., subject definitions, data accuracy, and statistical testing, it can be found on the Technical Documentation of the American Community Survey website in the following link: <a href="https://bit.ly/3SVaf9f" class="uri">https://bit.ly/3SVaf9f</a>)</p>
+<section id="blog-post-2---reviewing-feedback-and-data-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="blog-post-2---reviewing-feedback-and-data-exploration">Blog Post 2 - Reviewing Feedback and Data Exploration&nbsp;</h3>
+<p>Throughout this week, we reviewed the feedback on our datasets. We decided that we would use our datasets on death rates via suicide and unemployment as supplementary evidence later on in our project. These two datasets are quite messy to use and proved challenging to sort/clean them to provide a compelling argument. We found a third supporting dataset from the World Bank on Gender. We also decided to focus on the ACS data on Educational Attainment concerning Gender and Race (i.e., the Professor also told us how to extract data from ACS directly via R).&nbsp;</p>
+<p>From the ACS dataset, we brainstormed some ideas we could further explore. Firstly, we want to give a brief overview of the data we collected by exhibiting trends over time (i.e., showing poverty rates over time, median earnings of women from different racial backgrounds), and see if there are improvements or regressions in the data. Secondly, we also decided to conduct a gender-pay gap analysis by analyzing median earnings for women and men within each racial group based on their educational attainment. Relating to education, we also want to investigate the educational attainment of genders concerning race by seeing the percentage of women in different levels of education. Lastly, to further explore the disparities between genders, we want to see the poverty rates of women in each racial group, based on educational attainment. Run the chunk below to view the ACS dataset:&nbsp;</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tibble' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'forcats' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...1`</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="blog-post-2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">##ACS Educational Attainment Dataset:</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">'dataset/ACS_dataset.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 392 Columns: 1
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): ;;Alabama;;;;;;;;;;;;Alaska;;;;;;;;;;;;Arizona;;;;;;;;;;;;Arkansas;...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(data1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The World Bank dataset encapsulates a lot of data for many different categories including age-dependency ratios, population and birth rates, wage, and education. However, the World Bank data is not faceted by race. Additionally, there are also many NAs on certain measurements. We will probably use this data to compare with the ACS data to see averages and general correlations. Run the chunk below to view the World Bank Gender dataset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">##World Bank Gender Dataset: </span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">'dataset/USA_Gender_Stats.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+Rows: 1153 Columns: 70
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(4): Country.Name, Country.Code, Indicator.Name, Indicator.Code dbl (65): ...1,
+X1960, X1961, X1962, X1963, X1964, X1965, X1966, X1967, X196... lgl (1): X
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Team 8 Final Project - About</title>
+<title>Team 8 Final Project - Potential Graphs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -33,6 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -81,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -109,60 +144,72 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Potential Graphs</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
-<p>This comes from the file <code>about.qmd</code>.</p>
-<p>This is a website for the final project for MA[46]15 Data Science with R by Team 8. The members of this team are below.</p>
-<section id="zixinalicezhang" class="level2">
-<h2 data-anchor-id="zixinalicezhang">Zixin(Alice)Zhang</h2>
-<p>Alice is a senior student major in Economics.</p>
-</section>
-<section id="dylon-thompson" class="level2">
-<h2 data-anchor-id="dylon-thompson">Dylon Thompson</h2>
-<p>Dylon is a senior student majoring in Economics and Mathematics.</p>
-</section>
-<section id="bhimraj-singh-bhuller" class="level2">
-<h2 data-anchor-id="bhimraj-singh-bhuller">Bhimraj Singh Bhuller</h2>
+  
+
+</header>
+
 <div class="cell">
-<div class="cell-output-display">
-<p><img src="about_images/Bhim_pic.png" class="img-fluid" width="222"></p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(readxl))</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyverse))</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>acs_stuff <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dataset/ACS_Gender_and_Race.csv'</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>income_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dataset/dofl_income_clean.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric for percentage</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>acs_stuff<span class="sc">$</span>Male_P_Bach <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, acs_stuff<span class="sc">$</span>Male_P_Bach))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>acs_stuff<span class="sc">$</span>Female_P_Bach <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, acs_stuff<span class="sc">$</span>Female_P_Bach))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># organizing raced percentage data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>acs_stuff <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Race) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">bach_perc_male =</span> <span class="fu">sum</span>(Male_P_Bach, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">n</span>(),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">bach_perc_female =</span> <span class="fu">sum</span>(Female_P_Bach, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">n</span>(),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop_m_to_f =</span> bach_perc_female<span class="sc">/</span>bach_perc_male</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 4
+  Race                               bach_perc_male bach_perc_female prop_m_to_f
+  &lt;chr&gt;                                       &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;
+1 American Indian or Alaska Native …           13.8             17.2       1.25 
+2 Asian Alone                                  56.6             50.5       0.892
+3 Black Alone                                  20.8             24.8       1.19 
+4 Hispanic or Latino Origin                    17.4             21.2       1.22 
+5 Native Hawaiian and Other Pacific…           11.2             11.9       1.07 
+6 Some other race Alone                        13.8             16.9       1.23 
+7 Two or more races                            27.7             32.1       1.16 
+8 White Alone                                  34.3             36.0       1.05 
+9 White alone, not Hispanic or Lati…           35.8             37.2       1.04 </code></pre>
 </div>
 </div>
-<p><strong>LinkedIn</strong>: linkedin.com/in/bhimrajbhuller</p>
-<p>Bhimraj is a sophomore pursuing a dual degree program in B.A. in Economics and Mathematics and M.A.&nbsp;in Economics. He finds joy in using knowledge to enhance lives and processes. Economics is his playground, and he is an overenthusiastic problem-crusher. When not decoding economic mysteries, he is on a book binge or catching up with friends and family.</p>
-<p>In the economics arena, he is heads over heels for macroeconomics. Reading financial crisis books is a passion, giving him a lowdown on economic rollercoasters. Beyond that, he kicks a ball around, and travel to broaden his perspectives.</p>
-</section>
-<section id="tianxiang-chen" class="level2">
-<h2 data-anchor-id="tianxiang-chen">Tianxiang Chen</h2>
-<p>Tianxiang is a graduate student major in MA Economics.</p>
-</section>
-<section id="gabe-gan" class="level2">
-<h2 data-anchor-id="gabe-gan">Gabe Gan</h2>
-<p>Gabe is a senior student majoring in Applied Mathematics.</p>
-<!-- Please leave in the information below -->
-<section id="about-this-template." class="level3">
-<h3 data-anchor-id="about-this-template.">About this Template.</h3>
-<p>This is based off of the standard Quarto website template from RStudio (2023.09.0 Build 463).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># numeric for median data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(income_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
-</section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/sussmanbu/" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -183,6 +230,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
