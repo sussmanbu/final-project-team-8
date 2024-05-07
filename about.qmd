@@ -21,7 +21,12 @@ This is a website for the final project for MA\[46\]15 Data Science with R by Te
 
 ## Zixin(Alice)Zhang
 
-Alice is a senior student major in Economics.
+```{r echo=FALSE}
+library(knitr)
+knitr::include_graphics("about_images/Alice_pic.png")
+```
+
+Alice is a senior student majoring in Economics and Advertising.
 
 ## Dylon Thompson
 
