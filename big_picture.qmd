@@ -76,6 +76,8 @@ gendered_employment_split |>
   theme_minimal()
 ```
 
+## Charting Educational Journeys 
+
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
@@ -131,6 +133,8 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+## Illuminating the Gender Pay Gap
+
 Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
 
 ```{r include_image, echo=FALSE, fig.cap="Source: Cleaned Dept. of Labor Data"}
@@ -138,7 +142,9 @@ library(knitr)
 knitr::include_graphics("Graph median income.png")
 ```
 
-This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races.
+## Gender and Race Dynamics Above the Poverty Line
+
+This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities.
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
@@ -148,7 +154,7 @@ library(shiny)
 ui <- fluidPage(
   
 
-  titlePanel("Analyzing Gender Disparities: Proportions of Males Above Poverty Line Compared to Females, by Race and State"),
+  titlePanel("Analyzing Gender Disparities: Proportions of Males and Females Above Poverty Line, by Race and State"),
   
 
   sidebarLayout(
