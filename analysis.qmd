@@ -237,18 +237,11 @@ combined_table <- bind_rows(
 # Print the combined table
 knitr::kable(combined_table)
 ```
+In this ARIMA model, we took the 15 years of income data from the ACS and used it to predict the future change in income. The ar1 estimators basically show how much the a given year's income data is affected by the prior year's income data. Because all three (combined, male, and female) data have similar coefficients (all within a range of ±.03), we can assume that our variables all share similar levels of autocorrelation. This means they have similar momentum in time, which implies that the pay gap between men and women is relatively unchanged as both men and women receive similar changes in rates. 
 
-This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged
+This makes sense with the first model, because the pay gap has remained relatively the same, it is hard to show that just being female makes a significant change Average Median Income. 
 
-With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.
-
-```{r}
-bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
-
-bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
-
-bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Female_P_Bach)) / 100
-
+```{r model_3}
 dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
 
 dofl_prep <- dofl|>
@@ -303,12 +296,17 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 ```{r}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
+modeling_data$Race <- factor(modeling_data$Race, 
+                             levels = c("Black", "Hispanic","White", 
+                                        "White, non-Hispanic", "Asian"))
 
 glm_model <- glm(Income ~ Race + Gender + Bachelors_Attainment, 
                  data = modeling_data, family = gaussian())
 
 tidy_summary <- broom::tidy(glm_model)
 tidy_summary
+
+
 
 glm_model2 <- glm(Income ~ Race + Gender, 
                   data = modeling_data, family = gaussian())
