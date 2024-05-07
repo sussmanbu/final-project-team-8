@@ -146,10 +146,8 @@ knitr::include_graphics("bigpic_medianincome/graph_median_income.png")
 
 This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities. To visualize this data, we created an interactable Shiny App that can be accessed [Here](https://dylonth.shinyapps.io/final/)
 
-
-
 ## Using Statistical Techniques to Analyze Disparity
 
-This project uses a variety of statistical techniques to try to answer 
+This project uses a variety of statistical techniques to try to answer
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
