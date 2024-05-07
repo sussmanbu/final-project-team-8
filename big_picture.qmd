@@ -78,12 +78,74 @@ gendered_employment_split |>
 
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
 
-\[A graph here\]
+```{r echo=FALSE, results ='hide', message = FALSE}
+library(shiny)
+library(ggplot2)
+library(dplyr)
+
+ui <- fluidPage(
+  titlePanel("Percentage of people who have a Bachelor's degree or higher, by Gender and Race"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      selectInput("Race", "Select Race:", choices = c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin"))
+    ),
+    mainPanel(
+      plotOutput("male_plot"),
+      plotOutput("female_plot")
+    )
+  )
+)
+
+server <- function(input, output){
+  data <- read.csv('dataset/ACS_Gender_and_Race.csv')
+  
+  output$male_plot <- renderPlot({
+    # Convert Male_P_Bach to numeric
+    data$Male_P_Bach <- as.numeric(sub("%", "", data$Male_P_Bach))
+    filtered_data_m <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for male percentages
+    ggplot(filtered_data_m, aes(x = factor(Years), y = Male_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "yellow") +  
+      labs(x = "Years", y = "% of Male with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
+  })
+
+  output$female_plot <- renderPlot({
+    # Convert Female_P_Bach to numeric
+    data$Female_P_Bach <- as.numeric(sub("%", "", data$Female_P_Bach))
+    
+    filtered_data_f <- data %>% filter(Race == input$Race)
+    # Plot using ggplot for female percentages
+    ggplot(filtered_data_f, aes(x = factor(Years), y = Female_P_Bach, fill = Race)) +
+      geom_boxplot() +
+      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
+      scale_fill_manual(values = "lightblue") +  
+      labs(x = "Years", y = "% of Female with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
+      theme_minimal()    
+  })
+}
+
+shinyApp(ui, server)
+```
 
 Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
 
+```{r include_image, echo=FALSE, fig.cap="Source: Cleaned Dept. of Labor Data"}
+library(knitr)
+knitr::include_graphics("Graph median income.png")
+
+
+
+```
+
+This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races.
+
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
+
 
 
 ui <- fluidPage(
@@ -141,63 +203,9 @@ server <- function(input, output) {
 
 shinyApp(ui = ui, server = server)
 
+
 ```
 
-This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races.
-
-```{r echo=FALSE, results ='hide', message = FALSE}
-library(shiny)
-library(ggplot2)
-library(dplyr)
-
-ui <- fluidPage(
-  titlePanel("Percentage of people who have a Bachelor's degree or higher, by Gender and Race"),
-  
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("Race", "Select Race:", choices = c("White Alone", "White alone, not Hispanic or Latino", "Black Alone", "American Indian or Alaska Native Alone", "Asian Alone", "Native Hawaiian and Other Pacific Islander Alone", "Some other race Alone", "Two or more races", "Hispanic or Latino Origin"))
-    ),
-    mainPanel(
-      plotOutput("male_plot"),
-      plotOutput("female_plot")
-    )
-  )
-)
-
-server <- function(input, output){
-  data <- read.csv('dataset/ACS_Gender_and_Race.csv')
-  
-  output$male_plot <- renderPlot({
-    # Convert Male_P_Bach to numeric
-    data$Male_P_Bach <- as.numeric(sub("%", "", data$Male_P_Bach))
-    filtered_data_m <- data %>% filter(Race == input$Race)
-    # Plot using ggplot for male percentages
-    ggplot(filtered_data_m, aes(x = factor(Years), y = Male_P_Bach, fill = Race)) +
-      geom_boxplot() +
-      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
-      scale_fill_manual(values = "yellow") +  
-      labs(x = "Years", y = "% of Male with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
-      theme_minimal()    
-  })
-
-  output$female_plot <- renderPlot({
-    # Convert Female_P_Bach to numeric
-    data$Female_P_Bach <- as.numeric(sub("%", "", data$Female_P_Bach))
-    
-    filtered_data_f <- data %>% filter(Race == input$Race)
-    # Plot using ggplot for female percentages
-    ggplot(filtered_data_f, aes(x = factor(Years), y = Female_P_Bach, fill = Race)) +
-      geom_boxplot() +
-      stat_summary(fun=median, geom="text", aes(label=sprintf("%.1f%%", ..y..)), vjust=-1) + # Add median labels
-      scale_fill_manual(values = "lightblue") +  
-      labs(x = "Years", y = "% of Female with Bachelor's Degree or Higher (median labelled)", fill = "Race", caption = "Source: Cleaned American Community Survey Data") +
-      theme_minimal()    
-  })
-}
-
-shinyApp(ui, server)
-```
+## **\[NOT DONE YET THIS PART:  simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
-
-**Note: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)**
