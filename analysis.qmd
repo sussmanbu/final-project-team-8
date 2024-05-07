@@ -238,12 +238,15 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
 
-glm_model <- glm(Income ~ Race * Gender + Bachelors_Attainment, data = modeling_data, family = gaussian())
+glm_model <- glm(Income ~ Race + Gender + Bachelors_Attainment, data = modeling_data, family = gaussian())
 
+glm_model2 <- glm(Income ~ Race + Gender, data = modeling_data, family = gaussian())
 
 tidy_summary <- broom::tidy(glm_model)
 print(tidy_summary)
 
+tidy2summary <- broom::tidy(glm_model2)
+print(tidy2summary)
 
 ```
 > To be or not to be. \`\`\`
