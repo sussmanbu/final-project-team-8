@@ -51,7 +51,12 @@ Tianxiang is a graduate student major in MA Economics.
 
 ## Gabe Gan
 
-Gabe is a senior student majoring in Applied Mathematics.
+```{r echo=FALSE}
+library(knitr)
+knitr::include_graphics("about_images/Gabe_aboutpic.jpg")
+```
+
+Gabe is a senior student majoring in Applied Mathematics. After graduating this May, he is going to NYC to pursue a career in actuarial work.
 
 <!-- Please leave in the information below -->
 
