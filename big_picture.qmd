@@ -2,6 +2,7 @@
 title: "Big Picture"
 toc: true
 draft: FALSE
+shiny: true
 ---
 
 ![*Image: Demonstrators carry signs during the 2020 Women’s March on Jan. 18 in Washington, D.C. (Zach Gibson/Getty Images)*](https://www.pewresearch.org/wp-content/uploads/2020/07/FT_20.07.07_ActivismGender_feature.jpg)
@@ -145,67 +146,41 @@ knitr::include_graphics("bigpic_medianincome/graph_median_income.png")
 
 This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities.
 
-```{r echo=FALSE, results ='hide', message = FALSE}
+```{r echo=FALSE, message=FALSE, results='hide'}
 library(shiny)
 
-
-
 ui <- fluidPage(
-  
-
   titlePanel("Analyzing Gender Disparities: Proportions of Males and Females Above Poverty Line, by Race and State"),
-  
-
   sidebarLayout(
     sidebarPanel(
-
-      selectInput("gender", "Select gender:",
-                  choices = c("Male", "Female")),
-      
-
-      selectInput("race", "Select race:",
-                  choices = c("White Alone", 
-                              "White alone, not Hispanic or Latino", 
-                              "Black Alone", 
-                              "American Indian and Alaska Native Alone", 
-                              "Asian Alone", 
-                              "Native Hawaiian and Other Pacific Islander Alone", 
-                              "Some other race Alone", 
-                              "Two or more races", 
-                              "Hispanic or Latino Origin"))
+      selectInput("gender", "Select gender:", choices = c("Male", "Female")),
+      selectInput("race", "Select race:", choices = c(
+        "White Alone", 
+        "White alone, not Hispanic or Latino", 
+        "Black Alone", 
+        "American Indian and Alaska Native Alone", 
+        "Asian Alone", 
+        "Native Hawaiian and Other Pacific Islander Alone", 
+        "Some other race Alone", 
+        "Two or more races", 
+        "Hispanic or Latino Origin"))
     ),
-    
-
     mainPanel(
-
       imageOutput("image")
     )
   )
 )
 
-
 server <- function(input, output) {
-  
-
   output$image <- renderImage({
-    
     gender <- input$gender
     race <- input$race
     file_path <- paste0("bigpic_povertyimage/", gender, " ", race, ".jpg")
-    
-
-    list(src = file_path,
-         contentType = 'image/jpeg',
-         width = '100%',
-         height = 'auto')
-  },
-  deleteFile = FALSE)
+    list(src = file_path, contentType = 'image/jpeg', width = '100%', height = 'auto')
+  }, deleteFile = FALSE)
 }
 
-
 shinyApp(ui = ui, server = server)
-
-
 ```
 
 ## **\[NOT DONE YET THIS PART: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
