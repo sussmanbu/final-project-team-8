@@ -194,3 +194,64 @@ Another dataset we used is from the American Community Survey *(ACS)*, which pro
 The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, "acs5", cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.
 
 The dependent variable in this dataset is the poverty status, which is defined as the proportion of individuals below the poverty line in each surveyed group. The independent variables include the year of the survey, which ranges from 2015-2020, and demographic identifiers such as race and state.
+
+**Merging Data: Process and Challenges**
+
+The process of merging data was tedious yet rewarding. For this project, our group decided to merge income data from the Department of Labor dataset with the ACS data pertaining to educational attainment. 
+
+```{r}
+bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
+
+bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
+
+bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Female_P_Bach)) / 100
+
+dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
+```
+
+First, the data was read using the command 'read_csv' and the attainment data was transformed from characters to strings for further analysis.
+
+```{r}
+dofl_prep <- dofl|>
+  pivot_longer(cols = -Year, names_to = 'Race', values_to = 'Income') |>
+  mutate(Gender = str_replace(str_replace(str_extract(Race, "Men|Women"), "Men", "Male"), "Women", "Female"))
+```
+
+Prep for the department of data was done to create a column for gender and race, indexes that would be used later in the merging process.
+
+```{r}
+dofl_merge <- dofl_prep |>
+  mutate(Race = str_replace_all(Race, c(" Men" = "", " Women" = ""))) |>
+  filter(Year >= 2015) |>
+  filter(Race != 'Total') |>
+  arrange(Race) |>
+  arrange(Gender)
+```
+
+Then, the data was cleaned further, and filtered to include the years 2015-2022, in line with our data gathered from the ACS. Then, it was organized by both race and gender to ensure both datasets were in the same order.
+
+```{r}
+desired_races <- c("White", "Black", "Hispanic", "White, non-Hispanic", "Asian")
+
+bachelor_merge <- bachelors_attainment |>
+  mutate(Race = str_replace_all(Race, c(" Alone" = '', "not Hispanic"= 'non-Hispanic',' or Latino' = '', ' alone' = '', ' Origin' = ''))) |>
+  filter(Race %in% desired_races) |>
+  group_by(Race, Years)|>
+  summarise(`Percent Male` =mean(Male_P_Bach, na.rm = T),
+            `Percent Female` = mean(Female_P_Bach, na.rm = T)) |>
+  pivot_longer(cols = c("Percent Male", "Percent Female"), 
+               names_to = "Gender",
+               values_to = "Bachelors Attainment") |>
+  mutate(Gender = str_replace_all(Gender, c('Percent ' = ''))) |>
+  arrange(Race) |>
+  arrange(Gender)
+```
+
+The bachelors data, which was still divided by state, was filtered to only include races recorded by the Department of Labor. It was then summarized to gather prevalent information regarding the overall proportion of Bachelor degree attainment. Then, similar to the Department of Labor Data, it was arranged twice to ensure it was in the same order.
+
+```{r}
+modeling_data <- dofl_merge |>
+  mutate(Bachelors_Attainment = bachelor_merge$`Bachelors Attainment`)
+```
+
+Finally, our relevant Bachelor's attainment data was mutated onto the Department of Labor data, which was only possible due to careful planning and ensuring of proper syntax. The dataset 'modeling_data' is what was used to run the group's regression models.
