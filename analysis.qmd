@@ -30,26 +30,64 @@ install.packages("vars")
 library(vars)
 
 data <- read_csv(here::here('dataset/Numerical_ACS_Gender_and_Race.csv'))
+data_perc <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
 acs_income <- read_csv(here::here('dataset/ACS_Median_Income.csv'))
 data$Years <- as.Date(paste0(data$Years, "-01-01"))
-data2$Years <- as.Date(paste0(data2$Years, "-01-01"))
+acs_income$Years <- as.Date(paste0(acs_income$Years, "-01-01"))
 acs_stuff <- read.csv('dataset/ACS_Gender_and_Race.csv')
 
 # numeric for percentage
 acs_stuff$Male_P_Bach <- as.numeric(gsub("%", "", acs_stuff$Male_P_Bach))
 acs_stuff$Female_P_Bach <- as.numeric(gsub("%", "", acs_stuff$Female_P_Bach))
 
+bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
+bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
+bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Female_P_Bach)) / 100
+
 
 ```
 
 ## Exploratory Data Analysis
 
-### 
+We hypothesized that a good estimator for average would be the rate at which people achieve bachelor degrees. With this in mind, we wanted to see the rates of bachelor degree attainment for different races. 
+
+### Graph 1
+
 
 ```{r graphs for this page, echo = FALSE}
-view(acs_income)
+### Graph 1 
+ggplot(data = data, aes(x = Years)) + 
+  geom_line(aes(y = `Total Male`/1000, color = 'Total Male')) +
+  geom_line(aes(y = `Total Female`/1000, color = 'Total Female')) +
+  facet_wrap(~Race, scales = 'free') +
+  theme_minimal() +
+  theme(strip.text = element_text(size = 6),
+        axis.text.x = element_text(size = 6),  
+        axis.text.y = element_text(size = 6)) +
+  scale_color_manual(values = c('Total Male' = 'blue', 'Total Female' = 'red')) +
+  labs(color = 'Gender',
+       title = "Total Number of People Who Have Attained Bachelor's Degrees",
+       subtitle = "Pivoted by Race",
+       y = 'Bachelors Attainment (Thousands)')
+
+```
+This graph shows the number of people that have attained bachelor's degree's pivoted by race. In general, White people attain bachelor degrees at a much higher quantity. After that, Asian and Hispanic people attain bachelor degrees at a lesser to White people, but similar rates to each other. Black women attain bachelor degrees in similar quantities to Asian and Hispanic women, but there is a distinct drop off with the quantities for Black men. 
+
+```{r}
+### Table 1b
+bachelors_attainment %>% group_by(Race) %>%
+  summarize(
+    Male = sum(Male_P_Bach, na.rm = TRUE) / n(),
+    Female = sum(Female_P_Bach, na.rm = TRUE) / n()
+  )
+```
+Building off of Graph 1, while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor's Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees.
+
+### Graphs 2 and 3
+```{r}
+### Graph 2
 data2_bach <- acs_income %>% na.omit() %>% 
-  group_by(Year) %>%
+  group_by(Years) %>%
   summarize(
     Bach_M_Median = sum(Bach_M_Median) / n(),
     Bach_F_Median = sum(Bach_F_Median) / n(),
@@ -66,25 +104,6 @@ data2_grad <- acs_income %>% na.omit() %>%
   ) %>% 
   pivot_longer(cols = -Years, names_to = "Type", values_to = "Amount")
 
-### Graph 1 
-ggplot(data = data, aes(x = Years)) + 
-  geom_line(aes(y = `Total Male`/1000, color = 'Total Male')) +
-  geom_line(aes(y = `Total Female`/1000, color = 'Total Female')) +
-  facet_wrap(~Race, scales = 'free') +
-  theme_minimal() +
-  theme(strip.text = element_text(size = 6),
-        axis.text.x = element_text(size = 6),  
-        axis.text.y = element_text(size = 6)) +
-  scale_color_manual(values = c('Total Male' = 'blue', 'Total Female' = 'red')) +
-  labs(color = 'Gender',
-       y = 'Bachelors Attainment (Thousands)')
-
-
-```
-
-asfdadf
-
-```{### Graph 2}
 ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
   geom_line(stat = "identity") +
   ylim(0, 80000) +
@@ -99,8 +118,6 @@ ggplot(data2_bach, aes(x = Years, y = Amount, color = Type)) +
                     labels = c("Difference" = "Difference",
                                "Bach_M_Median" = "Male",
                                "Bach_F_Median" = "Female"))
-  
-
 ### Graph 3
 ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
   geom_line(stat = "identity") +
@@ -116,10 +133,12 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
                     labels = c("Difference" = "Difference",
                                "Grad_M_Median" = "Male",
                                "Grad_F_Median" = "Female"))
-
 ```
+```
+Graphs two and three 
 
-```{r echo = false}
+
+```{r, echo = FALSE}
 ### Graph 4
 
 # organizing raced percentage data
