@@ -134,11 +134,11 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
                                "Grad_M_Median" = "Male",
                                "Grad_F_Median" = "Female"))
 ```
-```
+
 Graphs two and three 
 
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 ### Graph 4
 
 # organizing raced percentage data
@@ -242,7 +242,7 @@ This is the set of the auto regressive coefficients of each of these variables a
 
 With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.
 
-```{r model_3}
+```{r}
 bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
 
 bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
@@ -300,7 +300,7 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 ### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
 
-```{r model_4}
+```{r}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
 
