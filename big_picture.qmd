@@ -154,6 +154,8 @@ This project uses a variety of statistical techniques to try to answer questions
 
 - When Income is regressed against Gender, Race, and Education, certain groups are doing greatly better than others
   - For example, Hispanic men and women have a significantly lower income than White men and women, but comparatively, Hispanic men are significantly better.
+  
+- Overall, the disparity that women receive facing income does not appear to be changing.
 
 
 
