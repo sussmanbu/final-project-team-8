@@ -25,6 +25,10 @@ Alice is a senior student major in Economics.
 
 ## Dylon Thompson
 
+```{r echo=FALSE, messages = F}
+library(knitr)
+knitr::include_graphics("about_images/dylon.jpg")
+```
 Dylon is a senior student majoring in Economics and Mathematics.
 
 ## Bhimraj Singh Bhuller
