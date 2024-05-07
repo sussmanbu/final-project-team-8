@@ -4,6 +4,7 @@ toc: true
 draft: FALSE
 ---
 
+
 ![*Image: Demonstrators carry signs during the 2020 Women’s March on Jan. 18 in Washington, D.C. (Zach Gibson/Getty Images)*](https://www.pewresearch.org/wp-content/uploads/2020/07/FT_20.07.07_ActivismGender_feature.jpg)
 
 # **Unveiling the Racial Education Divide: Women vs. Men in Every State - Who Wins the Race to Success?**
@@ -13,6 +14,7 @@ By Team 8
 In the pursuit of success, education is a key element, but what happens if the path of education is not equal to all? This project examines America's educational landscape, and examines how race and gender affect educational opportunities in the United States. Our goal is to expose inequalities, address challenges and spark conversations to transcend statistics to heal the gender-racial education divide in the country.
 
 The project confronts the stark disparities within and between gender and racial groups. A canvas of educational attainment paints a picture of untapped potential, begging the question: who truly wins the race to success?
+
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 
@@ -75,9 +77,11 @@ gendered_employment_split |>
   theme_minimal()
 ```
 
+
 ## Charting Educational Journeys 
 
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
+
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
@@ -132,18 +136,22 @@ server <- function(input, output){
 shinyApp(ui, server)
 ```
 
+
 ## Illuminating the Gender Pay Gap
 
 Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
+
 
 ```{r include_image, echo=FALSE, fig.cap="Source: Cleaned Dept. of Labor Data"}
 library(knitr)
 knitr::include_graphics("Graph median income.png")
 ```
 
+
 ## Gender and Race Dynamics Above the Poverty Line
 
 This project also investigates the amount of females and males above the poverty line across U.S. states and sees the differences for different gender and races. The disparities are particularly seen for Native Hawaiian and Other Pacific Islander Alone, Black Alone, and most notably, American Indian and Alaska Native Alone populations. These findings further highlight the systemic injustices that contribute to inequality within communities.
+
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
 library(shiny)
@@ -208,6 +216,8 @@ shinyApp(ui = ui, server = server)
 
 ```
 
+
 ## **\[NOT DONE YET THIS PART:  simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
+
