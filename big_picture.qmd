@@ -75,7 +75,7 @@ gendered_employment_split |>
   theme_minimal()
 ```
 
-## Charting Educational Journeys 
+## Charting Educational Journeys
 
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
 
@@ -138,7 +138,7 @@ Also guided by the beacon of economic insight, the project delves into income da
 
 ```{r include_image, echo=FALSE, fig.cap="Source: Cleaned Dept. of Labor Data"}
 library(knitr)
-knitr::include_graphics("Graph median income.png")
+knitr::include_graphics("bigpic_medianincome/graph_median_income.png")
 ```
 
 ## Gender and Race Dynamics Above the Poverty Line
@@ -191,7 +191,7 @@ server <- function(input, output) {
     
     gender <- input$gender
     race <- input$race
-    file_path <- paste0(gender, " ", race, ".jpg")
+    file_path <- paste0("bigpic_povertyimage/", gender, " ", race, ".jpg")
     
 
     list(src = file_path,
@@ -208,6 +208,6 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-## **\[NOT DONE YET THIS PART:  simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
+## **\[NOT DONE YET THIS PART: simplify how we say linear regression. The results are not yet done (so include paragraph parts on where you could put results)\]**
 
 This project stands on the crossroads of data and destiny. Join us as we continue this quest for a more egalitarian society, one insight at a time.
