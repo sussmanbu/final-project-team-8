@@ -5,9 +5,7 @@ toc: true
 draft: false
 ---
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/77/Pebbleswithquarzite.jpg)
-
-This comes from the file `analysis.qmd`.
+![](images/race_gender-plain.jpg-02.webp)This comes from the file `analysis.qmd`.
 
 We describe here our detailed data analysis. This page will provide an overview of what questions you addressed, illustrations of relevant aspects of the data with tables and figures, and a statistical model that attempts to answer part of the question. You'll also reflect on next steps and further analysis.
 
@@ -49,10 +47,9 @@ bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainm
 
 ## Exploratory Data Analysis
 
-We hypothesized that a good estimator for average would be the rate at which people achieve bachelor degrees. With this in mind, we wanted to see the rates of bachelor degree attainment for different races. 
+We hypothesized that a good estimator for average would be the rate at which people achieve bachelor degrees. With this in mind, we wanted to see the rates of bachelor degree attainment for different races.
 
 ### Graph 1
-
 
 ```{r graphs for this page, echo = FALSE}
 ### Graph 1 
@@ -71,7 +68,8 @@ ggplot(data = data, aes(x = Years)) +
        y = 'Bachelors Attainment (Thousands)')
 
 ```
-This graph shows the number of people that have attained bachelor's degree's pivoted by race. In general, White people attain bachelor degrees at a much higher quantity. After that, Asian and Hispanic people attain bachelor degrees at a lesser to White people, but similar rates to each other. Black women attain bachelor degrees in similar quantities to Asian and Hispanic women, but there is a distinct drop off with the quantities for Black men. 
+
+This graph shows the number of people that have attained bachelor's degree's pivoted by race. In general, White people attain bachelor degrees at a much higher quantity. After that, Asian and Hispanic people attain bachelor degrees at a lesser to White people, but similar rates to each other. Black women attain bachelor degrees in similar quantities to Asian and Hispanic women, but there is a distinct drop off with the quantities for Black men.
 
 ```{r message = F}
 ### Table 1b
@@ -81,9 +79,11 @@ bachelors_attainment %>% group_by(Race) %>%
     Female = sum(Female_P_Bach, na.rm = TRUE) / n()
   )
 ```
+
 Building off of Graph 1, while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor's Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees.
 
 ### Graphs 2 and 3
+
 ```{r message = F}
 ### Graph 2
 data2_bach <- acs_income %>% na.omit() %>% 
@@ -135,8 +135,7 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
                                "Grad_F_Median" = "Female"))
 ```
 
-Graphs two and three 
-
+Graphs two and three
 
 ```{r echo = FALSE, message = F}
 ### Graph 4
@@ -300,8 +299,6 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 
 As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 
-
-
 ```{r message=FALSE}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
@@ -318,10 +315,11 @@ glm_model2 <- glm(Income ~ Race + Gender,
 tidy2summary <- broom::tidy(glm_model2)
 tidy2summary
 ```
-Here we made two different linear models. The first shows the affects of Race, Gender, and Bachelors Attainment on Income. From this data we see that all of the predictor variables are statistically significant. However the most interesting predictor variables are gender and  bachelor.
+
+Here we made two different linear models. The first shows the affects of Race, Gender, and Bachelors Attainment on Income. From this data we see that all of the predictor variables are statistically significant. However the most interesting predictor variables are gender and bachelor.
 
 The second show the affects Race and Gender only (without Bachelors Attainment) on Income. We can see once again that all of the predictor variables are still statistically significant. The most interesting change is with Asians.
- 
+
 ------------------------------------------------------------------------
 
 ## Rubric: On this page
