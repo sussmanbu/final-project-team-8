@@ -53,6 +53,11 @@ In the economics arena, he is heads over heels for macroeconomics. Reading finan
 
 Tianxiang is a graduate student major in MA Economics.
 
+```{r echo=FALSE}
+library(knitr)
+knitr::include_graphics("about_images/Tianxiang.jpg")
+```
+
 ## Gabe Gan
 
 ```{r echo=FALSE}
