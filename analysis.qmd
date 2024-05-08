@@ -296,9 +296,11 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
        y = "Proportion Bachelor's Attainment",
        color = "Gender",
        title = "Relationship Between Income, Bachelor's Attainment, and Gender Across Races")
-
-### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
+
+As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
+
+
 
 ```{r message=FALSE}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
