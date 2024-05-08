@@ -278,7 +278,6 @@ This graph shoes how both bachelor attainment and gender affects income. It is c
 ### Model 3: Linear Regression
 ```{r}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
-modeling_data$Income <- scale(modeling_data$Income)
 modeling_data$Race <- factor(modeling_data$Race, 
                              levels = c("Black", "Hispanic","White", 
                                         "White, non-Hispanic", "Asian"))
