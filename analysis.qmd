@@ -225,7 +225,8 @@ This is the set of the auto regressive coefficients of each of these variables a
 With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.
 
 ```{r , message=FALSE, echo=F}
-bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
+suppressWarnings({
+  bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
 
 bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
 
@@ -278,6 +279,8 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
        y = "Proportion Bachelor's Attainment",
        color = "Gender",
        title = "Relationship Between Income, Bachelor's Attainment, and Gender Across Races")
+
+})
 ```
 
 As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression. Interestingly, a trend can be seen in the Asian group that is unlike the others. Asian men both get paid more, and go to school more. Their model is almost completely linear, including race.
@@ -305,3 +308,14 @@ Here we made two different linear models. The first shows the affects of Race, G
 
 The second show the affects Race and Gender only (without Bachelors Attainment) on Income. We can now see that all of the predictor variables are statistically significant. The most interesting change is with Asians, who do better than all other racial groups overall. These models are standardized, and estimates represent standard deviations from the national average. The least successful race is Hispanic, and our Male predictor maintains as being an important driver for income.
  
+### Next Steps and Further Research
+
+While this project did see some success regarding unearthing underlying trends between gender, race, and education, it left much to be desired. It could have been improved in a variety of ways, some suggestions being:
+
+More Data
+
+With more data points, our regression analysis would have been much more powerful. Due to a lack of relevant data, most high-level analysis was left to Autoregression techniques of linear modeling
+
+More Variables
+
+With other variables, more of the relationship between gender and income, and overall disparity, could have been explored. A particularly interesting datapoint to consider would have been age. As time has went on, our society has changed significantly, and analyzing the disparity in gender when it is separated by age groups could provide interesting results.
