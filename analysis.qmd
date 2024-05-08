@@ -278,7 +278,6 @@ This graph shoes how both bachelor attainment and gender affects income. It is c
 ### Model 3: Linear Regression
 ```{r}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
-modeling_data$Income <- scale(modeling_data$Income)
 modeling_data$Race <- factor(modeling_data$Race, 
                              levels = c("Black", "Hispanic","White", 
                                         "White, non-Hispanic", "Asian"))
@@ -297,7 +296,9 @@ glm_model2 <- glm(Income ~ Race + Gender,
 tidy2summary <- broom::tidy(glm_model2)
 tidy2summary
 ```
+Here we made two different linear models. The first shows the affects of Race, Gender, and Bachelors Attainment on Income. From this data we see that all of the predictor variables are statistically significant. However the most interesting predictor variables are gender and  bachelor.
 
+The second show the affects Race and Gender only (without Bachelors Attainment) on Income. We can see once again that all of the predictor variables are still statistically significant. The most interesting change is with Asians.
 ------------------------------------------------------------------------
 
 ## Rubric: On this page
