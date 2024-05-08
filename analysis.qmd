@@ -73,7 +73,7 @@ ggplot(data = data, aes(x = Years)) +
 ```
 This graph shows the number of people that have attained bachelor's degree's pivoted by race. In general, White people attain bachelor degrees at a much higher quantity. After that, Asian and Hispanic people attain bachelor degrees at a lesser to White people, but similar rates to each other. Black women attain bachelor degrees in similar quantities to Asian and Hispanic women, but there is a distinct drop off with the quantities for Black men. 
 
-```{r}
+```{r message = F}
 ### Table 1b
 bachelors_attainment %>% group_by(Race) %>%
   summarize(
@@ -84,7 +84,7 @@ bachelors_attainment %>% group_by(Race) %>%
 Building off of Graph 1, while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor's Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees.
 
 ### Graphs 2 and 3
-```{r}
+```{r message = F}
 ### Graph 2
 data2_bach <- acs_income %>% na.omit() %>% 
   group_by(Years) %>%
@@ -138,7 +138,7 @@ ggplot(data2_grad, aes(x = Years, y = Amount, color = Type)) +
 Graphs two and three 
 
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = F}
 ### Graph 4
 
 # organizing raced percentage data
@@ -197,7 +197,7 @@ looking at this graph, it is clear to see the data in general follows a linear t
 
 #### Model 1: VAR of Average Median Income
 
-```{r model_1}
+```{r model_1 , message = F}
 ### model 1 (VAR) of AVG. Median Income
 
 model1 <- VAR(acs_income_mean[, -1], p = 1)
@@ -212,7 +212,7 @@ knitr::kable(table1)
 
 When you regress the gendered average median income for people who have achieved bachelors against the Total Average Median Income (TAMI) for the same group, there are no significant p-values. The smallest p-value of the female data is at p = .099 implying that given the TAMI, there is about a 10% chance to get a set of statistics that is as far or further away from the TAMI given that there is no correlation between Average Female Median Income and TAMI.
 
-```{r model_2}
+```{r model_2 , message = F}
 ### model 2 ARIMA of each individual variable
 
 ar1 <- arima(acs_income_mean$`Average Median Income Bachelors`, order = c(1,1,1))
@@ -242,7 +242,7 @@ This is the set of the auto regressive coefficients of each of these variables a
 
 With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.
 
-```{r}
+```{r , message=FALSE}
 bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
 
 bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
@@ -300,7 +300,7 @@ ggplot(data = modeling_data, aes(x = Income/1000, y = Bachelors_Attainment, colo
 ### As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression.
 ```
 
-```{r}
+```{r message=FALSE}
 modeling_data$Bachelors_Attainment <- scale(modeling_data$Bachelors_Attainment)
 modeling_data$Income <- scale(modeling_data$Income)
 
