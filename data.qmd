@@ -28,10 +28,12 @@ To clean dataset 1, we followed the following steps:
 We begin by suppressing messages to keep our output clean while loading necessary libraries (‘readxl’ and ‘tidyverse’). This ensures that only essential output is displayed, making our script more readable.
 
 ```{r}
+suppressWarnings({
 suppressMessages(library(readxl))
 suppressMessages(library(tidyverse))
 
 acs_data <- read.csv('dataset/ACS_data_rendered.csv')
+})
 ```
 
 *2. Standardizing Reference Arrays*
@@ -200,13 +202,15 @@ The dependent variable in this dataset is the poverty status, which is defined a
 The process of merging data was tedious yet rewarding. For this project, our group decided to merge income data from the Department of Labor dataset with the ACS data pertaining to educational attainment. 
 
 ```{r}
-bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'))
+suppressWarnings({
+bachelors_attainment <- read_csv(here::here('dataset/ACS_Gender_and_Race.csv'),show_col_types = F)
 
 bachelors_attainment$Male_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Male_P_Bach)) / 100
 
 bachelors_attainment$Female_P_Bach <- as.numeric(gsub("%", "", bachelors_attainment$Female_P_Bach)) / 100
 
-dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'))
+dofl <- read_csv(here::here('dataset/dofl_income_clean.csv'),show_col_types = F)
+})
 ```
 
 First, the data was read using the command 'read_csv' and the attainment data was transformed from characters to strings for further analysis.
