@@ -135,10 +135,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./analysis.html"> 
 <span class="menu-text">Analysis</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./data.html" aria-current="page"> 
-<span class="menu-text">Data</span></a>
-  </li>  
+  <li class="dropdown-header">
+ <span class="menu-text">data.qmd</span></li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -199,96 +197,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>1. Initial Data Reading and Package Loading</em></p>
 <p>We begin by suppressing messages to keep our output clean while loading necessary libraries (‘readxl’ and ‘tidyverse’). This ensures that only essential output is displayed, making our script more readable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>({</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(readxl))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyverse))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>acs_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dataset/ACS_data_rendered.csv'</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(readxl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.2.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(tidyverse))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tibble' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'forcats' was built under R version 4.2.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.2.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>acs_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">'dataset/ACS_data_rendered.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>2. Standardizing Reference Arrays</em></p>
 <p>We define arrays for ‘state_names’ and ‘race_names’ to ensure consistency in how we reference these categories throughout our analysis. This is a form of data standardization, where we ensure that all data manipulation and analysis refer to the same set of standardized category names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>state_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alabama"</span>, <span class="st">"Alaska"</span>, <span class="st">"Arizona"</span>, <span class="st">"Arkansas"</span>, <span class="st">"California"</span>, <span class="st">"Colorado"</span>, <span class="st">"Connecticut"</span>, <span class="st">"Delaware"</span>, <span class="st">"Florida"</span>, <span class="st">"Georgia"</span>, <span class="st">"Hawaii"</span>, <span class="st">"Idaho"</span>, <span class="st">"Illinois"</span>, <span class="st">"Indiana"</span>, <span class="st">"Iowa"</span>, <span class="st">"Kansas"</span>, <span class="st">"Kentucky"</span>, <span class="st">"Louisiana"</span>, <span class="st">"Maine"</span>, <span class="st">"Maryland"</span>, <span class="st">"Massachusetts"</span>, <span class="st">"Michigan"</span>, <span class="st">"Minnesota"</span>, <span class="st">"Mississippi"</span>, <span class="st">"Missouri"</span>, <span class="st">"Montana"</span>, <span class="st">"Nebraska"</span>, <span class="st">"Nevada"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New Mexico"</span>, <span class="st">"New York"</span>, <span class="st">"North Carolina"</span>, <span class="st">"North Dakota"</span>, <span class="st">"Ohio"</span>, <span class="st">"Oklahoma"</span>, <span class="st">"Oregon"</span>, <span class="st">"Pennsylvania"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"South Carolina"</span>, <span class="st">"South Dakota"</span>, <span class="st">"Tennessee"</span>, <span class="st">"Texas"</span>, <span class="st">"Utah"</span>, <span class="st">"Vermont"</span>, <span class="st">"Virginia"</span>, <span class="st">"Washington"</span>, <span class="st">"West Virginia"</span>, <span class="st">"Wisconsin"</span>, <span class="st">"Wyoming"</span>, <span class="st">"Puerto Rico"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>race_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"White Alone"</span>, <span class="st">"White alone, not Hispanic or Latino"</span>, <span class="st">"Black Alone"</span>, <span class="st">"American Indian or Alaska Native Alone"</span>, <span class="st">"Asian Alone"</span>, <span class="st">"Native Hawaiian and Other Pacific Islander Alone"</span>, <span class="st">"Some other race Alone"</span>, <span class="st">"Two or more races"</span>, <span class="st">"Hispanic or Latino Origin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>state_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alabama"</span>, <span class="st">"Alaska"</span>, <span class="st">"Arizona"</span>, <span class="st">"Arkansas"</span>, <span class="st">"California"</span>, <span class="st">"Colorado"</span>, <span class="st">"Connecticut"</span>, <span class="st">"Delaware"</span>, <span class="st">"Florida"</span>, <span class="st">"Georgia"</span>, <span class="st">"Hawaii"</span>, <span class="st">"Idaho"</span>, <span class="st">"Illinois"</span>, <span class="st">"Indiana"</span>, <span class="st">"Iowa"</span>, <span class="st">"Kansas"</span>, <span class="st">"Kentucky"</span>, <span class="st">"Louisiana"</span>, <span class="st">"Maine"</span>, <span class="st">"Maryland"</span>, <span class="st">"Massachusetts"</span>, <span class="st">"Michigan"</span>, <span class="st">"Minnesota"</span>, <span class="st">"Mississippi"</span>, <span class="st">"Missouri"</span>, <span class="st">"Montana"</span>, <span class="st">"Nebraska"</span>, <span class="st">"Nevada"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New Mexico"</span>, <span class="st">"New York"</span>, <span class="st">"North Carolina"</span>, <span class="st">"North Dakota"</span>, <span class="st">"Ohio"</span>, <span class="st">"Oklahoma"</span>, <span class="st">"Oregon"</span>, <span class="st">"Pennsylvania"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"South Carolina"</span>, <span class="st">"South Dakota"</span>, <span class="st">"Tennessee"</span>, <span class="st">"Texas"</span>, <span class="st">"Utah"</span>, <span class="st">"Vermont"</span>, <span class="st">"Virginia"</span>, <span class="st">"Washington"</span>, <span class="st">"West Virginia"</span>, <span class="st">"Wisconsin"</span>, <span class="st">"Wyoming"</span>, <span class="st">"Puerto Rico"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>race_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"White Alone"</span>, <span class="st">"White alone, not Hispanic or Latino"</span>, <span class="st">"Black Alone"</span>, <span class="st">"American Indian or Alaska Native Alone"</span>, <span class="st">"Asian Alone"</span>, <span class="st">"Native Hawaiian and Other Pacific Islander Alone"</span>, <span class="st">"Some other race Alone"</span>, <span class="st">"Two or more races"</span>, <span class="st">"Hispanic or Latino Origin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>3. Creating 2 functions to pull data from the ACS</em></p>
 <p>The <em>first function</em> uses a for loop to loop through each races in ‘race_names’ for each of the races used a nested ‘for loop’ to go through each of the states in ‘state_names’. In the nested for loop, we identify which columns we need to pull from for the gendered percentage attainment of bachelor degrees and transfer these columns into new data tibbles (organized by state). We then combine these tables to put it into one table.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gendered_raced_data <span class="ot">&lt;-</span> <span class="cf">function</span>(race_names, state_names, data) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  race_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (race <span class="cf">in</span> race_names) {</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    state_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (index <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">51</span>) {</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      state <span class="ot">=</span> state_names[index]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      multiplier <span class="ot">&lt;-</span> <span class="fu">which</span>(race_names <span class="sc">==</span> race) </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      string2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">"*"</span>, multiplier)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      label <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Bachelor's degree or higher"</span>, <span class="fu">paste</span>(string2, <span class="at">collapse =</span> <span class="st">""</span>), </span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sep =</span> <span class="st">""</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>      filtered_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> label)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>      number_m_bach <span class="ot">&lt;-</span> <span class="dv">9</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      number_f_bach <span class="ot">&lt;-</span> <span class="dv">13</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>      state_data[[state]] <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">State =</span> state,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">Years =</span> filtered_data<span class="sc">$</span>Years,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">Male_P_Bach =</span> filtered_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, number_m_bach)]],</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">Female_P_Bach =</span> filtered_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, number_f_bach)]],</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">Race =</span> race</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    combined_state <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(state_data)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    race_data[[race]] <span class="ot">&lt;-</span> combined_state</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  race_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(race_data)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(race_data)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gendered_raced_data <span class="ot">&lt;-</span> <span class="cf">function</span>(race_names, state_names, data) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  race_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (race <span class="cf">in</span> race_names) {</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    state_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (index <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">51</span>) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>      state <span class="ot">=</span> state_names[index]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>      multiplier <span class="ot">&lt;-</span> <span class="fu">which</span>(race_names <span class="sc">==</span> race) </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>      string2 <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">"*"</span>, multiplier)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>      label <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Bachelor's degree or higher"</span>, <span class="fu">paste</span>(string2, <span class="at">collapse =</span> <span class="st">""</span>), </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>      filtered_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> label)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>      number_m_bach <span class="ot">&lt;-</span> <span class="dv">9</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>      number_f_bach <span class="ot">&lt;-</span> <span class="dv">13</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>      state_data[[state]] <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">State =</span> state,</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">Years =</span> filtered_data<span class="sc">$</span>Years,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">Male_P_Bach =</span> filtered_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, number_m_bach)]],</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">Female_P_Bach =</span> filtered_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, number_f_bach)]],</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">Race =</span> race</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    combined_state <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(state_data)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    race_data[[race]] <span class="ot">&lt;-</span> combined_state</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  race_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(race_data)</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(race_data)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <em>second function</em> works similarly to the first, except we do not have the outer for loop for the different races as the median income data is not categorized by race. We still loop through the different states and pull the columns containing the median incomes for people with bachelor degrees and people with graduate (or higher) degrees.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Median_Income_Data <span class="ot">&lt;-</span> <span class="cf">function</span> (state_names, data) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  state_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (index <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">51</span>) {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    state <span class="ot">=</span> state_names[index]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    bach_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> <span class="st">"Bachelor's degree"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    grad_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> <span class="st">"Graduate or professional degree"</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    male <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    female <span class="ot">&lt;-</span> <span class="dv">11</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    both <span class="ot">&lt;-</span> state</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    state_data[[state]] <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">State =</span> state,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">Years =</span> bach_data<span class="sc">$</span>Years,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">Median_Bach =</span> bach_data[[both]],</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">Bach_M_Median =</span> bach_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, male)]],</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">Bach_F_Median =</span> bach_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, female)]],</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">Median_Grad =</span> grad_data[[both]],</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">Grad_M_Median =</span> grad_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, male)]],</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">Grad_F_Median =</span> grad_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, female)]]</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    ) </span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  combined_state <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(state_data)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  combined_state <span class="ot">&lt;-</span> combined_state <span class="sc">%&gt;%</span> </span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Years <span class="sc">&gt;</span> <span class="dv">2014</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(combined_state)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">Median_Income_Data</span>(state_names, acs_data)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data2, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'ACS_Median_Income.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Median_Income_Data <span class="ot">&lt;-</span> <span class="cf">function</span> (state_names, data) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  state_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (index <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">51</span>) {</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    state <span class="ot">=</span> state_names[index]</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    bach_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> <span class="st">"Bachelor's degree"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    grad_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(acs_data, Label <span class="sc">==</span> <span class="st">"Graduate or professional degree"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    male <span class="ot">&lt;-</span> <span class="dv">7</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    female <span class="ot">&lt;-</span> <span class="dv">11</span> <span class="sc">+</span> <span class="dv">12</span> <span class="sc">*</span> (index <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    both <span class="ot">&lt;-</span> state</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    state_data[[state]] <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">State =</span> state,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">Years =</span> bach_data<span class="sc">$</span>Years,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">Median_Bach =</span> bach_data[[both]],</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">Bach_M_Median =</span> bach_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, male)]],</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">Bach_F_Median =</span> bach_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, female)]],</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">Median_Grad =</span> grad_data[[both]],</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">Grad_M_Median =</span> grad_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, male)]],</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">Grad_F_Median =</span> grad_data[[<span class="fu">paste0</span>(<span class="st">"..."</span>, female)]]</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    ) </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  combined_state <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(state_data)</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  combined_state <span class="ot">&lt;-</span> combined_state <span class="sc">%&gt;%</span> </span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Years <span class="sc">&gt;</span> <span class="dv">2014</span>)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(combined_state)</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">Median_Income_Data</span>(state_names, acs_data)</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data2, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'ACS_Median_Income.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>4. Calling the functions and writing new CSV’s</em></p>
 <p>We call the functions to write 2 new dataframes. Then we write the data frames into new CSV’s to make it easily accessible without having to rerun the script.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">gendered_raced_data</span>(race_names, state_names, acs_data)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'ACS_Gender_and_Race.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">gendered_raced_data</span>(race_names, state_names, acs_data)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'ACS_Gender_and_Race.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The cleaning script for dataset 1 can be found below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">source</span>(<span class="st">"scripts/acs_bach.R"</span>)) </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>script_content <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"scripts/acs_bach.R"</span>) </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(script_content, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">source</span>(<span class="st">"scripts/acs_bach.R"</span>)) </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>script_content <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"scripts/acs_bach.R"</span>) </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(script_content, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 # Reading Data and Initializing Packages
@@ -360,39 +385,8 @@ Median_Income_Data &lt;- function (state_names, data) {
   return(combined_state)
 }
 
-Median_Income_Data_Perc &lt;- function (state_names, data) {
-  state_data &lt;- list()
-  for (index in 1:51) {
-    state = state_names[index]
-    bach_data &lt;- filter(acs_data, Label == "Bachelor's degree")
-    grad_data &lt;- filter(acs_data, Label == "Graduate or professional degree")
-    male &lt;- 9 + 12 * (index - 1)
-    female &lt;- 13 + 12 * (index - 1)
-    both &lt;- state
-    state_data[[state]] &lt;- tibble(
-      State = state,
-      Years = bach_data$Years,
-      Median_Bach = bach_data[[both]],
-      Bach_M_Median = bach_data[[paste0("...", male)]],
-      Bach_F_Median = bach_data[[paste0("...", female)]],
-      Median_Grad = grad_data[[both]],
-      Grad_M_Median = grad_data[[paste0("...", male)]],
-      Grad_F_Median = grad_data[[paste0("...", female)]]
-    ) 
-    
-  }
-  combined_state &lt;- bind_rows(state_data)
-  combined_state &lt;- combined_state %&gt;% 
-    filter(Years &gt; 2014)
-  
-  return(combined_state)
-}
-
 data2 &lt;- Median_Income_Data(state_names, acs_data)
 write_csv(data2, here::here('dataset', 'ACS_Median_Income.csv'))
-
-data3 &lt;- Median_Income_Data_Perc(state_names, acs_data)
-write.csv(data3, here::here('dataset', 'ACS_Median_Income_Perc.csv'))
 
 # Save Data
 data &lt;- gendered_raced_data(race_names, state_names, acs_data)
@@ -407,32 +401,32 @@ write_csv(data, here::here('dataset', 'ACS_Gender_and_Race.csv'))</code></pre>
 <p><em>1. Initial Data Reading and Package Loading</em></p>
 <p>We loaded the data using ‘read_csv’ from the ‘readr’ package. This function is efficient for handling large datasets and allows easier manipulation of our dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>income_data <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"dataset/Income_dofl.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>income_data <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"dataset/Income_dofl.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>2. Filtering Data Based on Specific Criteria</em></p>
 <p>We filtered out records from 2013 and 2017 unless they were part of a new methodology implementation. In this way, we can ensure consistency in how data across different years were collected and reported.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>income_data_clean <span class="ot">&lt;-</span> income_data<span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">!=</span> <span class="dv">2013</span> <span class="sc">|</span> <span class="st">`</span><span class="at">In / Out of New Methodology Implemented</span><span class="st">`</span> <span class="sc">==</span> <span class="st">'In'</span>)<span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">!=</span> <span class="dv">2017</span> <span class="sc">|</span> <span class="st">`</span><span class="at">In / Out of New Methodology Implemented</span><span class="st">`</span> <span class="sc">==</span> <span class="st">'In'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>income_data_clean <span class="ot">&lt;-</span> income_data<span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">!=</span> <span class="dv">2013</span> <span class="sc">|</span> <span class="st">`</span><span class="at">In / Out of New Methodology Implemented</span><span class="st">`</span> <span class="sc">==</span> <span class="st">'In'</span>)<span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">!=</span> <span class="dv">2017</span> <span class="sc">|</span> <span class="st">`</span><span class="at">In / Out of New Methodology Implemented</span><span class="st">`</span> <span class="sc">==</span> <span class="st">'In'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>3. Selecting and Pivoting Data for Analysis</em></p>
 <p>We transformed the dataset from a long to a wide format using ‘pivot_wider’, making it easier to analyze income measures across different years. Columns were arranged by year to maintain a chronological order.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>income_data_clean <span class="ot">&lt;-</span> income_data_clean <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Measure Names</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">`</span><span class="at">Measure Names</span><span class="st">`</span>, <span class="at">values_from =</span> <span class="st">`</span><span class="at">Measure Values</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>income_data_clean <span class="ot">&lt;-</span> income_data_clean <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="st">`</span><span class="at">Measure Names</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> <span class="st">`</span><span class="at">Measure Names</span><span class="st">`</span>, <span class="at">values_from =</span> <span class="st">`</span><span class="at">Measure Values</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>4. Saving Cleaned Data</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(income_data_clean, <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'dofl_income_clean.csv'</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(income_data_clean, <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/dofl_income_clean.RData'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(income_data_clean, <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset'</span>, <span class="st">'dofl_income_clean.csv'</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(income_data_clean, <span class="at">file =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/dofl_income_clean.RData'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The cleaning script for dataset 2 can be found below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">source</span>(<span class="st">"scripts/Income_data_cleaning.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">source</span>(<span class="st">"scripts/Income_data_cleaning.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 780 Columns: 5
 ── Column specification ────────────────────────────────────────────────────────
@@ -444,12 +438,12 @@ num (1): Measure Values
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>script_content <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"scripts/Income_data_cleaning.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>script_content <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"scripts/Income_data_cleaning.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in readLines("scripts/Income_data_cleaning.R"): incomplete final line
 found on 'scripts/Income_data_cleaning.R'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(script_content, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(script_content, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>income_data = read_csv("dataset/Income_dofl.csv")
 ### median income data split by race
@@ -470,61 +464,6 @@ saveRDS(income_data_clean, file = here::here('dataset/dofl_income_clean.RData'))
 <p>Another dataset we used is from the American Community Survey <em>(ACS)</em>, which provides data from 2015 - 2020 regarding poverty status of males, and females, faceted to race and state. We selected this dataset because we wanted to analyze gender disparities, particularly seeing the proportion of males above poverty line compared to females, by race and state.</p>
 <p>The dataset is accessed via the ‘tidycensus’ package in R because the ‘tidycensus’ package simplifies the process of working with Census data, allowing for efficient data retrieval and handling. To load the variables for the year 2020, we use the function ‘load_variables(2020, “acs5”, cache = TRUE)’. This function fetches a list of available variables from the 5-year ACS dataset for 2020, caching them to speed up future queries.</p>
 <p>The dependent variable in this dataset is the poverty status, which is defined as the proportion of individuals below the poverty line in each surveyed group. The independent variables include the year of the survey, which ranges from 2015-2020, and demographic identifiers such as race and state.</p>
-<p><strong>Merging Data: Process and Challenges</strong></p>
-<p>The process of merging data was tedious yet rewarding. For this project, our group decided to merge income data from the Department of Labor dataset with the ACS data pertaining to educational attainment.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>({</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>bachelors_attainment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/ACS_Gender_and_Race.csv'</span>),<span class="at">show_col_types =</span> F)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>bachelors_attainment<span class="sc">$</span>Male_P_Bach <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, bachelors_attainment<span class="sc">$</span>Male_P_Bach)) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>bachelors_attainment<span class="sc">$</span>Female_P_Bach <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">"%"</span>, <span class="st">""</span>, bachelors_attainment<span class="sc">$</span>Female_P_Bach)) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>dofl <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/dofl_income_clean.csv'</span>),<span class="at">show_col_types =</span> F)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>First, the data was read using the command ‘read_csv’ and the attainment data was transformed from characters to strings for further analysis.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dofl_prep <span class="ot">&lt;-</span> dofl<span class="sc">|&gt;</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Year, <span class="at">names_to =</span> <span class="st">'Race'</span>, <span class="at">values_to =</span> <span class="st">'Income'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">str_replace</span>(<span class="fu">str_replace</span>(<span class="fu">str_extract</span>(Race, <span class="st">"Men|Women"</span>), <span class="st">"Men"</span>, <span class="st">"Male"</span>), <span class="st">"Women"</span>, <span class="st">"Female"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Prep for the department of data was done to create a column for gender and race, indexes that would be used later in the merging process.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dofl_merge <span class="ot">&lt;-</span> dofl_prep <span class="sc">|&gt;</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Race =</span> <span class="fu">str_replace_all</span>(Race, <span class="fu">c</span>(<span class="st">" Men"</span> <span class="ot">=</span> <span class="st">""</span>, <span class="st">" Women"</span> <span class="ot">=</span> <span class="st">""</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">'Total'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Race) <span class="sc">|&gt;</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Then, the data was cleaned further, and filtered to include the years 2015-2022, in line with our data gathered from the ACS. Then, it was organized by both race and gender to ensure both datasets were in the same order.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>desired_races <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Hispanic"</span>, <span class="st">"White, non-Hispanic"</span>, <span class="st">"Asian"</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>bachelor_merge <span class="ot">&lt;-</span> bachelors_attainment <span class="sc">|&gt;</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Race =</span> <span class="fu">str_replace_all</span>(Race, <span class="fu">c</span>(<span class="st">" Alone"</span> <span class="ot">=</span> <span class="st">''</span>, <span class="st">"not Hispanic"</span><span class="ot">=</span> <span class="st">'non-Hispanic'</span>,<span class="st">' or Latino'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="st">' alone'</span> <span class="ot">=</span> <span class="st">''</span>, <span class="st">' Origin'</span> <span class="ot">=</span> <span class="st">''</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">%in%</span> desired_races) <span class="sc">|&gt;</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Race, Years)<span class="sc">|&gt;</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="st">`</span><span class="at">Percent Male</span><span class="st">`</span> <span class="ot">=</span><span class="fu">mean</span>(Male_P_Bach, <span class="at">na.rm =</span> T),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Percent Female</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Female_P_Bach, <span class="at">na.rm =</span> T)) <span class="sc">|&gt;</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Percent Male"</span>, <span class="st">"Percent Female"</span>), </span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Gender"</span>,</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Bachelors Attainment"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">str_replace_all</span>(Gender, <span class="fu">c</span>(<span class="st">'Percent '</span> <span class="ot">=</span> <span class="st">''</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Race) <span class="sc">|&gt;</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'Race'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-</div>
-<p>The bachelors data, which was still divided by state, was filtered to only include races recorded by the Department of Labor. It was then summarized to gather prevalent information regarding the overall proportion of Bachelor degree attainment. Then, similar to the Department of Labor Data, it was arranged twice to ensure it was in the same order.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>modeling_data <span class="ot">&lt;-</span> dofl_merge <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Bachelors_Attainment =</span> bachelor_merge<span class="sc">$</span><span class="st">`</span><span class="at">Bachelors Attainment</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Finally, our relevant Bachelor’s attainment data was mutated onto the Department of Labor data, which was only possible due to careful planning and ensuring of proper syntax. The dataset ‘modeling_data’ is what was used to run the group’s regression models.</p>
 
 
 </section>
@@ -611,7 +550,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/sussmanbu\.github\.io\/final-project-team-8\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

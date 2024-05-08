@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -80,7 +46,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -89,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -103,9 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Team 8 Final Project</span>
     </a>
@@ -117,25 +90,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./big_picture.html" rel="" target="">
- <span class="menu-text">Big Picture</span></a>
+    <a class="nav-link" href="./big_picture.html"> 
+<span class="menu-text">Big Picture</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./analysis.html" rel="" target="" aria-current="page">
- <span class="menu-text">Analysis</span></a>
+    <a class="nav-link active" href="./analysis.html" aria-current="page"> 
+<span class="menu-text">Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data.html" rel="" target="">
- <span class="menu-text">Data</span></a>
+    <a class="nav-link" href="./data.html"> 
+<span class="menu-text">Data</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -148,9 +121,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#example-of-loading-data" id="toc-example-of-loading-data" class="nav-link active" data-scroll-target="#example-of-loading-data">Example of loading data</a></li>
-  <li><a href="#note-on-attribution" id="toc-note-on-attribution" class="nav-link" data-scroll-target="#note-on-attribution">Note on Attribution</a></li>
-  <li><a href="#rubric-on-this-page" id="toc-rubric-on-this-page" class="nav-link" data-scroll-target="#rubric-on-this-page">Rubric: On this page</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link active" data-scroll-target="#exploratory-data-analysis">Exploratory Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#graph-1" id="toc-graph-1" class="nav-link" data-scroll-target="#graph-1">Graph 1</a></li>
+  <li><a href="#graphs-2-and-3" id="toc-graphs-2-and-3" class="nav-link" data-scroll-target="#graphs-2-and-3">Graphs 2 and 3</a></li>
+  <li><a href="#graph-4" id="toc-graph-4" class="nav-link" data-scroll-target="#graph-4">Graph 4</a></li>
+  </ul></li>
+  <li><a href="#modeling" id="toc-modeling" class="nav-link" data-scroll-target="#modeling">Modeling</a>
+  <ul class="collapse">
+  <li><a href="#next-steps-and-further-research" id="toc-next-steps-and-further-research" class="nav-link" data-scroll-target="#next-steps-and-further-research">Next Steps and Further Research</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -177,182 +157,101 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Pebbleswithquarzite.jpg" class="img-fluid"></p>
-<p>This comes from the file <code>analysis.qmd</code>.</p>
-<p>We describe here our detailed data analysis. This page will provide an overview of what questions you addressed, illustrations of relevant aspects of the data with tables and figures, and a statistical model that attempts to answer part of the question. You’ll also reflect on next steps and further analysis.</p>
-<p>The audience for this page is someone like your class mates, so you can expect that they have some level of statistical and quantitative sophistication and understand ideas like linear and logistic regression, coefficients, confidence intervals, overfitting, etc.</p>
-<p>While the exact number of figures and tables will vary and depend on your analysis, you should target around 5 to 6. An overly long analysis could lead to losing points. If you want you can link back to your blog posts or create separate pages with more details.</p>
-<p>The style of this paper should aim to be that of an academic paper. I don’t expect this to be of publication quality but you should keep that aim in mind. Avoid using “we” too frequently, for example “We also found that …”. Describe your methodology and your findings but don’t describe your whole process.</p>
-<section id="example-of-loading-data" class="level3">
-<h3 class="anchored" data-anchor-id="example-of-loading-data">Example of loading data</h3>
-<p>The code below shows an example of loading the loan refusal data set (which you should delete at some point).</p>
+
+<p><img src="images/race_gender-plain.jpg-02.webp" class="img-fluid">This comes from the file <code>analysis.qmd</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">repos =</span> <span class="fu">c</span>(<span class="at">CRAN =</span> <span class="st">"https://mirrors.nics.utk.edu/cran/"</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"vars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing package into 'C:/Users/icega/AppData/Local/R/win-library/4.3'
-(as 'lib' is unspecified)</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>package 'vars' successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-    C:\Users\icega\AppData\Local\Temp\Rtmp0MPa0C\downloaded_packages</code></pre>
+    C:\Users\dylon\AppData\Local\Temp\Rtmp8C4p0c\downloaded_packages</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'vars' was built under R version 4.3.3</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: MASS
-
-Attaching package: 'MASS'
-
-The following object is masked from 'package:dplyr':
-
-    select
-
-Loading required package: strucchange</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'strucchange' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: zoo</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'zoo' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'zoo'
-
-The following objects are masked from 'package:base':
-
-    as.Date, as.Date.numeric
-
-Loading required package: sandwich</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'sandwich' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'strucchange'
-
-The following object is masked from 'package:stringr':
-
-    boundary
-
-Loading required package: urca</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'urca' was built under R version 4.3.3</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: lmtest</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'lmtest' was built under R version 4.3.3</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print(getwd())</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#data &lt;- read_csv(here::here("dataset/loan_refusal_clean.csv"))</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#load(here::here("dataset/loan_refusal.RData"))</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(ls())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis">Exploratory Data Analysis</h2>
+<p>We hypothesized that a good estimator for average would be the rate at which people achieve bachelor degrees. With this in mind, we wanted to see the rates of bachelor degree attainment for different races.</p>
+<section id="graph-1" class="level3">
+<h3 class="anchored" data-anchor-id="graph-1">Graph 1</h3>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 72 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Race
-dbl (3): Years, Total Male, Total Female
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 408 Columns: 8
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): State
-dbl (1): Years
-num (6): Median_Bach, Bach_M_Median, Bach_F_Median, Median_Grad, Grad_M_Medi...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
 <div class="cell-output-display">
-<p><img src="analysis_files/figure-html/graphs for this page-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="analysis_files/figure-html/graphs for this page-2.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="analysis_files/figure-html/graphs for this page-3.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/graphs for this page-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+<p>This graph shows the number of people that have attained bachelor’s degree’s pivoted by race. In general, White people attain bachelor degrees at a much higher quantity. After that, Asian and Hispanic people attain bachelor degrees at a lesser to White people, but similar rates to each other. Black women attain bachelor degrees in similar quantities to Asian and Hispanic women, but there is a distinct drop off with the quantities for Black men.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 3
+  Race                                              Male Female
+  &lt;chr&gt;                                            &lt;dbl&gt;  &lt;dbl&gt;
+1 American Indian or Alaska Native Alone           0.138  0.172
+2 Asian Alone                                      0.566  0.505
+3 Black Alone                                      0.208  0.248
+4 Hispanic or Latino Origin                        0.174  0.212
+5 Native Hawaiian and Other Pacific Islander Alone 0.112  0.119
+6 Some other race Alone                            0.138  0.169
+7 Two or more races                                0.277  0.321
+8 White Alone                                      0.343  0.360
+9 White alone, not Hispanic or Latino              0.358  0.372</code></pre>
+</div>
+</div>
+<p>Building off of Graph 1, while White people attain the highest quantities of bachelor degrees, they do not have the highest rates of bachelor degree attainment. Asian people do. Looking at Asian, Black, and Hispanic people who attain bachelor degrees at similar quantities, the rate at which Asian people attain Bachelor’s Degrees is around 2-3 times greater than the rate at which Hispanic or Black people achieve bachelor degrees.</p>
 </section>
-<section id="note-on-attribution" class="level2">
-<h2 class="anchored" data-anchor-id="note-on-attribution">Note on Attribution</h2>
-<p>In general, you should try to provide links to relevant resources, especially those that helped you. You don’t have to link to every StackOverflow post you used but if there are explainers on aspects of the data or specific models that you found helpful, try to link to those. Also, try to link to other sources that might support (or refute) your analysis. These can just be regular hyperlinks. You don’t need a formal citation.</p>
-<p>If you are directly quoting from a source, please make that clear. You can show quotes using <code>&gt;</code> like this</p>
+<section id="graphs-2-and-3" class="level3">
+<h3 class="anchored" data-anchor-id="graphs-2-and-3">Graphs 2 and 3</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">### importing data for first models</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>acs_income <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/ACS_Median_Income.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 408 Columns: 8
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): State
-dbl (1): Years
-num (6): Median_Bach, Bach_M_Median, Bach_F_Median, Median_Grad, Grad_M_Medi...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">###Summarize Income data</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>acs_income_mean <span class="ot">&lt;-</span> acs_income <span class="sc">|&gt;</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(Years, Bach_M_Median, Bach_F_Median, Median_Bach)<span class="sc">|&gt;</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Years)<span class="sc">|&gt;</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Median Income Bachelors (Male)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Bach_M_Median),</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Median Income Bachelors (Female)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Bach_F_Median),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Average Median Income Bachelors</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">mean</span>(Median_Bach, <span class="at">na.rm =</span> T)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="do">### preliminary model of income data checking (first need to see distribution)</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> acs_income_mean, <span class="fu">aes</span>(<span class="at">x =</span> Years)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">Average Median Income Bachelors</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">"total"</span>)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">Average Median Income Bachelors (Male)</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">'male'</span>)) <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">Average Median Income Bachelors (Female)</span><span class="st">`</span>, <span class="at">color =</span> <span class="st">'female'</span>)) <span class="sc">+</span> <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'total'</span> <span class="ot">=</span> <span class="st">'black'</span>, <span class="st">'male'</span> <span class="ot">=</span> <span class="st">'blue'</span>, <span class="st">'female'</span> <span class="ot">=</span> <span class="st">'red'</span>)) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="analysis_files/figure-html/Statistical Models-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="do">### looking at this graph, it is clear to see the data in general follows a linear trend. I have decided to use a VAR model. We can also see that the changes in each group by year are consistent</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="do">### model 1 (VAR) of AVG. Median Income</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">VAR</span>(acs_income_mean[, <span class="sc">-</span><span class="dv">1</span>], <span class="at">p =</span> <span class="dv">1</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>tidied <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(model1)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>table1 <span class="ot">&lt;-</span> tidied <span class="sc">|&gt;</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(group <span class="sc">==</span> <span class="st">'Average.Median.Income.Bachelors'</span>) </span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(table1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Graphs two and three show the median salary for Males and Females of different levels of educational attainment, this example pertaining to Citizens with Bachelors and Masters Degrees. As can be seen above, The disparity between groups is largely consistent.</p>
+</section>
+<section id="graph-4" class="level3">
+<h3 class="anchored" data-anchor-id="graph-4">Graph 4</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This graph represents the proportion of Male to Female Bachelor degrees, divided by race. While values are close to average, it is clear to see that on average, more Women achieve Bachelors degrees than Men for every race except for Asian.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/Statistical Models-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at this graph, it is clear to see the data in general follows a linear trend. We have decided to use a VAR model to see if gendering the average median income is statistically significant. We can also see that the changes in each group by year are consistent</p>
+</section>
+</section>
+<section id="modeling" class="level2">
+<h2 class="anchored" data-anchor-id="modeling">Modeling</h2>
+<section id="model-1-var-of-average-median-income" class="level4">
+<h4 class="anchored" data-anchor-id="model-1-var-of-average-median-income">Model 1: VAR of Average Median Income</h4>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -409,29 +308,9 @@ num (6): Median_Bach, Bach_M_Median, Bach_F_Median, Median_Grad, Grad_M_Medi...
 </tbody>
 </table>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">### model 2 ARIMA of each individual variable</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>ar1 <span class="ot">&lt;-</span> <span class="fu">arima</span>(acs_income_mean<span class="sc">$</span><span class="st">`</span><span class="at">Average Median Income Bachelors</span><span class="st">`</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ar1_t <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(ar1)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ar2 <span class="ot">&lt;-</span> <span class="fu">arima</span>(acs_income_mean<span class="sc">$</span><span class="st">`</span><span class="at">Average Median Income Bachelors (Male)</span><span class="st">`</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>ar2_t <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(ar2)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>ar3 <span class="ot">&lt;-</span> <span class="fu">arima</span>(acs_income_mean<span class="sc">$</span><span class="st">`</span><span class="at">Average Median Income Bachelors (Female)</span><span class="st">`</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)) </span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>ar3_t <span class="ot">&lt;-</span> broom<span class="sc">::</span><span class="fu">tidy</span>(ar3)</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>combined_table <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  ar1_t <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">"Average Median Income Bachelors"</span>),</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>  ar2_t <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">"Average Median Income Bachelors (Male)"</span>),</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>  ar3_t <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">"Average Median Income Bachelors (Female)"</span>)</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">filter</span>(term <span class="sc">==</span> <span class="st">'ar1'</span>)</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the combined table</span></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(combined_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>When we regress the gendered average median income for people who have achieved bachelors against the Total Average Median Income (TAMI) for the same group, there are no significant p-values. The smallest p-value of the female data is at p = .099 implying that given the TAMI, there is about a 10% chance to get a set of statistics that is as far or further away from the TAMI given that there is no correlation between Average Female Median Income and TAMI.</p>
+<div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -464,115 +343,57 @@ num (6): Median_Bach, Bach_M_Median, Bach_F_Median, Median_Grad, Grad_M_Medi...
 </tbody>
 </table>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="do">### This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>This is the set of the auto regressive coefficients of each of these variables analysed through a time series model. We can find that their coefficients are extremely similar, implying that our variables all share similar levels of autocorrelation, leading them to all have similar momentum, which implies that the pay gap between men and women is relatively unchanged</p>
+<p>With these two models we basically see that the income gap. Although women are getting paid more, so are men, and their pay increases are at similar rates.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>bachelors_attinment <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/Numerical_ACS_Gender_and_Race.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 72 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Race
-dbl (3): Years, Total Male, Total Female
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>dofl <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">'dataset/dofl_income_clean.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 63 Columns: 13
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (13): Year, Total Women, Total Men, White Women, White Men, Black Women,...
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>dofl_prep <span class="ot">&lt;-</span> dofl<span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Year, <span class="at">names_to =</span> <span class="st">'Race'</span>, <span class="at">values_to =</span> <span class="st">'Income'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">str_replace</span>(<span class="fu">str_replace</span>(<span class="fu">str_extract</span>(Race, <span class="st">"Men|Women"</span>), <span class="st">"Men"</span>, <span class="st">"Male"</span>), <span class="st">"Women"</span>, <span class="st">"Female"</span>))</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dofl_prep, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Income, <span class="at">color =</span> Race)) <span class="sc">+</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Years"</span>, <span class="at">y =</span> <span class="st">"Income"</span>, <span class="at">color =</span> <span class="st">"Race"</span>) <span class="sc">+</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 166 rows containing missing values (`geom_line()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<p><img src="analysis_files/figure-html/model 3-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Above is a line graph of income data for each race and gender</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="do">## merging attainment data with income</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>dofl_merge <span class="ot">&lt;-</span> dofl_prep <span class="sc">|&gt;</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Race =</span> <span class="fu">str_replace_all</span>(Race, <span class="fu">c</span>(<span class="st">" Men"</span> <span class="ot">=</span> <span class="st">""</span>, <span class="st">" Women"</span> <span class="ot">=</span> <span class="st">""</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">&gt;=</span> <span class="dv">2015</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">!=</span> <span class="st">'Total'</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Race)</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>desired_races <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Hispanic"</span>, <span class="st">"White, non-Hispanic"</span>, <span class="st">"Asian"</span>)</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>bachelor_merge <span class="ot">&lt;-</span> bachelors_attinment <span class="sc">|&gt;</span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Race =</span> <span class="fu">str_replace_all</span>(Race, <span class="fu">c</span>(<span class="st">" Alone"</span> <span class="ot">=</span> <span class="st">''</span>, <span class="st">"Not Hispanic"</span><span class="ot">=</span> <span class="st">'non-Hispanic'</span>,<span class="st">' or Latino Origin'</span> <span class="ot">=</span> <span class="st">''</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Race <span class="sc">%in%</span> desired_races) <span class="sc">|&gt;</span></span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="st">"Total Male"</span>, <span class="st">"Total Female"</span>), </span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"Gender"</span>,</span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"Bachelors Attainment"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Gender =</span> <span class="fu">str_replace_all</span>(Gender, <span class="fu">c</span>(<span class="st">'Total '</span> <span class="ot">=</span> <span class="st">''</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Race)</span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>modeling_data <span class="ot">&lt;-</span> dofl_merge <span class="sc">|&gt;</span></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Bachelors_Attainment =</span> bachelor_merge<span class="sc">$</span><span class="st">`</span><span class="at">Bachelors Attainment</span><span class="st">`</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<blockquote class="blockquote">
-<p>To be or not to be. ```</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>To be or not to be.</p>
-</blockquote>
-<hr>
+</div>
+<p>As can be seen in the graphs above, it is clear to see the distinction between males and Females in this data for every racial group. Males tend to go to college less and get paid more, but the groups themselves follow a mostly linear trend. This data appears to be suitable for linear regression. Interestingly, a trend can be seen in the Asian group that is unlike the others. Asian men both get paid more, and go to school more. Their model is almost completely linear, including race.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 5
+  term                    estimate std.error statistic  p.value
+  &lt;chr&gt;                      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)               -0.876    0.228      -3.85 2.51e- 4
+2 RaceBlack                  0.567    0.335       1.69 9.49e- 2
+3 RaceHispanic               0.443    0.372       1.19 2.37e- 1
+4 RaceWhite                  0.356    0.214       1.67 1.00e- 1
+5 RaceWhite, non-Hispanic    0.635    0.201       3.16 2.33e- 3
+6 GenderMale                 0.951    0.0550     17.3  1.63e-27
+7 Bachelors_Attainment       1.01     0.131       7.73 4.58e-11</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  term                    estimate std.error statistic  p.value
+  &lt;chr&gt;                      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)                0.806    0.0889      9.07 1.23e-13
+2 RaceBlack                 -1.94     0.115     -16.9  4.55e-27
+3 RaceHispanic              -2.36     0.115     -20.5  2.78e-32
+4 RaceWhite                 -1.16     0.115     -10.1  1.47e-15
+5 RaceWhite, non-Hispanic   -0.772    0.115      -6.73 3.17e- 9
+6 GenderMale                 0.876    0.0726     12.1  3.58e-19</code></pre>
+</div>
+</div>
+<p>Here we made two different linear models. The first shows the affects of Race, Gender, and Bachelors Attainment on Income. From this data we see that not all of the predictor variables are statistically significant. This was attributed to the extremely strong correlation between Bachelors attainment and income, and a second linear model was run to verify this claim. Trends that can be seen in this data that are statistically significant for increases in income are White(non-Hispanic), Male, and the aforementioned Bachelors Attainment.</p>
+<p>The second show the affects Race and Gender only (without Bachelors Attainment) on Income. We can now see that all of the predictor variables are statistically significant. The most interesting change is with Asians, who do better than all other racial groups overall. These models are standardized, and estimates represent standard deviations from the national average. The least successful race is Hispanic, and our Male predictor maintains as being an important driver for income.</p>
 </section>
-<section id="rubric-on-this-page" class="level2">
-<h2 class="anchored" data-anchor-id="rubric-on-this-page">Rubric: On this page</h2>
-<p>You will</p>
-<ul>
-<li>Introduce what motivates your Data Analysis (DA)
-<ul>
-<li>Which variables and relationships are you most interested in?</li>
-<li>What questions are you interested in answering?</li>
-<li>Provide context for the rest of the page. This will include figures/tables that illustrate aspects of the data of your question.</li>
-</ul></li>
-<li>Modeling and Inference
-<ul>
-<li>The page will include some kind of formal statistical model. This could be a linear regression, logistic regression, or another modeling framework.</li>
-<li>Explain the ideas and techniques you used to choose the predictors for your model. (Think about including interaction terms and other transformations of your variables.)</li>
-<li>Describe the results of your modelling and make sure to give a sense of the uncertainty in your estimates and conclusions.</li>
-</ul></li>
-<li>Explain the flaws and limitations of your analysis
-<ul>
-<li>Are there some assumptions that you needed to make that might not hold? Is there other data that would help to answer your questions?</li>
-</ul></li>
-<li>Clarity Figures
-<ul>
-<li>Are your figures/tables/results easy to read, informative, without problems like overplotting, hard-to-read labels, etc?</li>
-<li>Each figure should provide a key insight. Too many figures or other data summaries can detract from this. (While not a hard limit, around 5 total figures is probably a good target.)</li>
-<li>Default <code>lm</code> output and plots are typically not acceptable.</li>
-</ul></li>
-<li>Clarity of Explanations
-<ul>
-<li>How well do you explain each figure/result?</li>
-<li>Do you provide interpretations that suggest further analysis or explanations for observed phenomenon?</li>
-</ul></li>
-<li>Organization and cleanliness.
-<ul>
-<li>Make sure to remove excessive warnings, hide most or all code, organize with sections or multiple pages, use bullets, etc.</li>
-<li>This page should be self-contained, i.e.&nbsp;provide a description of the relevant data.</li>
-</ul></li>
-</ul>
+<section id="next-steps-and-further-research" class="level3">
+<h3 class="anchored" data-anchor-id="next-steps-and-further-research">Next Steps and Further Research</h3>
+<p>While this project did see some success regarding unearthing underlying trends between gender, race, and education, it left much to be desired. It could have been improved in a variety of ways, some suggestions being:</p>
+<p>More Data</p>
+<p>With more data points, our regression analysis would have been much more powerful. Due to a lack of relevant data, most high-level analysis was left to Autoregression techniques of linear modeling</p>
+<p>More Variables</p>
+<p>With other variables, more of the relationship between gender and income, and overall disparity, could have been explored. A particularly interesting datapoint to consider would have been age. As time has went on, our society has changed significantly, and analyzing the disparity in gender when it is separated by age groups could provide interesting results.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -655,10 +476,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/sussmanbu\.github\.io\/final-project-team-8\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -668,8 +506,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -681,7 +528,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -725,6 +695,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -750,6 +721,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -810,6 +807,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
