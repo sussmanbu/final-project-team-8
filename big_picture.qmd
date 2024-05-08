@@ -16,7 +16,8 @@ In the pursuit of success, education is a key element, but what happens if the p
 The project confronts the stark disparities within and between gender and racial groups. A canvas of educational attainment paints a picture of untapped potential, begging the question: who truly wins the race to success?
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
-
+suppressWarnings({
+  library(shiny)
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(tidycensus))
 suppressPackageStartupMessages(library(sf))
@@ -74,6 +75,7 @@ gendered_employment_split |>
   labs(fill = "Ratio ",
        title = "Ratio of Male to Female Employment in 2020, by State", caption= "Source: Cleaned American Community Survey Data") +
   theme_minimal()
+})
 ```
 
 ## Charting Educational Journies
@@ -81,9 +83,7 @@ gendered_employment_split |>
 The project begins by mapping the educational voyage of women and men across the fifty states and Puerto Rico. The project then dissects the percentage of women that has attained a bachelor's degree or higher, faceted by race. Through a lens of seven years, from 2015 - 2022, we project the percentage of women that has attained a bachelor's degree of higher for the next five years. Yet, the journey does not end there; the project mirrors this process for men, dissecting the educational diversity with equal rigor.
 
 ```{r echo=FALSE, results ='hide', message = FALSE}
-library(shiny)
-library(ggplot2)
-library(dplyr)
+
 
 ui <- fluidPage(
   titlePanel("Percentage of people who have a Bachelor's degree or higher, by Gender and Race"),
@@ -138,8 +138,10 @@ shinyApp(ui, server)
 Also guided by the beacon of economic insight, the project delves into income data of genders and races spanning sixty two years. The income data by the U.S. Department of Labor is more than statistics; they embody the struggle for equity. With each statistical model, this project sheds light on the pay gap differences between men and women, and between races.
 
 ```{r include_image, echo=FALSE, fig.cap="Source: Cleaned Dept. of Labor Data"}
-library(knitr)
+suppressWarnings({
+  library(knitr)
 knitr::include_graphics("bigpic_medianincome/graph_median_income.png")
+})
 ```
 
 ## Gender and Race Dynamics Above the Poverty Line
